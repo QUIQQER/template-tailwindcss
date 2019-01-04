@@ -1,0 +1,254 @@
+.page-header {
+    background: url(http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/architecture-bird-s-eye-view-bridge-1657558.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: auto;
+    min-height: 80vh;
+}
+
+.page-header-innerwrapper {
+    background: linear-gradient(45deg, #005186ee 0%, #2fb1facc 100%);
+    background: linear-gradient(45deg, #066dd7cf 0%, #2063aecc 100%);
+    background: linear-gradient(45deg, #0f7ee6e6 0%, #9171e1e3 100%);
+    background: linear-gradient(45deg, #0f7ee6e6 0%, #1080e7d4 100%);
+    background: linear-gradient(45deg, #0f7ee6e6 0%, #71cde1e3 100%);
+    /*background: linear-gradient(45deg, #8d2ef7e8 0%, #12bceedb 100%);*/
+    /*background: linear-gradient(45deg, #042a4de6 0%, #5810e7d4 100%);*/
+    /*background: linear-gradient(45deg, #1b78cff5 0%, #7f32d5de 100%);*/
+    flex: 1;
+    /*background: linear-gradient(45deg, #056bd5a3 0%, #056bd5cc 100%);*/
+    /*background: linear-gradient(45deg, #4d8cf4e0 0%, #4a8af4e3 100%);*/
+    background: linear-gradient(45deg, #2e81f7e8 30%, #45e4efd4 100%);
+    background: linear-gradient(45deg, #057cc0e8 0%, #3eb1f2f5 100%);
+    background: linear-gradient(45deg, #057cc0c4 0%, #b23ef2ad 100%);
+    height: 100%;
+
+    padding: 150px 0 250px;
+    width: 100%;
+}
+
+.test-img-box {
+    align-items: center;
+    display: flex;
+    height: calc(100px + 2rem);
+    justify-content: center;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    transition: 0.25s all;
+    white-space: nowrap;
+}
+
+
+.page-header-innerwrapper:after {
+    background: #f1f5f8;
+    bottom: -50px;
+    content: '';
+    height: 100px;
+    left: -10%;
+    position: absolute;
+    transform: rotate(2deg);
+    width: 120%;
+}
+
+.text-shadow {
+    text-shadow: 0 0 30px #333;
+}
+
+
+/****************/
+/* heading icon */
+/****************/
+.heading-icon-container {
+    text-align: center;
+}
+
+.headign-icon {
+    font-size: 2rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    background: #3392ea;
+    color: #e6f0fb;
+    background: #4ca0ed;
+    background: linear-gradient(-45deg, #4ca0ed 50%, #288be8ba 50%);
+    background: linear-gradient(45deg, #0f7ee6e6 0%, #9171e1e3 100%);
+    background: linear-gradient(45deg, #2e81f7e8 30%, #45e4efd4 100%);
+    background: linear-gradient(45deg, #057cc0e8 0%, #3eb1f2f5 100%);
+    /* text-shadow: 2px 2px 0px #e06164; */
+    color: #ffffff;
+    background: #4eb1ea;
+}
+
+/************/
+/* services */
+/************/
+/* banner */
+.nrservices-logos-entry {
+    cursor: pointer;
+}
+
+.nrservices-logos-entry h4 {
+    transition: 0.3s;
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+.nrservices-logos-entry img {
+    transition: 0.3s all;
+    background: transparent;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%) brightness(110%);
+}
+
+.nrservices-logos-entry:hover img {
+    filter: grayscale(0%);
+}
+
+.nrservices-logos-entry:hover h4 {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* banner END */
+
+.nrservices-1,
+.nrservices-2,
+.nrservices-3,
+.nrservices-4 {
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.nrservices-0,
+.nrservices-2,
+.nrservices-4 {
+    background: #dae1e7;
+}
+
+.nrservices-0:after,
+.nrservices-1:after,
+.nrservices-2:after,
+.nrservices-3:after,
+.nrservices-4:after,
+.vertical-tab-section:after,
+.news-section:after {
+    background: #fff;
+    bottom: -50px;
+    content: '';
+    height: 100px;
+    left: -10%;
+    position: absolute;
+    transform: rotate(-2deg);
+    width: 120%;
+}
+
+
+.nrservices-1:after,
+.nrservices-3:after,
+.vertical-tab-section:after {
+    background: #dae1e7;
+    transform: rotate(2deg);
+}
+
+/* background */
+.page-header-image,
+.nrservices-0,
+.nrservices-2,
+.nrservices-4,
+.nrservices-1:after,
+.nrservices-3:after,
+.vertical-tab-section:after,
+.news-section {
+    background: #f1f5f8;
+}
+
+
+
+/*
+.nr-services-last {
+  position: relative;
+}
+
+.nr-services-last:after {
+  width: 120%;
+  height: 100px;
+  position: absolute;
+  background: #f8f8f8;
+  left: -10%;
+  bottom: -50px;
+  content: '';
+  transform: rotate(2deg);}
+*/
+
+.test-img-box img {
+    max-height: 70px;
+}
+
+/***************************************/
+/* vertical tab - who is namerobot for */
+/***************************************/
+/*.vertical-tab-nav-entry:hover {
+    border-color: #4eb1ea;
+}*/
+
+.vertical-tab-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.vertical-tab-nav-entry.active {
+    background: #4eb1ea;
+    color: #fff;
+    border-color: #4eb1ea;
+    cursor: default;
+}
+
+.vertical-tab-nav-entry .fa {
+    font-size: 1.75rem;
+    width: 3rem;
+    line-height: 3rem;
+}
+
+.vertical-tab-nav-entry header {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/*************/
+/* news list */
+/*************/
+.news-section {
+    position: relative;
+    overflow: hidden;
+}
+.news-entry-header {
+    margin-bottom: 1.5em;
+}
+
+.news-entry-header-time {
+    margin-right: 1.5em;
+    color: #aab7c2;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-entry-header-time-day {
+    font-size: 1.8em;
+    line-height: 100%;
+    font-weight: normal;
+    text-align: right;
+}
+
+.news-entry-header-time-month {
+    font-weight: normal;
+    line-height: 1.4em;
+}
+
+.news-entry-header-title {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin-bottom: 0;
+}
