@@ -1,3 +1,7 @@
+.header-bar img {
+    max-height: 40px;
+}
+
 .page-header {
     background: url(http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/architecture-bird-s-eye-view-bridge-1657558.jpg);
     background-size: cover;

@@ -36,7 +36,7 @@
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass} font-open-sans h-screen text-grey-darkest leading-normal font-light" id="body-top">
 
-<div class="header-bar absolute w-full text-white py-4 z-10">
+<div class="header-bar absolute w-full text-white py-2 z-10">
     <div class=" px-4 mx-auto flex align-center">
         <div class="header-bar-logo-container font-bold w-auto lg:w-1/5 text-xl flex items-center">
             <a href="{url id=1}" class="header-bar-logo" title="{site id=1 attribute=title}">
@@ -58,34 +58,23 @@
     </div>
 </div>
 
-<!-- page header -->
-<section class="page-header relative overflow-hidden h-screen-4/5 flex-col flex items-center justify-center direction-column text-grey-lightest">
-        <div class="page-header-innerwrapper flex-col flex items-center justify-center direction-column text-grey-lightest">
-            <div class="container flex">
-                <div class="w-full md:w-4/5 flex flex-col items-start justify-center mx-auto text-center">
-                    <h1 class="text-shadow ">
-                        Finden Sie den passenden <span style="padding: 0 0.2em; border-bottom: 3px solid rgba(255, 255, 255, 0.5);">Namen</span>für Ihr Projekt
-                    </h1>
-                    <p class="text-shadow">
-                        Je früher Sie wissen, wie Sie ihr Unternehmen, Produkt oder Projekt nennen möchten, desto früher können Sie der Welt davon erzählen.
-                    </p>
-                    <p class="w-full mt-12">
-                        <a href="#" class="btn btn-white my-4 sm:mx-4 block sm:inline">Services entdecken</a>
-                        <a href="#" class="btn btn-outline-white my-4 sm:mx-4 block sm:inline">Ist NameRobot für mich?</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-</section>
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{foreach $headerSuffix as $Brick}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'general.fullWidth' )}
+    {assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-<!-- page header image -->
-<div class="pb-12 text-center page-header-image" style="height: calc(150px + 3em);">
-    <div class="page-header-image-container mx-auto relative"
-         style="max-width: 600px; height: 350px; top: -200px;">
-        <img src="https://colorlib.com/preview/theme/nexus/img/banner/home-left-1.png"
-             class="page-header-image-container-img">
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('general.noSpacing')}
+    {assign var=brickNoPadding value="brick-no-spacing"}
+{/if}
+<section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
     </div>
-</div>
+</section>
+{/foreach}
 
 <section class="bg-white pt-16 pb-32 nrservices-0 relative overflow-hidden">
     <div class="container">
