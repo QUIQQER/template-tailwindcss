@@ -26,6 +26,8 @@
             <pl><![CDATA[Bez odstępów od góry i dołu]]></pl>
         </locale>
 
+        <!-- hero header -->
+
         <!-- areas -->
         <locale name="area.footer.title">
             <de><![CDATA[Fußzeile der Seite (Footer)]]></de>

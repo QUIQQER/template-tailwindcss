@@ -41,9 +41,22 @@ class HeroHeader extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
+        $minHeight = '80vh';
+        if ($this->getAttribute('minHeight')) {
+            $minHeight = $this->getAttribute('minHeight');
+        }
+
+        $imageHeight = 300;
+        if ($this->getAttribute('imageHeight')) {
+            $imageHeight = $this->getAttribute('imageHeight');
+        }
 
         $Engine->assign([
-            'this' => $this
+            'this'            => $this,
+            'backgroundImage' => $this->getAttribute('backgroundImage'),
+            'minHeight'       => $minHeight,
+            'image'           => $this->getAttribute('image'),
+            'imageHeight'     => $imageHeight
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/HeroHeader.html');

@@ -28,17 +28,43 @@
             </description>
 
             <settings>
-                <setting name="mailTo">
+                <setting name="backgroundImage" class="media-image">
                     <locale group="quiqqer/template-tailwindcss"
-                            var="brick.control.simpleContact.mailTo"/>
+                            var="brick.heroHeader.backgroundImage"/>
                 </setting>
-                <setting name="showPrivacyPolicyCheckbox" type="checkbox">
+
+                <setting name="minHeight" type="select">
                     <locale group="quiqqer/template-tailwindcss"
-                            var="brick.control.simpleContact.showPrivacyPolicyCheckbox"/>
+                            var="brick.heroHeader.minHeight.text"/>
+
+                    <option value="30vh">30%</option>
+                    <option value="40vh">40%</option>
+                    <option value="50vh">50%</option>
+                    <option value="60vh">60%</option>
+                    <option value="70vh">70%</option>
+                    <option value="80vh">80%</option>
+                    <option value="90vh">90%</option>
+                    <option value="100vh">100%</option>
                 </setting>
-                <setting name="useCaptcha" type="checkbox">
+
+                <setting name="image" class="media-image">
                     <locale group="quiqqer/template-tailwindcss"
-                            var="brick.control.simpleContact.useCaptcha"/>
+                            var="brick.heroHeader.image"/>
+                </setting>
+
+                <setting name="imageHeight" type="select">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.heroHeader.imageHeight.text"/>
+
+                    <option value="200px">200px</option>
+                    <option value="250px">250px</option>
+                    <option value="300px">300px</option>
+                    <option value="350px">350px</option>
+                    <option value="400px">400px</option>
+                    <option value="450px">450px</option>
+                    <option value="500px">500px</option>
+                    <option value="550px">550px</option>
+                    <option value="600px">600px</option>
                 </setting>
             </settings>
         </brick>

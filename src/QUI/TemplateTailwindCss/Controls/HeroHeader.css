@@ -1,9 +1,7 @@
 .headerHero-content {
-    background: url(http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/architecture-bird-s-eye-view-bridge-1657558.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 80vh;
 }
 
 .headerHero-content-wrapper {
