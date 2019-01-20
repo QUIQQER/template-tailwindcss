@@ -193,7 +193,7 @@ module.exports = {
 
   fonts: {
       'sans': [
-          'Montserrat',
+          'Open Sans',
           'system-ui',
           'BlinkMacSystemFont',
           '-apple-system',
@@ -227,11 +227,8 @@ module.exports = {
           'Courier New',
           'monospace',
       ],
-      'roboto': [
-          'Roboto'
-      ],
-      'montserrat': [
-          'Montserrat'
+      'open-sans': [
+          'Open Sans'
       ]
   },
 

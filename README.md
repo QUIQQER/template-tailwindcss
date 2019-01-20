@@ -72,7 +72,7 @@ Every time you make changes to config file or input css file, you have to genera
 Use the following command (starting from template root directory):
 
 ```bash
-./tailwind/node_modules/.bin/tailwind build ./tailwind/tailwind.style.css -c ./tailwindcss/tailwind.config.js -o ./bin/css/style.css
+./tailwind/node_modules/.bin/tailwind build ./tailwind/tailwind.style.css -c ./tailwind/tailwind.config.js -o ./bin/css/style.css
 ``` 
 
 

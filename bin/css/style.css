@@ -3057,7 +3057,7 @@ table {
 }
 
 .font-sans {
-  font-family: Montserrat, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 .font-serif {
@@ -3068,12 +3068,16 @@ table {
   font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
-.font-roboto {
-  font-family: Roboto;
+.font-source-sans-pro {
+  font-family: Source Sans Pro;
 }
 
 .font-montserrat {
   font-family: Montserrat;
+}
+
+.font-open-sans {
+  font-family: Open Sans;
 }
 
 .font-hairline {
@@ -8805,7 +8809,7 @@ p {
   }
 
   .sm\:font-sans {
-    font-family: Montserrat, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .sm\:font-serif {
@@ -8816,12 +8820,16 @@ p {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 
-  .sm\:font-roboto {
-    font-family: Roboto;
+  .sm\:font-source-sans-pro {
+    font-family: Source Sans Pro;
   }
 
   .sm\:font-montserrat {
     font-family: Montserrat;
+  }
+
+  .sm\:font-open-sans {
+    font-family: Open Sans;
   }
 
   .sm\:font-hairline {
@@ -14453,7 +14461,7 @@ p {
   }
 
   .md\:font-sans {
-    font-family: Montserrat, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .md\:font-serif {
@@ -14464,12 +14472,16 @@ p {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 
-  .md\:font-roboto {
-    font-family: Roboto;
+  .md\:font-source-sans-pro {
+    font-family: Source Sans Pro;
   }
 
   .md\:font-montserrat {
     font-family: Montserrat;
+  }
+
+  .md\:font-open-sans {
+    font-family: Open Sans;
   }
 
   .md\:font-hairline {
@@ -20101,7 +20113,7 @@ p {
   }
 
   .lg\:font-sans {
-    font-family: Montserrat, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .lg\:font-serif {
@@ -20112,12 +20124,16 @@ p {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 
-  .lg\:font-roboto {
-    font-family: Roboto;
+  .lg\:font-source-sans-pro {
+    font-family: Source Sans Pro;
   }
 
   .lg\:font-montserrat {
     font-family: Montserrat;
+  }
+
+  .lg\:font-open-sans {
+    font-family: Open Sans;
   }
 
   .lg\:font-hairline {
