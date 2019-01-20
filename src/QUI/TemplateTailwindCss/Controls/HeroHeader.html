@@ -8,17 +8,8 @@
 <div class="headerHero-content relative overflow-hidden h-screen-4/5 flex-col flex items-center justify-center direction-column text-grey-lightest control-template">
     <div class="headerHero-content-wrapper flex-col flex items-center justify-center direction-column text-grey-lightest">
         <div class="container flex">
-            <div class="w-full md:w-4/5 flex flex-col items-start justify-center mx-auto text-center">
-                <h1 class="text-shadow ">
-                    Finden Sie den passenden <span style="padding: 0 0.2em; border-bottom: 3px solid rgba(255, 255, 255, 0.5);">Namen</span>für Ihr Projekt
-                </h1>
-                <p class="text-shadow">
-                    Je früher Sie wissen, wie Sie ihr Unternehmen, Produkt oder Projekt nennen möchten, desto früher können Sie der Welt davon erzählen.
-                </p>
-                <p class="w-full mt-12">
-                    <a href="#" class="btn btn-white my-4 sm:mx-4 block sm:inline">Services entdecken</a>
-                    <a href="#" class="btn btn-outline-white my-4 sm:mx-4 block sm:inline">Ist NameRobot für mich?</a>
-                </p>
+            <div class="w-full md:w-4/5 flex flex-col items-start justify-center mx-auto">
+                {$this->getAttribute('content')}
             </div>
         </div>
     </div>
