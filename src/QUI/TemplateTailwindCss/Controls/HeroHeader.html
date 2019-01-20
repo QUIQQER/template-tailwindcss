@@ -1,6 +1,12 @@
-<!-- page header -->
-<section class="page-header relative overflow-hidden h-screen-4/5 flex-col flex items-center justify-center direction-column text-grey-lightest">
-    <div class="page-header-innerwrapper flex-col flex items-center justify-center direction-column text-grey-lightest">
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+<!-- header hero content -->
+<div class="headerHero-content relative overflow-hidden h-screen-4/5 flex-col flex items-center justify-center direction-column text-grey-lightest control-template">
+    <div class="headerHero-content-wrapper flex-col flex items-center justify-center direction-column text-grey-lightest">
         <div class="container flex">
             <div class="w-full md:w-4/5 flex flex-col items-start justify-center mx-auto text-center">
                 <h1 class="text-shadow ">
@@ -16,9 +22,9 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- page header image -->
+<!-- header hero image -->
 <div class="pb-12 text-center page-header-image" style="height: calc(150px + 3em);">
     <div class="page-header-image-container mx-auto relative"
          style="max-width: 600px; height: 350px; top: -200px;">

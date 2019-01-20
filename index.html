@@ -69,8 +69,8 @@
 {if $Brick->getSetting('general.noSpacing')}
     {assign var=brickNoPadding value="brick-no-spacing"}
 {/if}
-<section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+<section class="brick-id-{$Brick->getAttribute('id')}">
+    <div class="{$brickFullWidth} {$brickNoPadding}">
         {$Brick->create()}
     </div>
 </section>
@@ -407,44 +407,6 @@
     </div>
 </section>
 
-<!--<div class="headerSuffix">
-    &lt;!&ndash; header suffix  &ndash;&gt;
-    {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-    {foreach $headerSuffix as $Brick}
-
-    {assign var=noPadding value=''}
-    {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-    {assign var=noPadding value='-noPadding'}
-    {/if}
-    {if $Brick->getSetting( 'brickFullWidth' )}
-    <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
-                        headerSuffix-container
-                        {cycle values='brick-even-suffix,brick-odd-suffix'}
-                        brick-id-{$Brick->getAttribute('id')}"
-             {if $Brick->getSetting('promosliderBackground')}
-        style="background-color: {$Brick->getSetting('promosliderBackground')};"
-        {/if}>
-        {$Brick->create()}
-    </section>
-    {else}
-    <div class="tpl-presentation-row
-                    headerSuffix-container
-                    {cycle values='brick-even-suffix,brick-odd-suffix'}
-                    brick-id-{$Brick->getAttribute('id')}">
-        <div class="grid-container">
-            <section>
-                {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
-            </section>
-        </div>
-    </div>
-    {/if}
-    {/foreach}
-</div>-->
-
 
 
 <!-- menu -->
@@ -501,6 +463,7 @@
     </div>
     {/if}
 
+    {*
     <div class="headerSuffix">
         <!-- header suffix  -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
@@ -537,6 +500,7 @@
         {/if}
         {/foreach}
     </div>
+    *}
 
     <!-- content -->
     <div class="main-content-color-bg  {cycle values='' reset=true}">

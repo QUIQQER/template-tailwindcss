@@ -41,12 +41,11 @@ class HeroHeader extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $LoginControl = new QUI\Users\Controls\Login();
 
         $Engine->assign([
-            'LoginControl' => $LoginControl
+            'this' => $this
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/LoginAndRegister.html');
+        return $Engine->fetch(dirname(__FILE__) . '/HeroHeader.html');
     }
 }

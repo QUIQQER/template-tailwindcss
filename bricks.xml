@@ -16,6 +16,33 @@
             </settings>
         </brick>
 
+        <!-- Hero Header -->
+        <brick control="\QUI\TemplateTailwindCss\Controls\HeroHeader">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.control.simpleContact.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.control.simpleContact.description"/>
+            </description>
+
+            <settings>
+                <setting name="mailTo">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.control.simpleContact.mailTo"/>
+                </setting>
+                <setting name="showPrivacyPolicyCheckbox" type="checkbox">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.control.simpleContact.showPrivacyPolicyCheckbox"/>
+                </setting>
+                <setting name="useCaptcha" type="checkbox">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.control.simpleContact.useCaptcha"/>
+                </setting>
+            </settings>
+        </brick>
+
 
         <!-- defined areas in the template -->
         <templateAreas>

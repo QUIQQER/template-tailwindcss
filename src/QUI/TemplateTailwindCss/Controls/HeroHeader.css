@@ -1,0 +1,15 @@
+.headerHero-content {
+    background: url(http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/architecture-bird-s-eye-view-bridge-1657558.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 80vh;
+}
+
+.headerHero-content-wrapper {
+    background: linear-gradient(45deg, #057cc0e8 0%, #3eb1f2f5 100%);
+    background: linear-gradient(45deg, #057cc0c4 0%, #b23ef2ad 100%);
+    height: 100%;
+    padding: 150px 0 250px;
+    width: 100%;
+}
