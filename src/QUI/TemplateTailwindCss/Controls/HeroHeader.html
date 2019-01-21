@@ -14,7 +14,7 @@
 <!-- header hero: content -->
 <div class="headerHero-content relative overflow-hidden  flex-col flex items-center justify-center direction-column text-grey-lightest control-template"
 style="{$bgImageStyle} {$minHeightStyle}">
-    <div class="headerHero-content-wrapper flex-col flex items-center justify-center direction-column text-grey-lightest" style="padding: 150px 0 calc({$imageHeight}px / 1.5);">
+    <div class="headerHero-content-wrapper flex-col flex items-center justify-center direction-column text-grey-lightest" style="padding: 150px 0 calc({$imageHeight} / 1.5);">
         <div class="container flex">
             <div class="w-full md:w-4/5 flex flex-col items-start justify-center mx-auto">
                 {$this->getAttribute('content')}
@@ -25,10 +25,10 @@ style="{$bgImageStyle} {$minHeightStyle}">
 
 {if $image}
 <!-- header hero: image -->
-<div class="text-center page-header-image" style="height: calc({$imageHeight}px / 2); ">
+<div class="text-center page-header-image" style="height: calc({$imageHeight} / 2); background: #aaa !important; ">
     <div class="page-header-image-container mx-auto relative"
-         style="max-width: 600px; bottom: calc({$imageHeight}px / 2); bottom: 100%;">
-        {image src=$image width=600 class="page-header-image-container-img" style="height: {$imageHeight}px"}
+         style="max-width: 600px; bottom: calc({$imageHeight} / 2); bottom: 100%;">
+        {image src=$image width=600 class="page-header-image-container-img" style="max-height: {$imageHeight}"}
         <!--<img src="https://colorlib.com/preview/theme/nexus/img/banner/home-left-1.png"
              class="page-header-image-container-img">-->
     </div>
