@@ -12,40 +12,42 @@
             <settings>
                 <title>
                     <locale group="quiqqer/template-tailwindcss"
-                            var="templateTailwindCss.siteSettings"/>
+                            var="site.settings"/>
                 </title>
 
                 <!-- show header -->
                 <select conf="templateTailwindCss.showEmotion">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
-                                var="siteSettings.showEmotion"/>
+                                var="site.settings.showEmotion"/>
                     </text>
                     <option value="default">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="siteSettings.showEmotion.default"/>
+                                var="site.settings.showEmotion.default"/>
                     </option>
                     <option value="show">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="siteSettings.showEmotion.show"/>
+                                var="site.settings.showEmotion.show"/>
                     </option>
                     <option value="hide">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="siteSettings.showEmotion.hide"/>
+                                var="site.settings.showEmotion.hide"/>
                     </option>
                 </select>
 
                 <!-- show title -->
                 <input conf="templateTailwindCss.showTitle" type="checkbox">
                     <text>
-                        <locale group="quiqqer/template-tailwindcss" var="siteSettings.showTitle"/>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.showTitle"/>
                     </text>
                 </input>
 
                 <!-- show short desc -->
                 <input conf="templateTailwindCss.showShort" type="checkbox">
                     <text>
-                        <locale group="quiqqer/template-tailwindcss" var="siteSettings.showShort"/>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.showShort"/>
                     </text>
                 </input>
             </settings>
@@ -58,40 +60,60 @@
         <layout type="layout/startPage"
                 image="bin/layouts/startPage.png">
             <title>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.startpage" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.startpage" />
             </title>
             <description>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.startpage.desc" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.startpage.desc" />
             </description>
         </layout>
 
         <layout type="layout/noSidebar"
                 image="bin/layouts/noSidebar.png">
             <title>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.noSidebar" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.noSidebar" />
             </title>
             <description>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.noSidebar.desc" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.noSidebar.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/noSidebarThin"
+                image="bin/layouts/noSidebarThin.png">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.noSidebarThin" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.noSidebarThin.desc" />
             </description>
         </layout>
 
         <layout type="layout/leftSidebar"
                 image="bin/layouts/leftSidebar.png">
             <title>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.leftSidebar" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.leftSidebar" />
             </title>
             <description>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.leftSidebar.desc" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.leftSidebar.desc" />
             </description>
         </layout>
 
         <layout type="layout/rightSidebar"
                 image="bin/layouts/rightSidebar.png">
             <title>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.rightSidebar" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.rightSidebar" />
             </title>
             <description>
-                <locale group="quiqqer/template-tailwindcss" var="admin.layout.rightSidebar.desc" />
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.rightSidebar.desc" />
             </description>
         </layout>
     </layouts>

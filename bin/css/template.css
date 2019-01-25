@@ -1,3 +1,30 @@
+/********************/
+/* template styling */
+/********************/
+.container.full-width {
+    width: 100%;
+}
+
+
+.body-container.body-padding {
+    padding-top: 80px;
+}
+
+/* nav background */
+.header-bar-alt {
+    color: #333;
+}
+
+.page-header-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
 .header-bar img {
     max-height: 40px;
 }

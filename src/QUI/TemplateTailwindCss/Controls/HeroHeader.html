@@ -25,7 +25,7 @@ style="{$bgImageStyle} {$minHeightStyle}">
 
 {if $image}
 <!-- header hero: image -->
-<div class="text-center page-header-image" style="height: calc({$imageHeight} / 2); background: #aaa !important; ">
+<div class="text-center page-header-image" style="height: calc({$imageHeight} / 2); /*background: #aaa !important;*/ ">
     <div class="page-header-image-container mx-auto relative"
          style="max-width: 600px; bottom: calc({$imageHeight} / 2); bottom: 100%;">
         {image src=$image width=600 class="page-header-image-container-img" style="max-height: {$imageHeight}"}

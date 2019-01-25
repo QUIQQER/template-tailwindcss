@@ -2,16 +2,16 @@
 <quiqqer>
     <bricks>
 
-        <!-- for all bricks -->
+        <!-- generall settings for all bricks -->
         <brick control="*">
             <settings>
-                <setting name="brickFullWidth" type="checkbox">
+                <setting name="general.fullWidth" type="checkbox">
                     <locale group="quiqqer/template-tailwindcss"
-                            var="brickFullWidth"/>
+                            var="brick.general.fullWidth"/>
                 </setting>
-                <setting name="noPadding" type="checkbox">
+                <setting name="general.noSpacing" type="checkbox">
                     <locale group="quiqqer/template-tailwindcss"
-                            var="noPadding"/>
+                            var="brick.general.noSpacing"/>
                 </setting>
             </settings>
         </brick>

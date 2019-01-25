@@ -93,8 +93,9 @@
 /* header nav item */
 /*******************/
 .header-bar-nav-item {
-    @apply mr-2 text-white font-bold py-4 px-6;
+    @apply mr-2 flex items-center font-bold py-0 px-6;
     transition: 0.25s all;
+    color: inherit;
 }
 
 .header-bar-nav-item:hover {

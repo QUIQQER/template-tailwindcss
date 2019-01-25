@@ -34,10 +34,21 @@
     {*$settingsCSS*}
 
 </head>
+
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
+{assign var=bodyPadding value=''}
+{if empty($headerSuffix) && !$showHeader}
+    {assign var=bodyPadding value='body-padding'}
+    {assign var=navBackground value='header-bar-alt'}
+{/if}
+
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass} font-open-sans h-screen text-grey-darkest leading-normal font-light" id="body-top">
 
-<div class="header-bar absolute w-full text-white py-2 z-10 hidden md:block">
-    <div class=" px-4 mx-auto flex align-center">
+<!-- header bar / navigation -->
+<div class="header-bar absolute w-full text-white py-2 z-10 hidden md:flex {$navBackground}" style="justify-content: stretch; height: 80px;">
+    <div class=" px-4 mx-auto flex align-center w-full">
         <div class="header-bar-logo-container font-bold w-auto lg:w-1/5 text-xl flex items-center">
             <a href="{url id=1}" class="header-bar-logo" title="{site id=1 attribute=title}">
                 <img src="{$logoUrl}" alt="{$logoAlt}"/>
@@ -58,381 +69,17 @@
     </div>
 </div>
 
-{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-{foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'general.fullWidth' )}
-    {assign var=brickFullWidth value='brick-full-width'}
-{/if}
-
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('general.noSpacing')}
-    {assign var=brickNoPadding value="brick-no-spacing"}
-{/if}
-<section class="brick-id-{$Brick->getAttribute('id')}">
-    <div class="{$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
-{/foreach}
-
-<section class="bg-white pt-16 pb-32 nrservices-0 relative overflow-hidden">
-    <div class="container">
-
-        <!--<div class="heading-icon-container">
-            <span class="fa fa-users headign-icon shadow-lg"></span>
-        </div>-->
-        <header class="text-center mb-16">
-            <h1 class="font-light leading-none tracking-tight">NameRobot Services</h1>
-            <h3 class="text-blue-darker opacity-75 font-normal leading-normal mb-8">Phasellus gravida semper nisi. Aenean posuere, <br class="hidden md:inline">tortor sed cursus feugiat, nunc augue blandit nunc.</h3>
-        </header>
-
-        <div class="flex -mx-4 nrservices-logos">
-            <div class="w-1/4 px-4 text-center">
-                <div class="nrservices-logos-entry" title="NameFruits">
-                    <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nf.png">
-                    <h4>NameFruits</h4>
-                </div>
-            </div>
-            <div class="w-1/4 px-4 text-center">
-                <div class="nrservices-logos-entry" title="FlyingNames">
-                    <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-fl.png">
-                    <h4>FlyingNames</h4>
-                </div>
-            </div>
-            <div class="w-1/4 px-4 text-center">
-                <div class="nrservices-logos-entry" title="NameRobot">
-                    <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nr.png">
-                    <h4>NameRobot</h4>
-                </div>
-            </div>
-            <div class="w-1/4 px-4 text-center">
-                <div class="nrservices-logos-entry" title="NameScore">
-                    <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-ns.png">
-                    <h4>NameScore</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-white pt-16 pb-32 nrservices-1">
-    <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
-        <div class="flex items-center justify-center h-full">
-            <div class="w-1/2">
-                <h2 class="mb-0">Namefruits</h2>
-                <p class="text-grey-darker">Das schlaue Namens-Tool für Gründer und Startups</p>
-
-                <p>Der intelligente Namensfindungs-Assistent nimmt dich an der Hand und hilft dir einen tollen Namen für dein Unternehmen zu finden. Absolut einfach, absolut clever.</p>
-
-                <p>Vorteile</p>
-
-                <ul>
-                    <li>Class aptent taciti</li>
-                    <li>Ut varius tincidunt libero. Nam eget dui.</li>
-                    <li>Phasellus gravida semper nisi.</li>
-                    <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
-                </ul>
-
-                <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
-            </div>
-            <div class="w-1/2 text-center p-4">
-                <!--<img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="https://www.namefruits.de/media/cache/Namefruits/logo__266x400.png">-->
-                <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nf.png">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-white pt-16 pb-32 nrservices-2">
-    <div class="nr-services-last">
-        <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
-            <div class="flex items-center justify-center h-full">
-                <div class="w-1/2 text-center p-4">
-                    <!--<img alt="flyingnames" src="https://www.flyingnames.de/media/cache/Namingservice/Flyingnames-Fav-Icon.png" />-->
-                    <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-fl.png">
-                </div>
-                <div class="w-1/2">
-                    <h2 class="mb-0">Flyingnames</h2>
-                    <p class="text-grey-darker">Der Namensfindungs-Service für Unternehmen</p>
-
-                    <p>Erfahrene Naming-Profis entwickeln erstklassige Namensvorschläge. Tarif auswählen, Fragebogen ausfüllen und das FlyingNames-Team macht sich ans Werk.</p>
-
-                    <ul>
-                        <li>Phasellus semper nisi.</li>
-                        <li>Class aptent pompeno taciti</li>
-                        <li>Ut varius tincidunt libero. Nam eget dui.</li>
-                        <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-white pt-16 pb-32 nrservices-3">
-    <div class="nr-services-last">
-        <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
-            <div class="flex items-center justify-center h-full">
-                <div class="w-1/2">
-                    <h2 class="mb-0">NameRobot Tools</h2>
-                    <p class="text-grey-darker">Namensfindung für alle, die selber gestalten wollen</p>
-
-                    <p>Finde deine Lieblings-Namensgeneratoren und lege fest, welche Art von Namen vorgeschlagen werden. Verfeinere alle Einstellungen genau nach deinem Geschmack.</p>
-
-                    <ul>
-                        <li>Ut varius tincidunt libero. Nam eget dui.</li>
-                        <li>Class aptent taciti</li>
-                        <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
-
-                </div>
-                <div class="w-1/2 text-center p-4">
-                    <!--<img src="https://www.namerobot.de/media/cache/namerobot/presse/Presse-2013-10/Namerobot_-_Namero.png" style="max-height: 300px;"/>-->
-                    <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nr.png">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-white pt-16 pb-32 nrservices-4">
-    <div class="nr-services-last">
-        <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
-            <div class="flex items-center justify-center h-full">
-                <div class="w-1/2 text-center p-4">
-                    <!--<img src="https://www.namescore.de/media/cache/namescore/general/icon__258x300.png" style="max-height: 200px;">-->
-                    <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-ns.png">
-                </div>
-                <div class="w-1/2">
-                    <h2 class="mb-0">NameScore</h2>
-                    <p class="text-grey-darker">Ihre eigene Namensidee prüfen lassen</p>
-
-                    <p>Sie haben schon einen Namen gefunden und möchten wissen, wie er wirkt und ob er einsetzbar ist? Finden Sie es jetzt direkt heraus mit der automatisierten NameScore Namensprüfung.</p>
-
-                    <ul>
-                        <li>Class aptent pompeno taciti</li>
-                        <li>Nam eget dui.</li>
-                        <li>Ut varius tincidunt libero.</li>
-                        <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="bg-white py-12 relative">
-    <div class="flex flex-col justify-center text-center">
-        <div class="heading-icon-container">
-            <span class="fa fa-users headign-icon shadow-lg"></span>
-        </div>
-        <h2 class="font-light leading-none tracking-tight">Für wen ist NameRobot?</h2>
-    </div>
-</section>
-
-<section class="bg-white pt-16 pb-32 relative vertical-tab-section">
-    <div class="vertical-tab-wrapper w-5/6 max-w-2xl flex mx-auto">
-        <div class="vertical-tab-nav w-1/5">
-            <div class="vertical-tab-nav-entry text-grey-dark active border mb-8 px-2 py-4 rounded-lg cursor-pointer shadow-lg">
-                <div class="rounded-lg-icon text-center mb-2">
-                    <span class="fa fa-user"></span>
-                </div>
-                <header>
-                    Gründer und Startups
-                </header>
-            </div>
-            <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                <div class="rounded-lg-icon text-center mb-2">
-                    <span class="fa fa-briefcase"></span>
-                </div>
-                <header>
-                    Unternehmen und Selbständige
-                </header>
-            </div>
-            <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                <div class="rounded-lg-icon text-center mb-2">
-                    <span class="fa fa-building-o"></span>
-                </div>
-                <header>
-                    Agenturen  und Kreative
-                </header>
-            </div>
-            <div class="vertical-tab-nav-entry text-grey-dark border mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                <div class="rounded-lg-icon text-center mb-2">
-                    <span class="fa fa-shopping-bag"></span>
-                </div>
-                <header>
-                    Andere Namenssuchende
-                </header>
-            </div>
-        </div>
-        <div class="vertical-tab-entries w-4/5 pl-12">
-            <!-- entry 1 -->
-            <div class="vertical-tab-entries-entry vertical-tab-entries-entry-1">
-                <div class="text-center mb-4 none">
-                    <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_startup_life_2du2.png" width="400"/>
-                </div>
-                <h2 class="mb-4">Gründer und Startups</h2>
-                <p>
-                    Selbständig machen ist stressig! Egal, ob Sie an einem brandneuen Startup basteln, als Freiberufler durchstarten oder ein Ladengeschäft eröffnen – in jedem Fall muss man gefühlte 101 Baustellen gleichzeitig bearbeiten. Eine davon ist die Namensfindung für Ihr Business.
-                </p>
-                <p>
-                    Ausgerechnet dafür benötigt man eigentlich ausreichend Zeit und Muße oder ein ordentliches Budget. Erfahrungsgemäß haben Firmengründer aber von alldem wenig zur Verfügung.
-                </p>
-                <p>
-                    Zum Glück gibt es NameRobot. Hier (er)finden Gründer günstig und schnell vielfältige Ideen für Firmennamen und Geschäftsnamen, und können diese anschließend sofort überprüfen.
-                </p>
-            </div>
-
-            <!-- entry 2 -->
-            <div class="vertical-tab-entries-entry vertical-tab-entries-entry-1" style="display: none;">
-                <div class="text-center mb-4">
-                    <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_pair_programming_njlp.png" width="400"/>
-                </div>
-                <h2 class="mb-4">Unternehmen und Selbständige</h2>
-                <p>
-                    Als Unternehmen oder Selbständige(r) benötigen Sie erst mal nur einen Namen – den Firmennamen bzw. die Geschäftsbezeichnung. Aber in der Regel bleibt es nicht dabei.
-                </p>
-                <p>
-                    Sei es, dass aus irgendeinem Grund ein neuer Firmenname her muss. Vielleicht planen Sie auch Produkte, gründen neue Geschäftszweige oder haben andere Projekte am Start. Und alle haben Sie eines gemeinsam: Sie brauchen einen passenden Namen!
-                </p>
-                <p>
-                    Bevor Sie bei der Namenssuche tagelang in Meetings und Recherchen versinken oder Berater engagieren, nutzen Sie doch die praktische Lösung: Finden Sie einfach passende Namen für Ihren Bedarf mit den ausgetüftelten Tools von NameRobot.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="pt-16 pb-32 relative news-section">
-    <div class="flex flex-col justify-center text-center">
-        <div class="heading-icon-container">
-            <span class="fa fa-newspaper-o headign-icon shadow-lg"></span>
-        </div>
-        <h2 class="font-light leading-none tracking-tight">News und Blog</h2>
-    </div>
-
-    <div class="w-5/6 max-w-2xl ml-auto mr-auto mt-8">
-        <div class="flex flex-wrap -mx-6 -my-6">
-            <div class="w-full lg:w-1/3">
-                <div class="rounded overflow-hidden p-8 news-entry">
-                    <header class="news-entry-header flex">
-                        <time class="news-entry-header-time">
-                            <span class="news-entry-header-time-day">20</span>
-                            <span class="news-entry-header-time-month">Nov.</span>
-                        </time>
-                        <h3 class="news-entry-header-title">Coole Namensfindungs-Deals zum Black Friday!</h3>
-                    </header>
-                    <p>
-                        NameRobot, Namefruits und NameScore warten mit richtig dicken Rabatten. Unser Black Friday
-                        Beitrag für alle Gründer, Unternehmer und Projektverwirklicher auf der Suche nach dem richtigen
-                        Namen. Zuschlagen, Namen finden, Projekt erfolgreich starten! <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
-                    </p><!--
-                    <div class="text-center">
-                        <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
-                           href="#">mehr</a>
-                    </div>-->
-                </div>
-            </div>
-            <div class="w-full lg:w-1/3">
-                <div class="rounded overflow-hidden p-8 news-entry">
-                    <header class="news-entry-header flex">
-                        <time class="news-entry-header-time">
-                            <span class="news-entry-header-time-day">30</span>
-                            <span class="news-entry-header-time-month">Aug.</span>
-                        </time>
-                        <h3 class="news-entry-header-title">Namefruits #1 Product of the Day bei Product Hunt</h3>
-                    </header>
-                    <p>
-                        Ein Grund zum feiern: Die Product Hunt Community hat Namefruits, unsere neue Künstliche
-                        Intelligenz für die Namensfindung, zum #1 Product of the Day gekürt. Yay! <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
-                    </p><!--
-                    <div class="text-center">
-                        <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
-                           href="#">mehr</a>
-                    </div>-->
-                </div>
-            </div>
-            <div class="w-full lg:w-1/3">
-                <div class="rounded overflow-hidden p-8 news-entry">
-                    <header class="news-entry-header flex">
-                        <time class="news-entry-header-time">
-                            <span class="news-entry-header-time-day">8</span>
-                            <span class="news-entry-header-time-month">Apr.</span>
-                        </time>
-                        <h3 class="news-entry-header-title">Namefruits NameReport – Namensideen im Überblick</h3>
-                    </header>
-                    <p>
-                        Mit dem NameReport von Namefruits bekommst du eine super praktische Entscheidungshilfe, um den
-                        optimal passenden Namen für Dein Business auszuwählen. <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
-                    </p><!--
-                    <div class="text-center">
-                        <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
-                           href="#">mehr</a>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!--<section class="bg-white py-16 relative">
-    <div class="flex flex-col justify-center text-center">
-        <div class="heading-icon-container">
-            <span class="fa fa-newspaper-o headign-icon shadow-lg"></span>
-        </div>
-        <h2 class="font-light leading-none tracking-tight">NameRobot ist bekannt aus</h2>
-        <p>Hier kommen Logos</p>
-    </div>
-</section>-->
-
-<section class="bg-white py-16 relative">
-    <div class="flex flex-col justify-center text-center">
-        <div class="heading-icon-container">
-            <span class="fa fa-comments-o headign-icon shadow-lg"></span>
-        </div>
-        <h2 class="font-light leading-none tracking-tight">Was unsere Kunden sagen</h2>
-        <p>Hier werden die Kundenmeinunen aufgelistet</p>
-    </div>
-</section>
-
-
-
-<!-- menu -->
-{*if $Template->getAttribute('template-header')}
-<div class="header-bar">
-    <div class="grid-container header-bar-inner">
-        <div class="header-bar-inner-nav" id="navigation">
-
-            {$MegaMenu->create()}
-
-        </div>
-    </div>
-</div>
-{/if*}
-
-
 <!-- page -->
-<div class="body-container">
-    <!-- header -->
+<div class="body-container {$bodyPadding}">
+
+    {* header *}
     {if $showHeader}
     {strip}
-    <header class="page-header">
-        {if $Site->getAttribute('image_emotion')}
-        {image src=$Site->getAttribute('image_emotion') class="header-img"
-        title=$Site->getAttribute('title')}
-        {/if}
+    <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1}); background-size: cover; background-position: center; height: 300px;">
+        <div class="page-header-wrapper">
+
+        </div>
+        {*
         <div class="page-header-container grid-container">
             {if $Site->getAttribute('templateTailwindCss.showTitle')}
             <h1 class="page-header-text-title">
@@ -449,157 +96,482 @@
             </div>
             {/if}
         </div>
+        *}
     </header>
     {/strip}
     {/if}
 
-    <!-- header suffix -->
-    <!-- breadcrumb -->
-    {if $showBreadcrumb}
-    <div class="template-breadcrumb">
-        <div class="grid-container">
-            {$Breadcrumb->create()}
+    {foreach $headerSuffix as $Brick}
+        {assign var=fullWidth value=''}
+        {if $Brick->getSetting( 'general.fullWidth' )}
+            {assign var=fullWidth value='max-w-full-force px-0'}
+        {/if}
+
+        {assign var=noPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=noPadding value="py-0"}
+        {/if}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="container {$fullWidth} {$noPadding}">
+                {$Brick->create()}
+            </div>
+        </section>
+    {/foreach}
+
+    <main class="cologne-main">
+        <div class="cologne-grid-container">
+            {$Template->getLayout()}
         </div>
-    </div>
+    </main>
+
+    {foreach $footerPrefix as $Brick}
+        {assign var=brickFullWidth value=''}
+        {if $Brick->getSetting( 'general.fullWidth' )}
+            {assign var=brickFullWidth value='brick-full-width'}
+        {/if}
+
+        {assign var=brickNoPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=brickNoPadding value="brick-no-spacing"}
+        {/if}
+        <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+                {$Brick->create()}
+            </div>
+        </section>
+    {/foreach}
+
+    {if $Site->getId() == 1}
+
+    <section class="bg-white pt-16 pb-32 nrservices-0 relative overflow-hidden">
+        <div class="container">
+
+            <!--<div class="heading-icon-container">
+                <span class="fa fa-users headign-icon shadow-lg"></span>
+            </div>-->
+            <header class="text-center mb-16">
+                <h1 class="font-light leading-none tracking-tight">NameRobot Services</h1>
+                <h3 class="text-blue-darker opacity-75 font-normal leading-normal mb-8">Phasellus gravida semper nisi. Aenean posuere, <br class="hidden md:inline">tortor sed cursus feugiat, nunc augue blandit nunc.</h3>
+            </header>
+
+            <div class="flex -mx-4 nrservices-logos">
+                <div class="w-1/4 px-4 text-center">
+                    <div class="nrservices-logos-entry" title="NameFruits">
+                        <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nf.png">
+                        <h4>NameFruits</h4>
+                    </div>
+                </div>
+                <div class="w-1/4 px-4 text-center">
+                    <div class="nrservices-logos-entry" title="FlyingNames">
+                        <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-fl.png">
+                        <h4>FlyingNames</h4>
+                    </div>
+                </div>
+                <div class="w-1/4 px-4 text-center">
+                    <div class="nrservices-logos-entry" title="NameRobot">
+                        <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nr.png">
+                        <h4>NameRobot</h4>
+                    </div>
+                </div>
+                <div class="w-1/4 px-4 text-center">
+                    <div class="nrservices-logos-entry" title="NameScore">
+                        <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-ns.png">
+                        <h4>NameScore</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-32 nrservices-1">
+        <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
+            <div class="flex items-center justify-center h-full">
+                <div class="w-1/2">
+                    <h2 class="mb-0">Namefruits</h2>
+                    <p class="text-grey-darker">Das schlaue Namens-Tool für Gründer und Startups</p>
+
+                    <p>Der intelligente Namensfindungs-Assistent nimmt dich an der Hand und hilft dir einen tollen Namen für dein Unternehmen zu finden. Absolut einfach, absolut clever.</p>
+
+                    <p>Vorteile</p>
+
+                    <ul>
+                        <li>Class aptent taciti</li>
+                        <li>Ut varius tincidunt libero. Nam eget dui.</li>
+                        <li>Phasellus gravida semper nisi.</li>
+                        <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
+                </div>
+                <div class="w-1/2 text-center p-4">
+                    <!--<img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="https://www.namefruits.de/media/cache/Namefruits/logo__266x400.png">-->
+                    <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nf.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-32 nrservices-2">
+        <div class="nr-services-last">
+            <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
+                <div class="flex items-center justify-center h-full">
+                    <div class="w-1/2 text-center p-4">
+                        <!--<img alt="flyingnames" src="https://www.flyingnames.de/media/cache/Namingservice/Flyingnames-Fav-Icon.png" />-->
+                        <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-fl.png">
+                    </div>
+                    <div class="w-1/2">
+                        <h2 class="mb-0">Flyingnames</h2>
+                        <p class="text-grey-darker">Der Namensfindungs-Service für Unternehmen</p>
+
+                        <p>Erfahrene Naming-Profis entwickeln erstklassige Namensvorschläge. Tarif auswählen, Fragebogen ausfüllen und das FlyingNames-Team macht sich ans Werk.</p>
+
+                        <ul>
+                            <li>Phasellus semper nisi.</li>
+                            <li>Class aptent pompeno taciti</li>
+                            <li>Ut varius tincidunt libero. Nam eget dui.</li>
+                            <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-32 nrservices-3">
+        <div class="nr-services-last">
+            <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
+                <div class="flex items-center justify-center h-full">
+                    <div class="w-1/2">
+                        <h2 class="mb-0">NameRobot Tools</h2>
+                        <p class="text-grey-darker">Namensfindung für alle, die selber gestalten wollen</p>
+
+                        <p>Finde deine Lieblings-Namensgeneratoren und lege fest, welche Art von Namen vorgeschlagen werden. Verfeinere alle Einstellungen genau nach deinem Geschmack.</p>
+
+                        <ul>
+                            <li>Ut varius tincidunt libero. Nam eget dui.</li>
+                            <li>Class aptent taciti</li>
+                            <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
+
+                    </div>
+                    <div class="w-1/2 text-center p-4">
+                        <!--<img src="https://www.namerobot.de/media/cache/namerobot/presse/Presse-2013-10/Namerobot_-_Namero.png" style="max-height: 300px;"/>-->
+                        <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nr.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-32 nrservices-4">
+        <div class="nr-services-last">
+            <div class="w-5/6 max-w-2xl ml-auto mr-auto h-full">
+                <div class="flex items-center justify-center h-full">
+                    <div class="w-1/2 text-center p-4">
+                        <!--<img src="https://www.namescore.de/media/cache/namescore/general/icon__258x300.png" style="max-height: 200px;">-->
+                        <img alt="icon" style="width: auto; max-height: 250px;" title="icon" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-ns.png">
+                    </div>
+                    <div class="w-1/2">
+                        <h2 class="mb-0">NameScore</h2>
+                        <p class="text-grey-darker">Ihre eigene Namensidee prüfen lassen</p>
+
+                        <p>Sie haben schon einen Namen gefunden und möchten wissen, wie er wirkt und ob er einsetzbar ist? Finden Sie es jetzt direkt heraus mit der automatisierten NameScore Namensprüfung.</p>
+
+                        <ul>
+                            <li>Class aptent pompeno taciti</li>
+                            <li>Nam eget dui.</li>
+                            <li>Ut varius tincidunt libero.</li>
+                            <li>Maximal 4 Vorteile! Zu viel ist auch schlecht</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-red border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark mt-8">Mehr erfahren</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white py-12 relative">
+        <div class="flex flex-col justify-center text-center">
+            <div class="heading-icon-container">
+                <span class="fa fa-users headign-icon shadow-lg"></span>
+            </div>
+            <h2 class="font-light leading-none tracking-tight">Für wen ist NameRobot?</h2>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-32 relative vertical-tab-section">
+        <div class="vertical-tab-wrapper w-5/6 max-w-2xl flex mx-auto">
+            <div class="vertical-tab-nav w-1/5">
+                <div class="vertical-tab-nav-entry text-grey-dark active border mb-8 px-2 py-4 rounded-lg cursor-pointer shadow-lg">
+                    <div class="rounded-lg-icon text-center mb-2">
+                        <span class="fa fa-user"></span>
+                    </div>
+                    <header>
+                        Gründer und Startups
+                    </header>
+                </div>
+                <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
+                    <div class="rounded-lg-icon text-center mb-2">
+                        <span class="fa fa-briefcase"></span>
+                    </div>
+                    <header>
+                        Unternehmen und Selbständige
+                    </header>
+                </div>
+                <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
+                    <div class="rounded-lg-icon text-center mb-2">
+                        <span class="fa fa-building-o"></span>
+                    </div>
+                    <header>
+                        Agenturen  und Kreative
+                    </header>
+                </div>
+                <div class="vertical-tab-nav-entry text-grey-dark border mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
+                    <div class="rounded-lg-icon text-center mb-2">
+                        <span class="fa fa-shopping-bag"></span>
+                    </div>
+                    <header>
+                        Andere Namenssuchende
+                    </header>
+                </div>
+            </div>
+            <div class="vertical-tab-entries w-4/5 pl-12">
+                <!-- entry 1 -->
+                <div class="vertical-tab-entries-entry vertical-tab-entries-entry-1">
+                    <div class="text-center mb-4 none">
+                        <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_startup_life_2du2_transparent.png" width="400"/>
+                    </div>
+                    <h2 class="mb-4">Gründer und Startups</h2>
+                    <p>
+                        Selbständig machen ist stressig! Egal, ob Sie an einem brandneuen Startup basteln, als Freiberufler durchstarten oder ein Ladengeschäft eröffnen – in jedem Fall muss man gefühlte 101 Baustellen gleichzeitig bearbeiten. Eine davon ist die Namensfindung für Ihr Business.
+                    </p>
+                    <p>
+                        Ausgerechnet dafür benötigt man eigentlich ausreichend Zeit und Muße oder ein ordentliches Budget. Erfahrungsgemäß haben Firmengründer aber von alldem wenig zur Verfügung.
+                    </p>
+                    <p>
+                        Zum Glück gibt es NameRobot. Hier (er)finden Gründer günstig und schnell vielfältige Ideen für Firmennamen und Geschäftsnamen, und können diese anschließend sofort überprüfen.
+                    </p>
+                </div>
+
+                <!-- entry 2 -->
+                <div class="vertical-tab-entries-entry vertical-tab-entries-entry-1" style="display: none;">
+                    <div class="text-center mb-4">
+                        <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_pair_programming_njlp.png" width="400"/>
+                    </div>
+                    <h2 class="mb-4">Unternehmen und Selbständige</h2>
+                    <p>
+                        Als Unternehmen oder Selbständige(r) benötigen Sie erst mal nur einen Namen – den Firmennamen bzw. die Geschäftsbezeichnung. Aber in der Regel bleibt es nicht dabei.
+                    </p>
+                    <p>
+                        Sei es, dass aus irgendeinem Grund ein neuer Firmenname her muss. Vielleicht planen Sie auch Produkte, gründen neue Geschäftszweige oder haben andere Projekte am Start. Und alle haben Sie eines gemeinsam: Sie brauchen einen passenden Namen!
+                    </p>
+                    <p>
+                        Bevor Sie bei der Namenssuche tagelang in Meetings und Recherchen versinken oder Berater engagieren, nutzen Sie doch die praktische Lösung: Finden Sie einfach passende Namen für Ihren Bedarf mit den ausgetüftelten Tools von NameRobot.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-16 pb-32 relative news-section">
+        <div class="flex flex-col justify-center text-center">
+            <div class="heading-icon-container">
+                <span class="fa fa-newspaper-o headign-icon shadow-lg"></span>
+            </div>
+            <h2 class="font-light leading-none tracking-tight">News und Blog</h2>
+        </div>
+
+        <div class="w-5/6 max-w-2xl ml-auto mr-auto mt-8">
+            <div class="flex flex-wrap -mx-6 -my-6">
+                <div class="w-full lg:w-1/3">
+                    <div class="rounded overflow-hidden p-8 news-entry">
+                        <header class="news-entry-header flex">
+                            <time class="news-entry-header-time">
+                                <span class="news-entry-header-time-day">20</span>
+                                <span class="news-entry-header-time-month">Nov.</span>
+                            </time>
+                            <h3 class="news-entry-header-title">Coole Namensfindungs-Deals zum Black Friday!</h3>
+                        </header>
+                        <p>
+                            NameRobot, Namefruits und NameScore warten mit richtig dicken Rabatten. Unser Black Friday
+                            Beitrag für alle Gründer, Unternehmer und Projektverwirklicher auf der Suche nach dem richtigen
+                            Namen. Zuschlagen, Namen finden, Projekt erfolgreich starten! <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
+                        </p><!--
+                        <div class="text-center">
+                            <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
+                               href="#">mehr</a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3">
+                    <div class="rounded overflow-hidden p-8 news-entry">
+                        <header class="news-entry-header flex">
+                            <time class="news-entry-header-time">
+                                <span class="news-entry-header-time-day">30</span>
+                                <span class="news-entry-header-time-month">Aug.</span>
+                            </time>
+                            <h3 class="news-entry-header-title">Namefruits #1 Product of the Day bei Product Hunt</h3>
+                        </header>
+                        <p>
+                            Ein Grund zum feiern: Die Product Hunt Community hat Namefruits, unsere neue Künstliche
+                            Intelligenz für die Namensfindung, zum #1 Product of the Day gekürt. Yay! <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
+                        </p><!--
+                        <div class="text-center">
+                            <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
+                               href="#">mehr</a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3">
+                    <div class="rounded overflow-hidden p-8 news-entry">
+                        <header class="news-entry-header flex">
+                            <time class="news-entry-header-time">
+                                <span class="news-entry-header-time-day">8</span>
+                                <span class="news-entry-header-time-month">Apr.</span>
+                            </time>
+                            <h3 class="news-entry-header-title">Namefruits NameReport – Namensideen im Überblick</h3>
+                        </header>
+                        <p>
+                            Mit dem NameReport von Namefruits bekommst du eine super praktische Entscheidungshilfe, um den
+                            optimal passenden Namen für Dein Business auszuwählen. <a href="#" class="text-red border-b-2 border-red font-normal hover:text-red-dark hover:border-red-darker">mehr</a>
+                        </p><!--
+                        <div class="text-center">
+                            <a class="btn btn-red btn-small border-2 border-red text-white shadow-md hover:shadow-lg hover:border-red-dark hover:bg-red-dark"
+                               href="#">mehr</a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--<section class="bg-white py-16 relative">
+        <div class="flex flex-col justify-center text-center">
+            <div class="heading-icon-container">
+                <span class="fa fa-newspaper-o headign-icon shadow-lg"></span>
+            </div>
+            <h2 class="font-light leading-none tracking-tight">NameRobot ist bekannt aus</h2>
+            <p>Hier kommen Logos</p>
+        </div>
+    </section>-->
+
+    <section class="bg-white py-16 relative">
+        <div class="flex flex-col justify-center text-center">
+            <div class="heading-icon-container">
+                <span class="fa fa-comments-o headign-icon shadow-lg"></span>
+            </div>
+            <h2 class="font-light leading-none tracking-tight">Was unsere Kunden sagen</h2>
+            <p>Hier werden die Kundenmeinunen aufgelistet</p>
+        </div>
+    </section>
+
     {/if}
 
-    {*
-    <div class="headerSuffix">
-        <!-- header suffix  -->
-        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {foreach $headerSuffix as $Brick}
+    <!-- menu -->
+    {*if $Template->getAttribute('template-header')}
+    <div class="header-bar">
+        <div class="grid-container header-bar-inner">
+            <div class="header-bar-inner-nav" id="navigation">
 
-        {assign var=noPadding value=''}
-        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps' ||
-            $Brick->getSetting('noPadding')}
-            {assign var=noPadding value='-noPadding'}
-        {/if}
-        {if $Brick->getSetting( 'brickFullWidth' )}
-        <section class="prefix-suffix-full-width clear-fix tpl-tailwindCss-row{$noPadding}
-                        headerSuffix-container {cycle values='brick-even-suffix,brick-odd-suffix'}
-                        brick-{$Brick->getAttribute('id')}-wrapper"
-                 {if $Brick->getSetting('promosliderBackground')}
-            style="background-color: {$Brick->getSetting('promosliderBackground')};"
-            {/if}>
-            {$Brick->create()}
-        </section>
-        {else}
-        <div class="prefix-suffix-nofull-width tpl-tailwindCss-row{$noPadding} headerSuffix-container
-                    {cycle values='brick-even-suffix,brick-odd-suffix'}
-                    brick-{$Brick->getAttribute('id')}-wrapper">
-            <div class="grid-container">
-                <section>
-                    {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                    {/if}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                    {$Brick->create()}
-                </section>
+                {$MegaMenu->create()}
+
             </div>
-        </div>
-        {/if}
-        {/foreach}
-    </div>
-    *}
-
-    <!-- content -->
-    <div class="main-content-color-bg  {cycle values='' reset=true}">
-        <div class="grid-container main-content">
-            {*$Template->getLayout()*}
         </div>
     </div>
-
-    <div class="prefixFooter">
-        <!-- footer prefix-->
-        {cycle assign=cy values='brick-even-suffix,brick-odd-suffix' reset=true}
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
-
-        {assign var=noPadding value=''}
-        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps' ||
-            $Brick->getSetting('noPadding')}
-            {assign var=noPadding value='-noPadding'}
-        {/if}
-
-        {if $Brick->getSetting( 'brickFullWidth' )}
-        <section class="prefix-suffix-full-width clear-fix tpl-tailwindCss-row{$noPadding}
-                        footerPrefix-container {cycle values='brick-even-prefix,brick-odd-prefix'}
-                        brick-{$Brick->getAttribute('id')}-wrapper"
-                 {if $Brick->getSetting('promosliderBackground')}
-            style="background-color: {$Brick->getSetting('promosliderBackground')};"
-            {/if}>
-
-            {$Brick->create()}
-        </section>
-        {else}
-        <div class="prefix-suffix-nofull-width tpl-tailwindCss-row{$noPadding} footerPrefix-container
-                    {cycle values='brick-even-prefix,brick-odd-prefix'}
-                    brick-{$Brick->getAttribute('id')}-wrapper">
-            <div class="grid-container">
-                <section>
-                    {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                    {/if}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                    {$Brick->create()}
-                </section>
-            </div>
-        </div>
-        {/if}
-        {/foreach}
-    </div>
-
-
-    <footer class="bg-grey-lightest py-8">
-        <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between px-8">
-            <small class="block text-sm text-grey">
-                &copy; CompanyName
-            </small>
-            <div class="mb-4 md:mb-0">
-                <div class="flex flex-col md:flex-row md:items-center">
-                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link</a>
-                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Another link</a>
-                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link to something</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer -->
-    {*if $Template->getAttribute('template-footer')}
-    <footer class="page-footer clear-fix">
-        <div class="page-footer-container grid-container">
-            {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-            {if !empty($footer)}
-            <div class="grid-children">
-                <div class="grid-children-container">
-                    {foreach from=$footer item=Brick}
-                        {if !$Brick->hasCSSClass('grid-*')}
-                            {$Brick->addCSSClass('grid-100')}
-                        {/if}
-                        {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                        {$Brick->create()}
-                    {/foreach}
-                </div>
-            </div>
-            {/if}
-        </div>
-
-        <div class="page-footer-copyright">
-            <div class="grid-container">
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-
-                    Template Tailwind CSS for QUIQQER
-                </div>
-
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                    <a href="#top" style="outline: none;">
-                        <i class="fa fa-arrow-up toTop"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
     {/if*}
+
+
+    <!-- page -->
+    <div class="body-container">
+        <!-- header -->
+        {if $showHeader}
+        {strip}
+        <header class="page-header">
+            {if $Site->getAttribute('image_emotion')}
+            {image src=$Site->getAttribute('image_emotion') class="header-img"
+            title=$Site->getAttribute('title')}
+            {/if}
+            <div class="page-header-container grid-container">
+                {if $Site->getAttribute('templateTailwindCss.showTitle')}
+                <h1 class="page-header-text-title">
+                    {$Site->getAttribute('title')}
+                </h1>
+                {/if}
+
+                {if $Site->getAttribute('templateTailwindCss.showShort') &&
+                $Site->getAttribute('short')}
+                <div class="page-header-text-wrapper">
+                    <div class="page-header-text-wrapper-short">
+                        {$Site->getAttribute('short')}
+                    </div>
+                </div>
+                {/if}
+            </div>
+        </header>
+        {/strip}
+        {/if}
+
+
+        <footer class="bg-grey-lightest py-8">
+            <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between px-8">
+                <small class="block text-sm text-grey">
+                    &copy; CompanyName
+                </small>
+                <div class="mb-4 md:mb-0">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link</a>
+                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Another link</a>
+                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link to something</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer -->
+        {*if $Template->getAttribute('template-footer')}
+        <footer class="page-footer clear-fix">
+            <div class="page-footer-container grid-container">
+                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+                {if !empty($footer)}
+                <div class="grid-children">
+                    <div class="grid-children-container">
+                        {foreach from=$footer item=Brick}
+                            {if !$Brick->hasCSSClass('grid-*')}
+                                {$Brick->addCSSClass('grid-100')}
+                            {/if}
+                            {$Brick->addCSSClass('page-footer-brick clear-fix')}
+                            {$Brick->create()}
+                        {/foreach}
+                    </div>
+                </div>
+                {/if}
+            </div>
+
+            <div class="page-footer-copyright">
+                <div class="grid-container">
+                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+
+                        Template Tailwind CSS for QUIQQER
+                    </div>
+
+                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
+                        <a href="#top" style="outline: none;">
+                            <i class="fa fa-arrow-up toTop"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {/if*}
+    </div>
 </div>
 
 

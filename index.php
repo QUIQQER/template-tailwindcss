@@ -199,6 +199,7 @@ $templateSettings['bodyClass']     = $bodyClass;
 $templateSettings['startPage']     = $startPage;
 $templateSettings['searchType']    = $searchType;
 
+
 /* neu for tailwindcss */
 /* Logo in menu */
 $logoAlt = "QUIQQER Project";
@@ -212,6 +213,9 @@ if ($Project->getMedia()->getLogoImage()) {
 
 $templateSettings['logoUrl'] = $logoUrl;
 $templateSettings['logoAlt'] = $logoAlt;
+
+$templateSettings['header']    = false;
+$templateSettings['navBackground']    = '';
 
 
 /******************/
