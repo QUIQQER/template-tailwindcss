@@ -570,6 +570,14 @@ table {
  * @import "components/forms";
  */
 
+body {
+  font-family: Open Sans;
+  height: 100vh;
+  color: #3d4852;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
 .btn {
   padding-top: .75rem;
   padding-bottom: .75rem;

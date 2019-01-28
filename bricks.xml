@@ -132,7 +132,7 @@
             <layouts>
 
                 <layout layout="layout/startPage">
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="contentPrefix" inheritance="1" priority="2">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.prefix.content.title"
@@ -160,7 +160,7 @@
                 </layout>
 
                 <layout layout="layout/productLandingPage">
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="contentPrefix" inheritance="1" priority="2">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.prefix.content.title"
@@ -201,7 +201,7 @@
                         </description>
                     </area>
 
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="contentPrefix" inheritance="1" priority="2">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.prefix.content.title"
@@ -228,6 +228,47 @@
                     </area>
                 </layout>
 
+                <layout layout="layout/noSidebarThin">
+                    <area name="noSidebar">
+                        <title>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.noSidebarThin.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.noSidebarThin.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentPrefix" inheritance="1" priority="2">
+                        <title>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.prefix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.prefix.content.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.suffix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.suffix.content.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
                 <layout layout="layout/leftSidebar">
                     <area name="leftSidebar" inheritance="1" priority="3">
                         <title>
@@ -242,7 +283,7 @@
                         </description>
                     </area>
 
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="contentPrefix" inheritance="1" priority="2">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.prefix.content.title"
@@ -283,7 +324,7 @@
                         </description>
                     </area>
 
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="contentPrefix" inheritance="1" priority="2">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.prefix.content.title"

@@ -13,16 +13,13 @@
 /* nav background */
 .header-bar-alt {
     color: #333;
+    border-bottom: 1px solid #ebebeb;
 }
 
-.page-header-wrapper {
-    height: 100%;
-    width: 100%;
+.container.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
 }
-
-
-
-
 
 
 .header-bar img {

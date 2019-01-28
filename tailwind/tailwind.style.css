@@ -36,6 +36,10 @@
  * @import "components/forms";
  */
 
+body {
+    @apply font-open-sans h-screen text-grey-darkest leading-normal font-light;
+}
+
 .btn {
     @apply py-3 px-5 rounded font-bold border-2 shadow-md inline-block;
     transition: 0.25s all;

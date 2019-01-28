@@ -45,7 +45,7 @@
     {assign var=navBackground value='header-bar-alt'}
 {/if}
 
-<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} font-open-sans h-screen text-grey-darkest leading-normal font-light" id="body-top">
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
 
 <!-- header bar / navigation -->
 <div class="header-bar absolute w-full text-white py-2 z-10 hidden md:flex {$navBackground}" style="justify-content: stretch; height: 80px;">
@@ -113,7 +113,7 @@
             {assign var=noPadding value="py-0"}
         {/if}
         <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="container {$fullWidth} {$noPadding}">
+            <div class="container {$fullWidth} {$noPadding} py-8">
                 {$Brick->create()}
             </div>
         </section>
@@ -476,19 +476,6 @@
     </section>
 
     {/if}
-
-    <!-- menu -->
-    {*if $Template->getAttribute('template-header')}
-    <div class="header-bar">
-        <div class="grid-container header-bar-inner">
-            <div class="header-bar-inner-nav" id="navigation">
-
-                {$MegaMenu->create()}
-
-            </div>
-        </div>
-    </div>
-    {/if*}
 
 
     <!-- page -->
