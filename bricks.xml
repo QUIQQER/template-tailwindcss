@@ -75,6 +75,19 @@
             <!-- global areas -->
 
             <areas>
+                <area name="header" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="area.header.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="area.header.description"
+                        />
+                    </description>
+                </area>
+
                 <area name="headerSuffix" inheritance="1" priority="1">
                     <title>
                         <locale group="quiqqer/template-tailwindcss"
@@ -142,6 +155,34 @@
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.sidebar.suffix.content.description"
                                     />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/productLandingPage">
+                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                        <title>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.prefix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.prefix.content.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.suffix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-tailwindcss"
+                                    var="area.sidebar.suffix.content.description"
+                            />
                         </description>
                     </area>
                 </layout>

@@ -61,11 +61,23 @@
                 image="bin/layouts/startPage.png">
             <title>
                 <locale group="quiqqer/template-tailwindcss"
-                        var="admin.layout.startpage" />
+                        var="admin.layout.startPage" />
             </title>
             <description>
                 <locale group="quiqqer/template-tailwindcss"
-                        var="admin.layout.startpage.desc" />
+                        var="admin.layout.startPage.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/productLandingPage"
+                image="bin/layouts/productLandingPage.png">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.productLandingPage" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="admin.layout.productLandingPage.desc" />
             </description>
         </layout>
 

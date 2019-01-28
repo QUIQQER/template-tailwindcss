@@ -35,11 +35,12 @@
 
 </head>
 
+{assign var=header value=$BricksManager->getBricksByArea('header', $Site)}
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
 {assign var=bodyPadding value=''}
-{if empty($headerSuffix) && !$showHeader}
+{if empty($header) && !$showHeader}
     {assign var=bodyPadding value='body-padding'}
     {assign var=navBackground value='header-bar-alt'}
 {/if}
@@ -54,7 +55,7 @@
                 <img src="{$logoUrl}" alt="{$logoAlt}"/>
             </a>
         </div>
-        <nav class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-stretch justify-center">
+        <nav class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-center justify-center">
             <a href="#" class="header-bar-nav-item">NameRobot <span class="fa fa-caret-down ml-2"></span></a>
             <a href="#" class="header-bar-nav-item">Produkte <span class="fa fa-caret-down ml-2"></span></a>
             <a href="#" class="header-bar-nav-item">Namensfindung <span class="fa fa-caret-down ml-2"></span></a>

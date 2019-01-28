@@ -93,7 +93,7 @@
 /* header nav item */
 /*******************/
 .header-bar-nav-item {
-    @apply mr-2 flex items-center font-bold py-0 px-6;
+    @apply mr-2 flex items-center font-bold py-4 px-6 max-h-full;
     transition: 0.25s all;
     color: inherit;
 }
@@ -101,6 +101,16 @@
 .header-bar-nav-item:hover {
     background-color: rgba(255,255,255, 0.15);
 }
+
+/* header nav alt */
+.header-bar-alt {
+    @apply text-grey-darkest;
+}
+
+.header-bar-nav-item:hover {
+    background-color: rgba(0,0,0, 0.1);
+}
+
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

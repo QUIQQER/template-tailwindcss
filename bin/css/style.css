@@ -662,16 +662,27 @@ table {
   display: flex;
   align-items: center;
   font-weight: 700;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  max-height: 100%;
   transition: .25s all;
   color: inherit;
 }
 
 .header-bar-nav-item:hover {
   background-color: rgba(255, 255, 255, .15);
+}
+
+/* header nav alt */
+
+.header-bar-alt {
+  color: #3d4852;
+}
+
+.header-bar-nav-item:hover {
+  background-color: rgba(0, 0, 0, .1);
 }
 
 /**

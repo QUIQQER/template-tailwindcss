@@ -23,6 +23,15 @@
 
 
         <!-- areas -->
+        <locale name="area.header.title">
+            <de><![CDATA[Kopfbereiches der Seite (Header)]]></de>
+            <en><![CDATA[Page header]]></en>
+        </locale>
+        <locale name="area.header.description">
+            <de><![CDATA[Bausteinzone im Kopfereichs (Header). Bausteine in dieser Zone werden unter dem Menü platziert (Menü überdeckt den Baustein).]]></de>
+            <en><![CDATA[Brick zone in the header area. Bricks in this zone are placed under the menu (menu covers the brick).]]></en>
+        </locale>
+
         <locale name="area.headerSuffix.title">
             <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
             <en><![CDATA[Header suffix]]></en>
@@ -89,13 +98,22 @@
 
 
         <!-- layouts -->
-        <locale name="admin.layout.startpage">
+        <locale name="admin.layout.startPage">
             <de><![CDATA[Landingpage (Startpage)]]></de>
-            <en><![CDATA[Landingpage (start page)]]></en>
+            <en><![CDATA[Landing page (start page)]]></en>
         </locale>
-        <locale name="admin.layout.startpage.description">
+        <locale name="admin.layout.startPage.description">
             <de><![CDATA[Layout ohne Sidebars. Passend für Startseite.]]></de>
             <en><![CDATA[Layout without sidebars. Intended for homepage / start page.]]></en>
+        </locale>
+
+        <locale name="admin.layout.productLandingPage">
+            <de><![CDATA[Produkt Landingpage]]></de>
+            <en><![CDATA[Product landing page]]></en>
+        </locale>
+        <locale name="admin.layout.productLandingPage.description">
+            <de><![CDATA[Seitenlayout für Darstellung von Produkt oder App auf einer Landingpage. Das Layout kann das Menü überschreiben (Template Einstellungen).]]></de>
+            <en><![CDATA[Page layout for presenting a product or app on a landing page. The layout can overwrite the menu (template settings).]]></en>
         </locale>
 
         <locale name="admin.layout.noSidebar">
