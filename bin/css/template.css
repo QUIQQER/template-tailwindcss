@@ -42,6 +42,33 @@
     text-shadow: 0 0 30px #333;
 }
 
+/*************/
+/* mega menu */
+/*************/
+.quiqqer-menu-megaMenu {
+    height: 100%;
+    position: initial !important; /* so hat das Untermenü volle Breite */
+}
+
+.quiqqer-menu-megaMenu-list-item--current:after {
+    width: 100%;
+    content: '';
+    height: 2px;
+    background: #3392ea;
+    background: linear-gradient(45deg, #057cc0c4 0%, #b23ef2ad 100%);
+    left: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.header-bar-nav-item a {
+    color: inherit;
+}
+
+.quiqqer-menu-megaMenu-list-item-menu {
+    max-width: 100% !important;
+}
+
 
 /****************/
 /* heading icon */

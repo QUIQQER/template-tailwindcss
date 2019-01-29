@@ -64,6 +64,22 @@ switch ($Template->getLayoutType()) {
         break;
 }
 
+/**
+ * Mega menu
+ */
+$MegaMenu = false;
+
+if ($Template->getAttribute('template-header')) {
+    /**
+     * Mega menu
+     */
+    $MegaMenu = new QUI\Menu\MegaMenu(array(
+        'showStart' => false
+    ));
+}
+$templateSettings['MegaMenu'] = $MegaMenu;
+
+
 $templateSettings['BricksManager'] = QUI\Bricks\Manager::init();
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['bodyClass']     = $bodyClass;

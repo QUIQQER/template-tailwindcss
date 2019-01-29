@@ -96,14 +96,17 @@ body {
 /*******************/
 /* header nav item */
 /*******************/
-.header-bar-nav-item {
-    @apply mr-2 flex items-center font-bold py-4 px-6 max-h-full;
-    transition: 0.25s all;
-    color: inherit;
+.header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
+    @apply font-bold mx-2 h-full flex items-center;
+    padding: 0 !important;
 }
 
-.header-bar-nav-item:hover {
-    background-color: rgba(255,255,255, 0.15);
+.header-bar-nav-item a {
+    @apply px-6 py-4;
+}
+
+.header-bar-nav-item a:hover {
+    color: #057cc0;
 }
 
 /* header nav alt */
@@ -112,7 +115,6 @@ body {
 }
 
 .header-bar-nav-item:hover {
-    background-color: rgba(0,0,0, 0.1);
 }
 
 
