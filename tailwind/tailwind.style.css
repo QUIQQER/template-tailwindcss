@@ -37,7 +37,7 @@
  */
 
 body {
-    @apply font-open-sans h-screen text-grey-darkest leading-normal font-light;
+    @apply font-open-sans h-screen text-grey-darkest leading-normal font-light text-base;
 }
 
 .btn {
@@ -110,7 +110,8 @@ body {
 }
 
 /* header nav alt */
-.header-bar-alt {
+.header-bar-alt,
+.quiqqer-menu-megaMenu-children-standard {
     @apply text-grey-darkest;
 }
 
@@ -144,7 +145,7 @@ body {
  */
 
 h1, h2, h3, h4, h5 {
-    @apply font-normal leading-tight;
+    @apply font-light leading-tight;
     margin-bottom: 1rem;
 }
 

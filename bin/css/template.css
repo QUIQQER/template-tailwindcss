@@ -22,7 +22,7 @@
 }
 
 
-.header-bar img {
+.header-bar-logo img {
     max-height: 40px;
 }
 
@@ -69,6 +69,11 @@
     max-width: 100% !important;
 }
 
+
+/* megaMenu-children-standard-icon */
+.quiqqer-menu-megaMenu-children-standard-icon {
+    height: 100%;
+}
 
 /****************/
 /* heading icon */
@@ -161,16 +166,23 @@
 }
 
 .vertical-tab-nav-entry.active {
-    background: #4eb1ea;
-    color: #fff;
-    border-color: #4eb1ea;
     cursor: default;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
 }
 
 .vertical-tab-nav-entry .fa {
-    font-size: 1.75rem;
-    width: 3rem;
-    line-height: 3rem;
+    /*font-size: 1.75rem;*/
+    width: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+.vertical-tab-nav-entry.active .fa {
+    background: currentColor;
+}
+
+.vertical-tab-nav-entry.active .fa:before {
+    color: #fff;
 }
 
 .vertical-tab-nav-entry header {

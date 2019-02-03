@@ -14,7 +14,7 @@
     {*unsemantic*}
 
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400" rel="stylesheet">
 
     <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="{$URL_TPL_DIR}bin/css/unsemantic-wrapper.css" rel="stylesheet" type="text/css"/>
@@ -111,6 +111,23 @@
     {/strip}
     {/if}
 
+    {foreach $header as $Brick}
+        {assign var=fullWidth value=''}
+        {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=fullWidth value='max-w-full-force px-0'}
+        {/if}
+
+        {assign var=noPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+        {assign var=noPadding value="py-0"}
+        {/if}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="container {$fullWidth} {$noPadding} py-8">
+                {$Brick->create()}
+            </div>
+        </section>
+    {/foreach}
+
     {foreach $headerSuffix as $Brick}
         {assign var=fullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
@@ -160,11 +177,11 @@
                 <span class="fa fa-users headign-icon shadow-lg"></span>
             </div>-->
             <header class="text-center mb-16">
-                <h1 class="font-light leading-none tracking-tight">NameRobot Services</h1>
-                <h3 class="text-blue-darker opacity-75 font-normal leading-normal mb-8">Phasellus gravida semper nisi. Aenean posuere, <br class="hidden md:inline">tortor sed cursus feugiat, nunc augue blandit nunc.</h3>
+                <h1 class="">NameRobot Services</h1>
+                <p class="text-xl mb-8">Phasellus gravida semper nisi. Aenean posuere, <br class="hidden md:inline">tortor sed cursus feugiat, nunc augue blandit nunc.</p>
             </header>
 
-            <div class="flex -mx-4 nrservices-logos">
+            <div class="flex -mx-4 py-12 nrservices-logos">
                 <div class="w-1/4 px-4 text-center">
                     <div class="nrservices-logos-entry" title="NameFruits">
                         <img alt="icon" class="mb-4" style="width: auto; max-height: 150px;" src="http://nrwebsite.michael.pcsg//media/cache/NamerobotWebsite/Logo/waben/waben-nf.png">
@@ -307,61 +324,41 @@
         </div>
     </section>
 
-
-    <section class="bg-white py-12 relative">
+    <section class="bg-white py-16 relative">
         <div class="flex flex-col justify-center text-center">
-            <div class="heading-icon-container">
-                <span class="fa fa-users headign-icon shadow-lg"></span>
-            </div>
+            <!--<div class="heading-icon-container">
+                <span class="fa fa-comments-o headign-icon shadow-lg"></span>
+            </div>-->
             <h2 class="font-light leading-none tracking-tight">Für wen ist NameRobot?</h2>
+            <p>Sed fringilla mauris sit amet nibh. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. <br class="hidden lg:inline" />Phasellus magna. Maecenas egestas arcu quis ligula mattis placerat.</p>
         </div>
     </section>
 
     <section class="bg-white pt-16 pb-32 relative vertical-tab-section">
         <div class="vertical-tab-wrapper w-5/6 max-w-2xl flex mx-auto">
-            <div class="vertical-tab-nav w-1/5">
-                <div class="vertical-tab-nav-entry text-grey-dark active border mb-8 px-2 py-4 rounded-lg cursor-pointer shadow-lg">
-                    <div class="rounded-lg-icon text-center mb-2">
-                        <span class="fa fa-user"></span>
-                    </div>
-                    <header>
-                        Gründer und Startups
-                    </header>
+            <div class="vertical-tab-nav w-2/5 pr-12">
+                <h4 class="mb-10">NameRobot für...</h4>
+                <div class="vertical-tab-nav-entry text-dark active mb-2 p-4 rounded-lg cursor-pointer">
+                    <span class="fa fa-user text-red mr-2 rounded-lg"></span> Gründer und Startups
                 </div>
-                <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                    <div class="rounded-lg-icon text-center mb-2">
-                        <span class="fa fa-briefcase"></span>
-                    </div>
-                    <header>
-                        Unternehmen und Selbständige
-                    </header>
+                <div class="vertical-tab-nav-entry text-grey-dark mb-2 p-4 rounded-lg cursor-pointer">
+                    <span class="fa fa-briefcase text-grey-darkest mr-2 rounded-lg"></span> Unternehmen und Selbständige
                 </div>
-                <div class="vertical-tab-nav-entry text-grey-dark border border-grey-light mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                    <div class="rounded-lg-icon text-center mb-2">
-                        <span class="fa fa-building-o"></span>
-                    </div>
-                    <header>
-                        Agenturen  und Kreative
-                    </header>
+                <div class="vertical-tab-nav-entry text-grey-dark mb-2 p-4 rounded-lg cursor-pointer">
+                    <span class="fa fa-building-o text-orange mr-2 rounded-lg"></span> Agenturen  und Kreative
                 </div>
-                <div class="vertical-tab-nav-entry text-grey-dark border mb-8 px-2 py-4 rounded-lg cursor-pointer hover:shadow-lg">
-                    <div class="rounded-lg-icon text-center mb-2">
-                        <span class="fa fa-shopping-bag"></span>
-                    </div>
-                    <header>
-                        Andere Namenssuchende
-                    </header>
+                <div class="vertical-tab-nav-entry text-grey-dark mb-2 p-4 rounded-lg cursor-pointer">
+                    <span class="fa fa-shopping-bag text-blue mr-2 rounded-lg"></span> Andere Namenssuchende
                 </div>
             </div>
-            <div class="vertical-tab-entries w-4/5 pl-12">
+            <div class="vertical-tab-entries w-3/5">
                 <!-- entry 1 -->
                 <div class="vertical-tab-entries-entry vertical-tab-entries-entry-1">
                     <div class="text-center mb-4 none">
-                        <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_startup_life_2du2_transparent.png" width="400"/>
+                        <img src="http://nrwebsite.michael.pcsg/media/cache/NamerobotWebsite/Grafik/Fuer_wen_NameRobot/undraw_startup_life_2du2_transparent.png" width="400" style="width: 200px;"/>
                     </div>
-                    <h2 class="mb-4">Gründer und Startups</h2>
                     <p>
-                        Selbständig machen ist stressig! Egal, ob Sie an einem brandneuen Startup basteln, als Freiberufler durchstarten oder ein Ladengeschäft eröffnen – in jedem Fall muss man gefühlte 101 Baustellen gleichzeitig bearbeiten. Eine davon ist die Namensfindung für Ihr Business.
+                        Selbständig machen ist stressig! Egal, ob Sie an einem brandneuen <strong>Startup</strong> basteln, als <strong>Freiberufler</strong> durchstarten oder ein <strong>Ladengeschäft</strong> eröffnen – in jedem Fall muss man gefühlte 101 Baustellen gleichzeitig bearbeiten. Eine davon ist die <strong>Namensfindung für Ihr Business</strong>.
                     </p>
                     <p>
                         Ausgerechnet dafür benötigt man eigentlich ausreichend Zeit und Muße oder ein ordentliches Budget. Erfahrungsgemäß haben Firmengründer aber von alldem wenig zur Verfügung.
