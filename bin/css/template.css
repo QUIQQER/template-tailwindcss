@@ -1,6 +1,12 @@
 /********************/
 /* template styling */
 /********************/
+.content-body,
+.content-template {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .container.full-width {
     width: 100%;
 }
@@ -57,7 +63,7 @@
     background: #3392ea;
     background: linear-gradient(45deg, #057cc0c4 0%, #b23ef2ad 100%);
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     position: absolute;
 }
 

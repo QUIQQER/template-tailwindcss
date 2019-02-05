@@ -11,13 +11,13 @@
 
     <!-- [begin] css combine -->
     {fontawesome}
-    {*unsemantic*}
+    {unsemantic}
 
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400" rel="stylesheet">
 
     <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="{$URL_TPL_DIR}bin/css/unsemantic-wrapper.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="{$URL_TPL_DIR}bin/css/unsemantic-wrapper.css" rel="stylesheet" type="text/css"/>-->
     <link href="{$URL_TPL_DIR}bin/css/template.css" rel="stylesheet" type="text/css"/>
 
     <!-- [end] css combine -->
@@ -57,7 +57,7 @@
         </div>
 
         {*
-        <nav class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-center justify-center">
+        <nav class="header-bar-nav w-auto lg:w-3/5 text-xs flex items-center justify-center">
             <a href="#" class="header-bar-nav-item">NameRobot <span class="fa fa-caret-down ml-2"></span></a>
             <a href="#" class="header-bar-nav-item">Produkte <span class="fa fa-caret-down ml-2"></span></a>
             <a href="#" class="header-bar-nav-item">Namensfindung <span class="fa fa-caret-down ml-2"></span></a>
@@ -139,16 +139,14 @@
             {assign var=noPadding value="py-0"}
         {/if}
         <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="container {$fullWidth} {$noPadding} py-8">
+            <div class="container {$fullWidth} {$noPadding} my-8">
                 {$Brick->create()}
             </div>
         </section>
     {/foreach}
 
-    <main class="cologne-main">
-        <div class="cologne-grid-container">
-            {$Template->getLayout()}
-        </div>
+    <main class="template-main my-8">
+        {$Template->getLayout()}
     </main>
 
     {foreach $footerPrefix as $Brick}

@@ -97,12 +97,13 @@ body {
 /* header nav item */
 /*******************/
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
-    @apply font-bold mx-2 h-full flex items-center;
+    @apply font-normal mx-3 h-full flex items-center;
     padding: 0 !important;
 }
 
 .header-bar-nav-item a {
-    @apply px-6 py-4;
+    @apply px-2 py-2 items-center h-full;
+    @apply flex !important;
 }
 
 .header-bar-nav-item a:hover {

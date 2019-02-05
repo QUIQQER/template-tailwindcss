@@ -576,7 +576,7 @@ body {
   color: #3d4852;
   line-height: 1.5;
   font-weight: 300;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .btn {
@@ -597,7 +597,7 @@ body {
   padding-bottom: .5rem;
   padding-left: .75rem;
   padding-right: .75rem;
-  font-size: 1rem;
+  font-size: .875rem;
   font-weight: 400;
 }
 
@@ -667,9 +667,9 @@ body {
 /*******************/
 
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
-  font-weight: 700;
-  margin-left: .5rem;
-  margin-right: .5rem;
+  font-weight: 400;
+  margin-left: .75rem;
+  margin-right: .75rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -677,10 +677,13 @@ body {
 }
 
 .header-bar-nav-item a {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  align-items: center;
+  height: 100%;
+  display: flex !important;
 }
 
 .header-bar-nav-item a:hover {
@@ -5963,43 +5966,43 @@ body {
 }
 
 .text-xs {
-  font-size: .875rem;
+  font-size: .75rem;
 }
 
 .text-sm {
-  font-size: 1rem;
+  font-size: .875rem;
 }
 
 .text-base {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .text-lg {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .text-xl {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .text-2xl {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
 }
 
 .text-3xl {
-  font-size: 2.25rem;
+  font-size: 1.875rem;
 }
 
 .text-4xl {
-  font-size: 2.625rem;
+  font-size: 2.25rem;
 }
 
 .text-5xl {
-  font-size: 3.5rem;
+  font-size: 2.625rem;
 }
 
 .text-6xl {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .italic {
@@ -6402,19 +6405,19 @@ h5 {
 }
 
 h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
   font-size: 1.875rem;
 }
 
-h3 {
+h2 {
   font-size: 1.5rem;
 }
 
-h4 {
+h3 {
   font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
 }
 
 a {
@@ -6426,6 +6429,24 @@ p {
 }
 
 @media (min-width: 576px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
   h1 {
     font-size: 2.625rem;
   }
@@ -6440,24 +6461,6 @@ p {
 
   h4 {
     font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  h2 {
-    font-size: 2.625rem;
-  }
-
-  h3 {
-    font-size: 2.25rem;
-  }
-
-  h4 {
-    font-size: 1.875rem;
   }
 }
 
@@ -11695,43 +11698,43 @@ p {
   }
 
   .sm\:text-xs {
-    font-size: .875rem;
+    font-size: .75rem;
   }
 
   .sm\:text-sm {
-    font-size: 1rem;
+    font-size: .875rem;
   }
 
   .sm\:text-base {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .sm\:text-lg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .sm\:text-xl {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .sm\:text-2xl {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 
   .sm\:text-3xl {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
   }
 
   .sm\:text-4xl {
-    font-size: 2.625rem;
+    font-size: 2.25rem;
   }
 
   .sm\:text-5xl {
-    font-size: 3.5rem;
+    font-size: 2.625rem;
   }
 
   .sm\:text-6xl {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .sm\:italic {
@@ -17343,43 +17346,43 @@ p {
   }
 
   .md\:text-xs {
-    font-size: .875rem;
+    font-size: .75rem;
   }
 
   .md\:text-sm {
-    font-size: 1rem;
+    font-size: .875rem;
   }
 
   .md\:text-base {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .md\:text-lg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .md\:text-xl {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .md\:text-2xl {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 
   .md\:text-3xl {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
   }
 
   .md\:text-4xl {
-    font-size: 2.625rem;
+    font-size: 2.25rem;
   }
 
   .md\:text-5xl {
-    font-size: 3.5rem;
+    font-size: 2.625rem;
   }
 
   .md\:text-6xl {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .md\:italic {
@@ -22991,43 +22994,43 @@ p {
   }
 
   .lg\:text-xs {
-    font-size: .875rem;
+    font-size: .75rem;
   }
 
   .lg\:text-sm {
-    font-size: 1rem;
+    font-size: .875rem;
   }
 
   .lg\:text-base {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .lg\:text-lg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .lg\:text-xl {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .lg\:text-2xl {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 
   .lg\:text-3xl {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
   }
 
   .lg\:text-4xl {
-    font-size: 2.625rem;
+    font-size: 2.25rem;
   }
 
   .lg\:text-5xl {
-    font-size: 3.5rem;
+    font-size: 2.625rem;
   }
 
   .lg\:text-6xl {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .lg\:italic {
@@ -28639,43 +28642,43 @@ p {
   }
 
   .xl\:text-xs {
-    font-size: .875rem;
+    font-size: .75rem;
   }
 
   .xl\:text-sm {
-    font-size: 1rem;
+    font-size: .875rem;
   }
 
   .xl\:text-base {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .xl\:text-lg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .xl\:text-xl {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .xl\:text-2xl {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 
   .xl\:text-3xl {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
   }
 
   .xl\:text-4xl {
-    font-size: 2.625rem;
+    font-size: 2.25rem;
   }
 
   .xl\:text-5xl {
-    font-size: 3.5rem;
+    font-size: 2.625rem;
   }
 
   .xl\:text-6xl {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .xl\:italic {

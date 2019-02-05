@@ -253,7 +253,7 @@ module.exports = {
   |
   */
 
-  textSizes: {
+  /*textSizes: {
     'xs': '.875rem',    // 14px
     'sm': '1rem',     // 16px
     'base': '1.125rem',   // 18px
@@ -264,9 +264,9 @@ module.exports = {
     '4xl': '2.625rem',  // 36px
     '5xl': '3.5rem',    // 48px
     '6xl': '4rem',    // 48px
-  },
+  },*/
 
-  /*textSizes: {
+  textSizes: {
     'xs': '.75rem',     // 12px
     'sm': '.875rem',    // 14px
     'base': '1rem',     // 16px
@@ -277,7 +277,7 @@ module.exports = {
     '4xl': '2.25rem',   // 36px
     '5xl': '2.625rem',  // 36px
     '6xl': '3.5rem',    // 48px
-  },*/
+  },
 
 
   /*
