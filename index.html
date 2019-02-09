@@ -56,16 +56,6 @@
             </a>
         </div>
 
-        {*
-        <nav class="header-bar-nav w-auto lg:w-3/5 text-xs flex items-center justify-center">
-            <a href="#" class="header-bar-nav-item">NameRobot <span class="fa fa-caret-down ml-2"></span></a>
-            <a href="#" class="header-bar-nav-item">Produkte <span class="fa fa-caret-down ml-2"></span></a>
-            <a href="#" class="header-bar-nav-item">Namensfindung <span class="fa fa-caret-down ml-2"></span></a>
-            <a href="#" class="header-bar-nav-item">Suche</a>
-        </nav>
-        *}
-
-
         <div class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-center justify-center">
             {$MegaMenu->create()}
         </div>
@@ -86,7 +76,7 @@
     {if $showHeader}
     {strip}
     <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1}); background-size: cover; background-position: center; height: 300px;">
-        <div class="page-header-wrapper">
+        <div class="page-header-inner">
 
         </div>
         {*

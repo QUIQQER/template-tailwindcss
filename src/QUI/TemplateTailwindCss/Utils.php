@@ -50,23 +50,29 @@ class Utils
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
-                $showHeader     = $Project->getConfig('templateTailwindCss.settings.showHeaderStartPage');
-                $showBreadcrumb = $Project->getConfig('templateTailwindCss.settings.showBreadcrumbStartPage');
+                $showHeader     = $Project->getConfig('settings.page.startPage.header');
+                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbStartPage');
                 break;
 
             case 'layout/noSidebar':
-                $showHeader     = $Project->getConfig('templateTailwindCss.settings.showHeaderNoSidebar');
-                $showBreadcrumb = $Project->getConfig('templateTailwindCss.settings.showBreadcrumbNoSidebar');
+                $showHeader     = $Project->getConfig('settings.page.noSidebar.header');
+                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbNoSidebar');
                 break;
 
+            case 'layout/noSidebarThin':
+                $showHeader     = $Project->getConfig('settings.page.noSidebarThin.header');
+                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbNoSidebarThin');
+                break;
+
+
             case 'layout/rightSidebar':
-                $showHeader     = $Project->getConfig('templateTailwindCss.settings.showHeaderRightSidebar');
-                $showBreadcrumb = $Project->getConfig('templateTailwindCss.settings.showBreadcrumbRightSidebar');
+                $showHeader     = $Project->getConfig('settings.page.RightSidebar.header');
+                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbRightSidebar');
                 break;
 
             case 'layout/leftSidebar':
-                $showHeader     = $Project->getConfig('templateTailwindCss.settings.showHeaderLeftSidebar');
-                $showBreadcrumb = $Project->getConfig('templateTailwindCss.settings.showBreadcrumbLeftSidebar');
+                $showHeader     = $Project->getConfig('settings.page.leftSidebar.header');
+                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbLeftSidebar');
                 break;
         }
 
@@ -75,7 +81,7 @@ class Utils
         $showPageShort = $params['Site']->getAttribute('templateTailwindCss.showShort');
 
         /* site own show header */
-        switch ($params['Site']->getAttribute('templateTailwindCss.showEmotion')) {
+        switch ($params['Site']->getAttribute('templateTailwindCss.header')) {
             case 'show':
                 $showHeader = true;
                 break;

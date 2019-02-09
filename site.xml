@@ -2,7 +2,7 @@
 <site>
     <!-- global attributes -->
     <attributes>
-        <attribute>templateTailwindCss.showEmotion</attribute>
+        <attribute>templateTailwindCss.header</attribute>
         <attribute>templateTailwindCss.showTitle</attribute>
         <attribute>templateTailwindCss.showShort</attribute>
     </attributes>
@@ -16,22 +16,22 @@
                 </title>
 
                 <!-- show header -->
-                <select conf="templateTailwindCss.showEmotion">
+                <select conf="templateTailwindCss.header">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showEmotion"/>
+                                var="site.settings.header"/>
                     </text>
                     <option value="default">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showEmotion.default"/>
+                                var="site.settings.header.default"/>
                     </option>
                     <option value="show">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showEmotion.show"/>
+                                var="site.settings.header.show"/>
                     </option>
                     <option value="hide">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showEmotion.hide"/>
+                                var="site.settings.header.hide"/>
                     </option>
                 </select>
 

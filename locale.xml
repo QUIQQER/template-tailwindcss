@@ -154,8 +154,8 @@
         <!-- end layouts -->
 
         <locale name="copyright.text" html="true">
-            <de><![CDATA[&copy; [year] - Template <em>Business Pro</em> umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER</a>]]></de>
-            <en><![CDATA[&copy; [year] - Theme <em>Business Pro</em> realized with <a href="https://www.quiqqer.com">QUIQQER</a>]]></en>
+            <de><![CDATA[&copy; [year] - Template <em>Tailwind CSS</em> umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER</a>]]></de>
+            <en><![CDATA[&copy; [year] - Theme <em>Tailwind CSS</em> realized with <a href="https://www.quiqqer.com">QUIQQER</a>]]></en>
         </locale>
         <locale name="copyright.link" html="true">
             <de><![CDATA[Startseite]]></de>
@@ -164,8 +164,8 @@
         
         <!-- settings -->
         <locale name="templateTailwindCss.settings.menu.title">
-            <de><![CDATA[Template Einstellungen: Business Pro]]></de>
-            <en><![CDATA[Template settings: Business Pro]]></en>
+            <de><![CDATA[Template Einstellungen: Tailwind CSS]]></de>
+            <en><![CDATA[Template settings: Tailwind CSS]]></en>
         </locale>
 
 
@@ -176,19 +176,19 @@
             <en><![CDATA[Template Tailwind CSS: settings]]></en>
         </locale>
 
-        <locale name="site.settings.showEmotion">
+        <locale name="site.settings.header">
             <de><![CDATA[Header]]></de>
             <en><![CDATA[Header]]></en>
         </locale>
-            <locale name="site.settings.showEmotion.default">
+            <locale name="site.settings.header.default">
                 <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
                 <en><![CDATA[Default template setting]]></en>
             </locale>
-            <locale name="site.settings.showEmotion.show">
+            <locale name="site.settings.header.show">
                 <de><![CDATA[Anzeigen]]></de>
                 <en><![CDATA[Show]]></en>
             </locale>
-            <locale name="site.settings.showEmotion.hide">
+            <locale name="site.settings.header.hide">
                 <de><![CDATA[Verstecken]]></de>
                 <en><![CDATA[Hide]]></en>
             </locale>
