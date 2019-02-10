@@ -1,0 +1,25 @@
+{if $pageHeader}
+{strip}
+<header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1});">
+    <div class="page-header-inner">
+        {*
+        <div class="page-header-container grid-container">
+            {if $pageTitle}
+            <h1 class="page-header-text-title">
+                {$Site->getAttribute('title')}
+            </h1>
+            {/if}
+
+            {if $pageShort && $Site->getAttribute('short')}
+            <div class="page-header-text-wrapper">
+                <div class="page-header-text-wrapper-short">
+                    {$Site->getAttribute('short')}
+                </div>
+            </div>
+            {/if}
+        </div>
+        *}
+    </div>
+</header>
+{/strip}
+{/if}

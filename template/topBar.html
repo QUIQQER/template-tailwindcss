@@ -1,0 +1,21 @@
+<!-- top bar/ navigation -->
+<div class="header-bar absolute w-full text-white z-10 hidden md:flex {$navBackground}" style="justify-content: stretch; height: 80px;">
+    <div class=" px-4 mx-auto flex align-center w-full">
+        <div class="header-bar-logo-container font-bold w-auto lg:w-1/5 text-xl flex items-center py-2">
+            <a href="{url id=1}" class="header-bar-logo" title="{site id=1 attribute=title}">
+                <img src="{$logoUrl}" alt="{$logoAlt}"/>
+            </a>
+        </div>
+
+        <div class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-center justify-center">
+            {$MegaMenu->create()}
+        </div>
+
+        <div class="header-bar-right w-auto lg:w-1/5 text-sm flex items-center justify-end py-2">
+
+            {$SlideOutMenu->create()}
+            <!-- das hier nur auf landig pages -->
+            <!--<a href="#" class="btn border-2 btn-outline-white">Anmelden</a>-->
+        </div>
+    </div>
+</div>

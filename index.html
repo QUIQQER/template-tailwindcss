@@ -47,114 +47,86 @@
 
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
 
-<!-- header bar / navigation -->
-<div class="header-bar absolute w-full text-white z-10 hidden md:flex {$navBackground}" style="justify-content: stretch; height: 80px;">
-    <div class=" px-4 mx-auto flex align-center w-full">
-        <div class="header-bar-logo-container font-bold w-auto lg:w-1/5 text-xl flex items-center py-2">
-            <a href="{url id=1}" class="header-bar-logo" title="{site id=1 attribute=title}">
-                <img src="{$logoUrl}" alt="{$logoAlt}"/>
-            </a>
-        </div>
-
-        <div class="header-bar-nav w-auto lg:w-3/5 text-sm flex items-center justify-center">
-            {$MegaMenu->create()}
-        </div>
-
-        <div class="header-bar-right w-auto lg:w-1/5 text-sm flex items-center justify-end py-2">
-
-            {$SlideOutMenu->create()}
-            <!-- das hier nur auf landig pages -->
-            <!--<a href="#" class="btn border-2 btn-outline-white">Anmelden</a>-->
-        </div>
-    </div>
-</div>
+{* <!--top bar / navigation--> *}
+{fetch template="template/topBar.html"
+        navBackground=$navBackground
+        MegaMenu=$MegaMenu
+        SlideOutMenu=$SlideOutMenu
+        logoUrl=$logoUrl
+        logoAlt=$logoAlt
+}
 
 <!-- page -->
 <div class="body-container {$bodyPadding}">
 
-    {* page header *}
-    {if $pageHeader}
-    {strip}
-    <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1});">
-        <div class="page-header-inner">
-            {*
-            <div class="page-header-container grid-container">
-                {if $pageTitle}
-                <h1 class="page-header-text-title">
-                    {$Site->getAttribute('title')}
-                </h1>
-                {/if}
-
-                {if $pageShort && $Site->getAttribute('short')}
-                <div class="page-header-text-wrapper">
-                    <div class="page-header-text-wrapper-short">
-                        {$Site->getAttribute('short')}
-                    </div>
-                </div>
-                {/if}
-            </div>
-            *}
-        </div>
-    </header>
-    {/strip}
-    {/if}
+    {* <!--page header --> *}
+    {fetch template="template/header.html" Site=$Site pageHeader=$pageHeader pageTitle=$pageTitle pageShort=$pageShort}
 
     {foreach $header as $Brick}
         {assign var=fullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
-        {assign var=fullWidth value='max-w-full-force px-0'}
+            {assign var=fullWidth value='force-full-width px-0'}
         {/if}
 
-        {assign var=noPadding value=""}
+        {assign var=margin value="my-8"}
         {if $Brick->getSetting('general.noSpacing')}
-        {assign var=noPadding value="py-0"}
+            {assign var=margin value="my-0"}
         {/if}
         <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="container {$fullWidth} {$noPadding} py-8">
-                {$Brick->create()}
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$fullWidth}">
+                    {$Brick->create()}
+                </div>
             </div>
         </section>
     {/foreach}
+
+    {* <!-- breadcrumb --> *}
+    {fetch template="template/breadcrumb.html" Site=$Site pageBreadcrumb=$pageBreadcrumb}
+
 
     {foreach $headerSuffix as $Brick}
         {assign var=fullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=fullWidth value='max-w-full-force px-0'}
+            {assign var=fullWidth value='force-full-width px-0'}
         {/if}
 
-        {assign var=noPadding value=""}
+        {assign var=margin value="my-8"}
         {if $Brick->getSetting('general.noSpacing')}
-            {assign var=noPadding value="py-0"}
+            {assign var=margin value="my-0"}
         {/if}
         <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="container {$fullWidth} {$noPadding} my-8">
-                {$Brick->create()}
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$fullWidth}">
+                    {$Brick->create()}
+                </div>
             </div>
         </section>
     {/foreach}
 
-    <main class="template-main my-8">
-        {$Template->getLayout()}
-    </main>
+    {* <!--main content--> *}
+    {$Template->getLayout()}
 
     {foreach $footerPrefix as $Brick}
         {assign var=brickFullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=brickFullWidth value='brick-full-width'}
+            {assign var=fullWidth value='force-full-width px-0'}
         {/if}
 
-        {assign var=brickNoPadding value=""}
+        {assign var=margin value="my-8"}
         {if $Brick->getSetting('general.noSpacing')}
-            {assign var=brickNoPadding value="brick-no-spacing"}
+            {assign var=margin value="my-0"}
         {/if}
-        <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
-            <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-                {$Brick->create()}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$brickFullWidth}">
+                    {$Brick->create()}
+                </div>
             </div>
         </section>
     {/foreach}
 
-    {if $Site->getId() == 1}
+    {if $Site->getId() == 999999}
 
     <section class="bg-white pt-16 pb-32 nrservices-0 relative overflow-hidden">
         <div class="container">
@@ -470,62 +442,58 @@
     {/if}
 
 
-    <!-- page -->
-    <div class="body-container">
-        <!-- header -->
 
 
-        <footer class="bg-grey-lightest py-8">
-            <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between px-8">
-                <small class="block text-sm text-grey">
-                    &copy; CompanyName
-                </small>
-                <div class="mb-4 md:mb-0">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link</a>
-                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Another link</a>
-                        <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link to something</a>
-                    </div>
+    <footer class="bg-grey-lightest py-8">
+        <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between px-8">
+            <small class="block text-sm text-grey">
+                &copy; CompanyName
+            </small>
+            <div class="mb-4 md:mb-0">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link</a>
+                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Another link</a>
+                    <a class="text-xl md:text-base leading-normal text-grey-dark hover:text-black no-underline mb-4 md:mb-0 md:ml-8" href="#">Link to something</a>
                 </div>
             </div>
-        </footer>
-        <!-- footer -->
-        {*if $Template->getAttribute('template-footer')}
-        <footer class="page-footer clear-fix">
-            <div class="page-footer-container grid-container">
-                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-                {if !empty($footer)}
-                <div class="grid-children">
-                    <div class="grid-children-container">
-                        {foreach from=$footer item=Brick}
-                            {if !$Brick->hasCSSClass('grid-*')}
-                                {$Brick->addCSSClass('grid-100')}
-                            {/if}
-                            {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                            {$Brick->create()}
-                        {/foreach}
-                    </div>
-                </div>
-                {/if}
-            </div>
-
-            <div class="page-footer-copyright">
-                <div class="grid-container">
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-
-                        Template Tailwind CSS for QUIQQER
-                    </div>
-
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                        <a href="#top" style="outline: none;">
-                            <i class="fa fa-arrow-up toTop"></i>
-                        </a>
-                    </div>
+        </div>
+    </footer>
+    <!-- footer -->
+    {*if $Template->getAttribute('template-footer')}
+    <footer class="page-footer clear-fix">
+        <div class="page-footer-container grid-container">
+            {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+            {if !empty($footer)}
+            <div class="grid-children">
+                <div class="grid-children-container">
+                    {foreach from=$footer item=Brick}
+                        {if !$Brick->hasCSSClass('grid-*')}
+                            {$Brick->addCSSClass('grid-100')}
+                        {/if}
+                        {$Brick->addCSSClass('page-footer-brick clear-fix')}
+                        {$Brick->create()}
+                    {/foreach}
                 </div>
             </div>
-        </footer>
-        {/if*}
-    </div>
+            {/if}
+        </div>
+
+        <div class="page-footer-copyright">
+            <div class="grid-container">
+                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+
+                    Template Tailwind CSS for QUIQQER
+                </div>
+
+                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
+                    <a href="#top" style="outline: none;">
+                        <i class="fa fa-arrow-up toTop"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {/if*}
 </div>
 
 

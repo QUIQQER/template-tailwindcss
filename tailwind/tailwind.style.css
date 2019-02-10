@@ -40,6 +40,11 @@ body {
     @apply font-open-sans h-screen text-grey-darkest leading-normal font-light text-base;
 }
 
+.content-body,
+.content-template {
+    @apply my-8;
+}
+
 .btn {
     @apply py-3 px-5 rounded font-bold border-2 shadow-md inline-block;
     transition: 0.25s all;

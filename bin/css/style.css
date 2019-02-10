@@ -579,6 +579,12 @@ body {
   font-size: 1rem;
 }
 
+.content-body,
+.content-template {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .btn {
   padding-top: .75rem;
   padding-bottom: .75rem;

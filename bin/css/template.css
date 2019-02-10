@@ -1,16 +1,14 @@
 /********************/
 /* template styling */
 /********************/
-.content-body,
-.content-template {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
 
 .container.full-width {
     width: 100%;
 }
 
+.force-full-width {
+    max-width: 100% !important;
+}
 
 .body-container.body-padding {
     padding-top: 80px;
@@ -18,13 +16,13 @@
 
 /* nav background */
 .header-bar-alt {
-    color: #333;
     border-bottom: 1px solid #ebebeb;
+    color: #333;
 }
 
-.container.py-0 {
-    padding-top: 0;
+.brick-wrapper.my-0 {
     padding-bottom: 0;
+    padding-top: 0;
 }
 
 
@@ -57,14 +55,14 @@
 }
 
 .quiqqer-menu-megaMenu-list-item--current:after {
-    width: 100%;
-    content: '';
-    height: 2px;
     background: #3392ea;
     background: linear-gradient(45deg, #057cc0c4 0%, #b23ef2ad 100%);
-    left: 0;
     bottom: -1px;
+    content: '';
+    height: 2px;
+    left: 0;
     position: absolute;
+    width: 100%;
 }
 
 .header-bar-nav-item a {
@@ -82,10 +80,6 @@
 }
 
 
-
-
-
-
 /***************/
 /* page header */
 /***************/
@@ -99,7 +93,6 @@
 }
 
 
-
 /****************/
 /* heading icon */
 /****************/
@@ -108,21 +101,21 @@
 }
 
 .headign-icon {
-    font-size: 2rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    margin-bottom: 3rem;
-    border-radius: 1rem;
     background: #3392ea;
-    color: #e6f0fb;
     background: #4ca0ed;
     background: linear-gradient(-45deg, #4ca0ed 50%, #288be8ba 50%);
     background: linear-gradient(45deg, #0f7ee6e6 0%, #9171e1e3 100%);
     background: linear-gradient(45deg, #2e81f7e8 30%, #45e4efd4 100%);
     background: linear-gradient(45deg, #057cc0e8 0%, #3eb1f2f5 100%);
-    /* text-shadow: 2px 2px 0px #e06164; */
-    color: #ffffff;
     background: #4eb1ea;
+    border-radius: 1rem;
+    color: #e6f0fb;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 4.5rem;
+    /* text-shadow: 2px 2px 0px #e06164; */
+    margin-bottom: 3rem;
+    width: 4.5rem;
 }
 
 /************/
@@ -134,16 +127,16 @@
 }
 
 .nrservices-logos-entry h4 {
-    transition: 0.3s;
-    transform: translateY(-30px);
     opacity: 0;
+    transform: translateY(-30px);
+    transition: 0.3s;
 }
 
 .nrservices-logos-entry img {
-    transition: 0.3s all;
     background: transparent;
-    margin-bottom: 0.5rem;
     filter: grayscale(100%) brightness(110%);
+    margin-bottom: 0.5rem;
+    transition: 0.3s all;
 }
 
 .nrservices-logos-entry:hover img {
@@ -154,8 +147,8 @@
     opacity: 1;
     transform: translateY(0);
 }
-/* banner END */
 
+/* banner END */
 
 
 /*
@@ -186,20 +179,20 @@
 }*/
 
 .vertical-tab-section {
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 .vertical-tab-nav-entry.active {
-    cursor: default;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: default
 }
 
 .vertical-tab-nav-entry .fa {
     /*font-size: 1.75rem;*/
-    width: 2.5rem;
     line-height: 2.5rem;
     text-align: center;
+    width: 2.5rem;
 }
 
 .vertical-tab-nav-entry.active .fa {
@@ -219,24 +212,25 @@
 /* news list */
 /*************/
 .news-section {
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
+
 .news-entry-header {
     margin-bottom: 1.5em;
 }
 
 .news-entry-header-time {
-    margin-right: 1.5em;
     color: #aab7c2;
     display: flex;
     flex-direction: column;
+    margin-right: 1.5em;
 }
 
 .news-entry-header-time-day {
     font-size: 1.8em;
-    line-height: 100%;
     font-weight: normal;
+    line-height: 100%;
     text-align: right;
 }
 

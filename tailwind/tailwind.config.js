@@ -626,8 +626,7 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
-    'full': '100%',
-    'full-force': '100% !important',
+    'full': '100%'
   },
 
 
