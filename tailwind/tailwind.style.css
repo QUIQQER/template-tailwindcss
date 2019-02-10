@@ -45,8 +45,17 @@ body {
     @apply my-8;
 }
 
+a {
+    @apply text-grey-darkest font-normal;
+    /*color: #154a95;*/
+}
+
+a:hover {
+    color: #276ccc;
+}
+
 ul, ol {
-    @apply mb-4;
+    @apply mb-4 px-0;
 }
 
 li {
@@ -131,6 +140,12 @@ li {
 
 .header-bar-nav-item:hover {
 }
+
+/*************/
+/* Mega Menu */
+/*************/
+
+
 
 
 /**

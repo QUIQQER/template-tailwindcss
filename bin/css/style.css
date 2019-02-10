@@ -585,9 +585,21 @@ body {
   margin-bottom: 2rem;
 }
 
+a {
+  color: #3d4852;
+  font-weight: 400;
+  /*color: #154a95;*/
+}
+
+a:hover {
+  color: #276ccc;
+}
+
 ul,
 ol {
   margin-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 li {
@@ -716,6 +728,12 @@ li {
 
 .header-bar-nav-item:hover {
 }
+
+/*************/
+
+/* Mega Menu */
+
+/*************/
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

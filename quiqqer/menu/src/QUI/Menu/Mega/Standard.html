@@ -2,8 +2,8 @@
     <div class="quiqqer-menu-megaMenu-children-standard-container">
         <ul class="quiqqer-menu-megaMenu-children-standard-list">
             {foreach $children as $Child}
-            <li class="quiqqer-menu-megaMenu-children-standard-list-entry">
-                <a href="{url site=$Child}"
+            <li class="quiqqer-menu-megaMenu-children-standard-list-entry mb-2">
+                <a href="{url site=$Child}" class="text-2xl"
                    title="{$Child->getAttribute('title')|escape:" html"}">
                 {$Child->getAttribute('title')}
                 </a>
@@ -11,10 +11,10 @@
                 {assign var=subchildren value=$Child->getNavigation()}
 
                 {if count($subchildren)}
-                <div class="quiqqer-menu-megaMenu-children-standard-list-entry-short">
+                <div class="quiqqer-menu-megaMenu-children-standard-list-entry-short text-sm">
                     <ul>
                         {foreach $subchildren as $SubChild}
-                        <li>
+                        <li class="mb-1">
                             <a href="{url site=$SubChild}"
                                title="{$SubChild->getAttribute('title')|escape:" html"}">
                             {$SubChild->getAttribute('title')}
