@@ -102,7 +102,7 @@
                         <type><![CDATA[number]]></type>
                         <defaultvalue>250</defaultvalue>
                     </conf>
-                    <conf name="position">
+                    <conf name="imagePosition">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>center</defaultvalue>
                     </conf>
@@ -328,7 +328,7 @@
                                     />
                                 </text>
 
-                                <option value="flex-start">
+                                <option value="top">
                                     <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.top"
                                     />
@@ -338,7 +338,7 @@
                                             var="settings.header.imagePosition.center"
                                     />
                                 </option>
-                                <option value="flex-end">
+                                <option value="bottom">
                                     <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.bottom"
                                     />

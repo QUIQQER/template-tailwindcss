@@ -127,8 +127,8 @@ class Utils
             'pageTitle'      => $title,
             'pageShort'      => $short,
             'pageHeader'     => $header,
-            'pageBreadcrumb' => $breadcrumb
-//            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
+            'pageBreadcrumb' => $breadcrumb,
+            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
         ];
 
         // set cache

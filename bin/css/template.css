@@ -89,6 +89,10 @@
 /***************/
 /* page header */
 /***************/
+.page-header {
+    background-size: cover;
+}
+
 .page-header-inner {
     height: 100%;
     width: 100%;

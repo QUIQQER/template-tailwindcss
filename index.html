@@ -31,7 +31,7 @@
 
     </style>
 
-    {*$settingsCSS*}
+    {$settingsCSS}
 
 </head>
 
@@ -75,7 +75,7 @@
     {* page header *}
     {if $pageHeader}
     {strip}
-    <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1}); background-size: cover; background-position: center; height: 300px;">
+    <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1});">
         <div class="page-header-inner">
             {*
             <div class="page-header-container grid-container">
