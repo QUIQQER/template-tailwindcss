@@ -7,7 +7,6 @@ window.addEvent("domready", function () {
     });
 
 
-
     require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {
         QUI.addEvent("onError", function (msg, url, linenumber) {
             console.error(msg);
@@ -24,14 +23,14 @@ window.addEvent("domready", function () {
                 buttonVisible = false;
 
             // show on load after 1s delay
-            if (QUI.getScroll().y > 150) {
+            if (QUI.getScroll().y > 300) {
                 toTop.addClass('toTop__show');
                 buttonVisible = true;
             }
 
             // show button toTop after scrolling down
             QUI.addEvent('scroll', function () {
-                if (QUI.getScroll().y > 150) {
+                if (QUI.getScroll().y > 300) {
                     if (!buttonVisible) {
                         toTop.addClass('toTop__show');
                         buttonVisible = true;
@@ -54,11 +53,95 @@ window.addEvent("domready", function () {
         }
 
 
+        /**
+         * Header bar / Navigation
+         */
         var HeaderBar = document.getElement('.header-bar');
 
         if (HeaderBar) {
+            setHeaderBarPos(HeaderBar, QUI);
         }
-
-
     });
 });
+
+/**
+ * Handle header bar position.
+ *
+ * @param HeaderBar
+ * @param QUI
+ */
+function setHeaderBarPos (HeaderBar, QUI) {
+    var fixed    = false,
+        istAlt   = false,
+        altClass = 'header-bar-alt';
+
+    if (HeaderBar.hasClass(altClass)) {
+        istAlt = true;
+    }
+
+    var setAbsolute = function () {
+        if (!istAlt) {
+            HeaderBar.removeClass(altClass)
+        }
+
+        HeaderBar.setStyles({
+            top     : 0,
+            position: 'absolute'
+        });
+    };
+
+    var setFixed = function () {
+        if (!istAlt) {
+            HeaderBar.addClass(altClass)
+        }
+
+        HeaderBar.setStyles({
+            top     : -150,
+            position: 'fixed'
+        });
+    };
+
+    var showNav = function () {
+        return new Promise(function (resolve) {
+            moofx(HeaderBar).animate({
+                top: 0,
+            }, {
+                duration: 500,
+                callback: resolve
+            });
+        });
+    };
+
+    if (QUI.getScroll().y > 200) {
+        setFixed();
+
+        (function () {
+            showNav();
+            fixed = true;
+        }).delay(1000)
+    }
+
+    QUI.addEvent('scroll', function () {
+        if (QUI.getScroll().y > 200) {
+            if (!fixed) {
+                setFixed();
+                (function () {
+                    showNav();
+                }).delay(100);
+
+                fixed = true;
+            }
+            return;
+        }
+
+        if (!fixed) {
+            return;
+        }
+
+        // set pos abs after user has scrolled to top
+        if (QUI.getScroll().y === 0) {
+            setAbsolute();
+            fixed = false;
+        }
+    });
+}

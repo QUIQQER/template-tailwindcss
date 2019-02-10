@@ -19,6 +19,12 @@
 }
 
 /* nav background */
+.header-bar {
+    border-bottom: 1px solid transparent;
+    transition: 0.3s border-bottom-color, 0.3s background-color, 0.3s color;
+    background: transparent;
+}
+
 .header-bar-alt {
     background: #fff;
     border-bottom: 1px solid #ebebeb;

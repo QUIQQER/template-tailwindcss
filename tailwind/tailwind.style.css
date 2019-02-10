@@ -45,6 +45,14 @@ body {
     @apply my-8;
 }
 
+ul, ol {
+    @apply mb-4;
+}
+
+li {
+    @apply mb-2;
+}
+
 .btn {
     @apply py-3 px-5 rounded font-bold border-2 shadow-md inline-block;
     transition: 0.25s all;
@@ -102,7 +110,7 @@ body {
 /* header nav item */
 /*******************/
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
-    @apply font-normal mx-3 h-full flex items-center;
+    @apply font-normal mx-3 my-0 h-full flex items-center;
     padding: 0 !important;
 }
 
