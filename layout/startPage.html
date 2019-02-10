@@ -20,16 +20,15 @@
     {/foreach}
     {/if}
 
-    <div role="main">
-
+    <div role="main" class="main-container my-8">
         {if $pageTitle || $pageShort}
-        <div class="page-info">
+        <div class="main-header">
             {if $pageTitle}
-            <h1 class="page-info-title">{$Site->getAttribute('title')}</h1>
+            <h1 class="main-header-title">{$Site->getAttribute('title')}</h1>
             {/if}
 
             {if $pageShort}
-            <div class="page-info-short">
+            <div class="main-header-short">
                 {$Site->getAttribute('short')}
             </div>
             {/if}

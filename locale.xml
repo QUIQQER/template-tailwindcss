@@ -162,6 +162,12 @@
             <en><![CDATA[Home]]></en>
         </locale>
 
+        <!-- OTHERS -->
+        <locale name="template.button.toTop">
+            <de><![CDATA[Nach oben]]></de>
+            <en><![CDATA[To top]]></en>
+        </locale>
+
     </groups>
     <groups name="quiqqer/template-tailwindcss" datatype="php">
 

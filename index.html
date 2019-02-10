@@ -107,7 +107,7 @@
     {* <!--main content--> *}
     {$Template->getLayout()}
 
-    {foreach $footerPrefix as $Brick}
+    {foreach $footerPrefix as $Brick}4
         {assign var=brickFullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
             {assign var=fullWidth value='force-full-width px-0'}
@@ -496,6 +496,8 @@
     {/if*}
 </div>
 
+{* to top icon *}
+{fetch template="template/toTop.html"}
 
 <!-- [begin] js combine -->
 <script src="{$URL_OPT_DIR}bin/require.js"></script>
