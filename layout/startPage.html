@@ -18,7 +18,7 @@
     {/if}
 
     <div role="main">
-        {if $header == 'beforeContent' && !$productPage}
+        {if $pageHeader === 'beforeContent'}
             {if $Site->getAttribute('image_emotion')}
             <header class="page-content-header page-content-header-emotion"
                     style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"

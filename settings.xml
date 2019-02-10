@@ -11,11 +11,15 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
-                    <conf name="startPage.desc">
+                    <conf name="startPage.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="startPage.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="startPage.breadcrumb">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
@@ -25,11 +29,15 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-                    <conf name="noSidebar.desc">
+                    <conf name="noSidebar.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
                     <conf name="noSidebar.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="noSidebar.breadcrumb">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
@@ -39,11 +47,15 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-                    <conf name="noSidebarThin.desc">
+                    <conf name="noSidebarThin.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
                     <conf name="noSidebarThin.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="noSidebarThin.breadcrumb">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
@@ -53,11 +65,15 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-                    <conf name="leftSidebar.desc">
+                    <conf name="leftSidebar.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
                     <conf name="leftSidebar.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="leftSidebar.breadcrumb">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
@@ -67,11 +83,15 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-                    <conf name="rightSidebar.desc">
+                    <conf name="rightSidebar.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
                     <conf name="rightSidebar.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="rightSidebar.breadcrumb">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
@@ -105,142 +125,177 @@
                         <settings title="settings.page"
                                   name="settings.page">
                             <title>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.title"
                                 />
                             </title>
 
                             <!-- start page -->
                             <text>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.startPage.text" />
                             </text>
                             <input conf="settings.page.startPage.title" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.startPage.title"
                                     />
                                 </text>
                             </input>
-                            <input conf="settings.page.startPage.desc" type="checkbox">
+                            <input conf="settings.page.startPage.short" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
-                                            var="settings.page.startPage.desc"
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.startPage.short"
                                     />
                                 </text>
                             </input>
                             <input conf="settings.page.startPage.header" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.startPage.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.startPage.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.startPage.breadcrumb"
                                     />
                                 </text>
                             </input>
 
                             <!-- no sidebar -->
                             <text>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.noSidebar.text" />
                             </text>
                             <input conf="settings.page.noSidebar.title" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.noSidebar.title"
                                     />
                                 </text>
                             </input>
-                            <input conf="settings.page.noSidebar.desc" type="checkbox">
+                            <input conf="settings.page.noSidebar.short" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
-                                            var="settings.page.noSidebar.desc"
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.noSidebar.short"
                                     />
                                 </text>
                             </input>
                             <input conf="settings.page.noSidebar.header" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.noSidebar.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.noSidebar.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.noSidebar.breadcrumb"
                                     />
                                 </text>
                             </input>
 
                             <!-- no sidebar (thin)-->
                             <text>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.noSidebarThin.text" />
                             </text>
                             <input conf="settings.page.noSidebarThin.title" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.noSidebarThin.title"
                                     />
                                 </text>
                             </input>
-                            <input conf="settings.page.noSidebarThin.desc" type="checkbox">
+                            <input conf="settings.page.noSidebarThin.short" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
-                                            var="settings.page.noSidebarThin.desc"
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.noSidebarThin.short"
                                     />
                                 </text>
                             </input>
                             <input conf="settings.page.noSidebarThin.header" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.noSidebarThin.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.noSidebarThin.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.noSidebarThin.breadcrumb"
                                     />
                                 </text>
                             </input>
 
                             <!-- left sidebar -->
                             <text>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.leftSidebar.text" />
                             </text>
                             <input conf="settings.page.leftSidebar.title" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.leftSidebar.title"
                                     />
                                 </text>
                             </input>
-                            <input conf="settings.page.leftSidebar.desc" type="checkbox">
+                            <input conf="settings.page.leftSidebar.short" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
-                                            var="settings.page.leftSidebar.desc"
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.leftSidebar.short"
                                     />
                                 </text>
                             </input>
                             <input conf="settings.page.leftSidebar.header" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.leftSidebar.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.leftSidebar.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.leftSidebar.breadcrumb"
                                     />
                                 </text>
                             </input>
 
                             <!-- header: right sidebar -->
                             <text>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.page.rightSidebar.text" />
                             </text>
                             <input conf="settings.page.rightSidebar.title" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.rightSidebar.title"
                                     />
                                 </text>
                             </input>
-                            <input conf="settings.page.rightSidebar.desc" type="checkbox">
+                            <input conf="settings.page.rightSidebar.short" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
-                                            var="settings.page.rightSidebar.desc"
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.rightSidebar.short"
                                     />
                                 </text>
                             </input>
                             <input conf="settings.page.rightSidebar.header" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.rightSidebar.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.rightSidebar.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.rightSidebar.breadcrumb"
                                     />
                                 </text>
                             </input>
@@ -251,20 +306,15 @@
                         <settings title="settings.header"
                                   name="settings.header">
                             <title>
-                                <locale group="quiqqer/template-tailwind"
+                                <locale group="quiqqer/template-tailwindcss"
                                         var="settings.header.title"
                                 />
                             </title>
 
                             <!-- image size -->
-                            <text>
-                                <locale group="quiqqer/template-tailwind"
-                                        var="settings.header.height.text"
-                                />
-                            </text>
                             <input conf="settings.header.height" type="number">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.height.text"
                                     />
                                 </text>
@@ -273,23 +323,23 @@
                             <!-- header: image position -->
                             <select conf="settings.header.imagePosition">
                                 <text>
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.text"
                                     />
                                 </text>
 
                                 <option value="flex-start">
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.top"
                                     />
                                 </option>
                                 <option value="center">
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.center"
                                     />
                                 </option>
                                 <option value="flex-end">
-                                    <locale group="quiqqer/template-tailwind"
+                                    <locale group="quiqqer/template-tailwindcss"
                                             var="settings.header.imagePosition.bottom"
                                     />
                                 </option>

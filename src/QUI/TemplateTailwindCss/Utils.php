@@ -31,75 +31,105 @@ class Utils
         } catch (QUI\Exception $Exception) {
         }
 
-        $config = array();
+
+        $config = [];
 
         /* @var $Project QUI\Projects\Project */
         $Project  = $params['Project'];
         $Template = $params['Template'];
 
         /**
-         * no header?
-         * no breadcrumb?
-         * Body Class
-         *
-         * own site type
+         * General page settings: Title? Description? Header? Breadcrumb?
          */
-
-        $showHeader     = false;
-        $showBreadcrumb = false;
+        $title      = false;
+        $short       = false;
+        $header     = false;
+        $breadcrumb = false;
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
-                $showHeader     = $Project->getConfig('settings.page.startPage.header');
-                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbStartPage');
+                $title      = $Project->getConfig('settings.page.startPage.title');
+                $short       = $Project->getConfig('settings.page.startPage.desc');
+                $header     = $Project->getConfig('settings.page.startPage.header');
+                $breadcrumb = $Project->getConfig('settings.page.startPage.breadcrumb');
                 break;
 
             case 'layout/noSidebar':
-                $showHeader     = $Project->getConfig('settings.page.noSidebar.header');
-                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbNoSidebar');
+                $title      = $Project->getConfig('settings.page.noSidebar.title');
+                $short       = $Project->getConfig('settings.page.noSidebar.desc');
+                $header     = $Project->getConfig('settings.page.noSidebar.header');
+                $breadcrumb = $Project->getConfig('settings.page.noSidebar.breadcrumb');
                 break;
 
             case 'layout/noSidebarThin':
-                $showHeader     = $Project->getConfig('settings.page.noSidebarThin.header');
-                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbNoSidebarThin');
-                break;
-
-
-            case 'layout/rightSidebar':
-                $showHeader     = $Project->getConfig('settings.page.RightSidebar.header');
-                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbRightSidebar');
+                $title      = $Project->getConfig('settings.page.noSidebarThin.title');
+                $short       = $Project->getConfig('settings.page.noSidebarThin.desc');
+                $header     = $Project->getConfig('settings.page.noSidebarThin.header');
+                $breadcrumb = $Project->getConfig('settings.page.noSidebarThin.breadcrumb');
                 break;
 
             case 'layout/leftSidebar':
-                $showHeader     = $Project->getConfig('settings.page.leftSidebar.header');
-                $showBreadcrumb = $Project->getConfig('settings.showBreadcrumbLeftSidebar');
+                $title      = $Project->getConfig('settings.page.leftSidebar.title');
+                $short       = $Project->getConfig('settings.page.leftSidebar.desc');
+                $header     = $Project->getConfig('settings.page.leftSidebar.header');
+                $breadcrumb = $Project->getConfig('settings.page.leftSidebar.breadcrumb');
+                break;
+
+            case 'layout/rightSidebar':
+                $title      = $Project->getConfig('settings.page.rightSidebar.title');
+                $short      = $Project->getConfig('settings.page.rightSidebar.desc');
+                $header     = $Project->getConfig('settings.page.rightSidebar.header');
+                $breadcrumb = $Project->getConfig('settings.page.rightSidebar.breadcrumb');
                 break;
         }
 
-
-        $showPageTitle = $params['Site']->getAttribute('templateTailwindCss.showTitle');
-        $showPageShort = $params['Site']->getAttribute('templateTailwindCss.showShort');
-
-        /* site own show header */
-        switch ($params['Site']->getAttribute('templateTailwindCss.header')) {
+        /* site own title settings */
+        switch ($params['Site']->getAttribute('site.settings.pageTitle')) {
             case 'show':
-                $showHeader = true;
+                $title = true;
                 break;
             case 'hide':
-                $showHeader = false;
+                $title = false;
+        }
+
+        /* site own description settings */
+        switch ($params['Site']->getAttribute('site.settings.pageShort')) {
+            case 'show':
+                $short = true;
+                break;
+            case 'hide':
+                $short = false;
+        }
+
+        /* site own header settings */
+        switch ($params['Site']->getAttribute('site.settings.pageHeader')) {
+            case 'show':
+                $header = true;
+                break;
+            case 'hide':
+                $header = false;
+        }
+
+        /* site own breadcrumb settings */
+        switch ($params['Site']->getAttribute('site.settings.pageBreadcrumb')) {
+            case 'show':
+                $breadcrumb = true;
+                break;
+            case 'hide':
+                $breadcrumb = false;
         }
 
         $settingsCSS = include 'settings.css.php';
 
-        $config += array(
+        $config += [
             'quiTplType'     => $Project->getConfig('templateTailwindCss.settings.standardType'),
-            'showHeader'     => $showHeader,
-            'showBreadcrumb' => $showBreadcrumb,
+            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'pageTitle'      => $title,
+            'pageShort'      => $short,
+            'pageHeader'     => $header,
+            'pageBreadcrumb' => $breadcrumb
 //            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(array('/', ':'), '-', $params['Site']->getAttribute('type')),
-            'showPageTitle'  => $showPageTitle,
-            'showPageShort'  => $showPageShort
-        );
+        ];
 
         // set cache
         QUI\Cache\Manager::set(

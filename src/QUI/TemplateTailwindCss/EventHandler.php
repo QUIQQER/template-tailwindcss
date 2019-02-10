@@ -1,9 +1,9 @@
 <?php
 /**
- * This file contains \QUI\TemplateBusinessPro\EventHandler
+ * This file contains \QUI\TemplateTailwindCss\EventHandler
  */
 
-namespace QUI\TemplateBusinessPro;
+namespace QUI\TemplateTailwindCss;
 
 use QUI;
 

@@ -40,7 +40,7 @@
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
 {assign var=bodyPadding value=''}
-{if empty($header) && !$showHeader}
+{if empty($header) && !$pageHeader}
     {assign var=bodyPadding value='body-padding'}
     {assign var=navBackground value='header-bar-alt'}
 {/if}
@@ -72,31 +72,29 @@
 <!-- page -->
 <div class="body-container {$bodyPadding}">
 
-    {* header *}
-    {if $showHeader}
+    {* page header *}
+    {if $pageHeader}
     {strip}
     <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1}); background-size: cover; background-position: center; height: 300px;">
         <div class="page-header-inner">
+            {*
+            <div class="page-header-container grid-container">
+                {if $pageTitle}
+                <h1 class="page-header-text-title">
+                    {$Site->getAttribute('title')}
+                </h1>
+                {/if}
 
-        </div>
-        {*
-        <div class="page-header-container grid-container">
-            {if $Site->getAttribute('templateTailwindCss.showTitle')}
-            <h1 class="page-header-text-title">
-                {$Site->getAttribute('title')}
-            </h1>
-            {/if}
-
-            {if $Site->getAttribute('templateTailwindCss.showShort') &&
-            $Site->getAttribute('short')}
-            <div class="page-header-text-wrapper">
-                <div class="page-header-text-wrapper-short">
-                    {$Site->getAttribute('short')}
+                {if $pageShort && $Site->getAttribute('short')}
+                <div class="page-header-text-wrapper">
+                    <div class="page-header-text-wrapper-short">
+                        {$Site->getAttribute('short')}
+                    </div>
                 </div>
+                {/if}
             </div>
-            {/if}
+            *}
         </div>
-        *}
     </header>
     {/strip}
     {/if}
@@ -475,32 +473,6 @@
     <!-- page -->
     <div class="body-container">
         <!-- header -->
-        {if $showHeader}
-        {strip}
-        <header class="page-header">
-            {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') class="header-img"
-            title=$Site->getAttribute('title')}
-            {/if}
-            <div class="page-header-container grid-container">
-                {if $Site->getAttribute('templateTailwindCss.showTitle')}
-                <h1 class="page-header-text-title">
-                    {$Site->getAttribute('title')}
-                </h1>
-                {/if}
-
-                {if $Site->getAttribute('templateTailwindCss.showShort') &&
-                $Site->getAttribute('short')}
-                <div class="page-header-text-wrapper">
-                    <div class="page-header-text-wrapper-short">
-                        {$Site->getAttribute('short')}
-                    </div>
-                </div>
-                {/if}
-            </div>
-        </header>
-        {/strip}
-        {/if}
 
 
         <footer class="bg-grey-lightest py-8">

@@ -100,7 +100,6 @@ if ($Project->getMedia()->getLogoImage()) {
 $templateSettings['logoUrl'] = $logoUrl;
 $templateSettings['logoAlt'] = $logoAlt;
 
-$templateSettings['header']    = false;
 $templateSettings['navBackground']    = '';
 
 

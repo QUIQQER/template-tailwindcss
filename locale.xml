@@ -161,47 +161,194 @@
             <de><![CDATA[Startseite]]></de>
             <en><![CDATA[Home]]></en>
         </locale>
-        
-        <!-- settings -->
+
+    </groups>
+    <groups name="quiqqer/template-tailwindcss" datatype="php">
+
+        <!-- TEMPLATE SETTINGS-->
         <locale name="templateTailwindCss.settings.menu.title">
             <de><![CDATA[Template Einstellungen: Tailwind CSS]]></de>
             <en><![CDATA[Template settings: Tailwind CSS]]></en>
         </locale>
+        <!-- template page settings -->
+        <locale name="settings.page.title">
+            <de><![CDATA[Seitenspezifische Einstellungen]]></de>
+            <en><![CDATA[Page settings]]></en>
+        </locale>
+
+        <!-- start page -->
+        <locale name="settings.page.startPage.text" html="true">
+            <de><![CDATA[<strong>Startseite</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: start page.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.startPage.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.startPage.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.startPage.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.startPage.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- no sidebar page -->
+        <locale name="settings.page.noSidebar.text" html="true">
+            <de><![CDATA[<strong>Keine Sidebar</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: no sidebar.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.noSidebar.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.noSidebar.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.noSidebar.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.noSidebar.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- no sidebar (thin) page-->
+        <locale name="settings.page.noSidebarThin.text" html="true">
+            <de><![CDATA[<strong>Keine Sidebar - schmaler Inhalt</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: no sidebar - thin content.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.noSidebarThin.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.noSidebarThin.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.noSidebarThin.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.noSidebarThin.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- left sidebar page -->
+        <locale name="settings.page.leftSidebar.text" html="true">
+            <de><![CDATA[<strong>Linke Sidebar</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: left sidebar.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.leftSidebar.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.leftSidebar.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.leftSidebar.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.leftSidebar.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- right sidebar page -->
+        <locale name="settings.page.rightSidebar.text" html="true">
+            <de><![CDATA[<strong>Rechte Sidebar</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: right sidebar.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.rightSidebar.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.rightSidebar.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.rightSidebar.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.rightSidebar.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- header settings -->
+        <locale name="settings.header.title">
+            <de><![CDATA[Header Einstellungen]]></de>
+            <en><![CDATA[Header settings]]></en>
+        </locale>
+        <locale name="settings.header.height.text">
+            <de><![CDATA[Höhe des Headers (in Pixel)]]></de>
+            <en><![CDATA[Header height (in pixels)]]></en>
+        </locale>
+        <locale name="settings.header.imagePosition.text">
+            <de><![CDATA[Bildposition im Header]]></de>
+            <en><![CDATA[Header image position]]></en>
+        </locale>
+            <locale name="settings.header.imagePosition.top">
+                <de><![CDATA[Oben]]></de>
+                <en><![CDATA[Top]]></en>
+            </locale>
+            <locale name="settings.header.imagePosition.center">
+                <de><![CDATA[Zentriert]]></de>
+                <en><![CDATA[Center]]></en>
+            </locale>
+            <locale name="settings.header.imagePosition.bottom">
+                <de><![CDATA[Unten]]></de>
+                <en><![CDATA[Bottom]]></en>
+            </locale>
 
 
-
-        <!-- site settings -->
+        <!-- PAGE SETTINGS -->
         <locale name="site.settings">
             <de><![CDATA[Template Tailwind CSS: Einstellungen]]></de>
             <en><![CDATA[Template Tailwind CSS: settings]]></en>
         </locale>
-
-        <locale name="site.settings.header">
+        <locale name="site.settings.pageTitle">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="site.settings.pageShort">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short descriptions]]></en>
+        </locale>
+        <locale name="site.settings.pageHeader">
             <de><![CDATA[Header]]></de>
             <en><![CDATA[Header]]></en>
         </locale>
-            <locale name="site.settings.header.default">
-                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
-                <en><![CDATA[Default template setting]]></en>
-            </locale>
-            <locale name="site.settings.header.show">
-                <de><![CDATA[Anzeigen]]></de>
-                <en><![CDATA[Show]]></en>
-            </locale>
-            <locale name="site.settings.header.hide">
-                <de><![CDATA[Verstecken]]></de>
-                <en><![CDATA[Hide]]></en>
-            </locale>
-
-        <!-- Title & short -->
-        <locale name="site.settings.showTitle">
-            <de><![CDATA[Überschrift anzeigen]]></de>
-            <en><![CDATA[Show title]]></en>
-        </locale>
-        <locale name="site.settings.showShort">
-            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
-            <en><![CDATA[Show short descriptions]]></en>
+        <locale name="site.settings.pageBreadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
         </locale>
 
+        <!--GENERAL SETGINGS LOCALE -->
+        <locale name="general.settings.locale.default">
+            <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="general.settings.locale.show">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Show]]></en>
+        </locale>
+        <locale name="general.settings.locale.hide">
+            <de><![CDATA[Verstecken]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
     </groups>
+
+
 </locales>

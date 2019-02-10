@@ -2,9 +2,10 @@
 <site>
     <!-- global attributes -->
     <attributes>
-        <attribute>templateTailwindCss.header</attribute>
-        <attribute>templateTailwindCss.showTitle</attribute>
-        <attribute>templateTailwindCss.showShort</attribute>
+        <attribute>site.settings.pageTitle</attribute>
+        <attribute>site.settings.pageShort</attribute>
+        <attribute>site.settings.pageHeader</attribute>
+        <attribute>site.settings.pageBreadcrumb</attribute>
     </attributes>
 
     <settings>
@@ -15,41 +16,87 @@
                             var="site.settings"/>
                 </title>
 
-                <!-- show header -->
-                <select conf="templateTailwindCss.header">
+                <!-- TITLE -->
+                <select conf="site.settings.pageTitle">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.header"/>
+                                var="site.settings.pageTitle"/>
                     </text>
                     <option value="default">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.header.default"/>
+                                var="general.settings.locale.default"/>
                     </option>
                     <option value="show">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.header.show"/>
+                                var="general.settings.locale.show"/>
                     </option>
                     <option value="hide">
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.header.hide"/>
+                                var="general.settings.locale.hide"/>
                     </option>
                 </select>
 
-                <!-- show title -->
-                <input conf="templateTailwindCss.showTitle" type="checkbox">
+                <!-- SHORT DESCRIPTION -->
+                <select conf="site.settings.pageShort">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showTitle"/>
+                                var="site.settings.pageShort"/>
                     </text>
-                </input>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.hide"/>
+                    </option>
+                </select>
 
-                <!-- show short desc -->
-                <input conf="templateTailwindCss.showShort" type="checkbox">
+                <!-- HEADER -->
+                <select conf="site.settings.pageHeader">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
-                                var="site.settings.showShort"/>
+                                var="site.settings.pageHeader"/>
                     </text>
-                </input>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.hide"/>
+                    </option>
+                </select>
+
+
+                <!-- BREADCRUMB -->
+                <select conf="site.settings.pageBreadcrumb">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageBreadcrumb"/>
+                    </text>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.hide"/>
+                    </option>
+                </select>
+
             </settings>
         </category>
     </settings>
