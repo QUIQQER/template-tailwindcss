@@ -23,9 +23,9 @@
         {/foreach}
         {/if}
 
-        <div role="main" class="main-container my-8">
+        <div role="main" class="main-container">
             {if $pageTitle || $pageShort}
-            <div class="main-header">
+            <div class="main-header my-8">
                 {if $pageTitle}
                 <h1 class="main-header-title">{$Site->getAttribute('title')}</h1>
                 {/if}
