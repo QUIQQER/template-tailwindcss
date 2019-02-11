@@ -459,41 +459,16 @@
         </div>
     </footer>
     <!-- footer -->
-    {*if $Template->getAttribute('template-footer')}
+    {if $Template->getAttribute('template-footer')}
     <footer class="page-footer clear-fix">
-        <div class="page-footer-container grid-container">
-            {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-            {if !empty($footer)}
-            <div class="grid-children">
-                <div class="grid-children-container">
-                    {foreach from=$footer item=Brick}
-                        {if !$Brick->hasCSSClass('grid-*')}
-                            {$Brick->addCSSClass('grid-100')}
-                        {/if}
-                        {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                        {$Brick->create()}
-                    {/foreach}
-                </div>
-            </div>
-            {/if}
-        </div>
 
-        <div class="page-footer-copyright">
-            <div class="grid-container">
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+        {* <!--footer bricks--> *}
+        {fetch template="template/footerBricks.html" Site=$Site BricksManager=$BricksManager}
 
-                    Template Tailwind CSS for QUIQQER
-                </div>
-
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                    <a href="#top" style="outline: none;">
-                        <i class="fa fa-arrow-up toTop"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        {* <!--footer copyright--> *}
+        {fetch template="template/footerCopyright.html"}
     </footer>
-    {/if*}
+    {/if}
 </div>
 
 {* to top icon *}
