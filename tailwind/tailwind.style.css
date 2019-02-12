@@ -55,7 +55,7 @@ a:hover {
 }
 
 ul, ol {
-    @apply mb-4 px-0;
+    @apply mb-4 pl-5 pr-0;
 }
 
 li {
@@ -89,7 +89,7 @@ li {
 }
 
 .btn-red:hover {
-    @apply shadow-lg border-red-dark bg-red-dark;
+    @apply shadow-lg border-red-dark bg-red-dark text-white;
 }
 
 .btn-blue {
@@ -102,7 +102,7 @@ li {
 }
 
 .btn-white:hover {
-    @apply shadow-lg;
+    @apply shadow-lg text-grey-darkest;
 }
 
 /* outline white */
@@ -129,7 +129,7 @@ li {
 }
 
 .header-bar-nav-item a:hover {
-    color: #057cc0;
+    color: inherit;
 }
 
 /* header nav alt */
@@ -144,7 +144,6 @@ li {
 /*************/
 /* Mega Menu */
 /*************/
-
 
 
 

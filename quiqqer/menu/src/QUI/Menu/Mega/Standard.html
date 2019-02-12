@@ -3,7 +3,7 @@
         <ul class="quiqqer-menu-megaMenu-children-standard-list">
             {foreach $children as $Child}
             <li class="quiqqer-menu-megaMenu-children-standard-list-entry mb-2">
-                <a href="{url site=$Child}" class="text-2xl"
+                <a href="{url site=$Child}" class="quiqqer-menu-megaMenu-children-standard-list-entry-title text-2xl"
                    title="{$Child->getAttribute('title')|escape:" html"}">
                 {$Child->getAttribute('title')}
                 </a>

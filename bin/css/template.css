@@ -119,7 +119,7 @@
     border-bottom: none !important;
 }
 
-.quiqqer-menu-megaMenu-children-standard-list-entry a {
+.quiqqer-menu-megaMenu-children-standard-list-entry-title {
     color: #333;
     display: inline-block;
     font-weight: 400;
@@ -131,6 +131,7 @@
 
 .quiqqer-menu-megaMenu-children-standard-list-entry-short ul {
     margin-bottom: 0;
+    margin-left: 0 !important;
 }
 
 
