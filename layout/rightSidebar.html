@@ -24,7 +24,7 @@
         {/if}
 
         <div role="main" class="main-container">
-            {if $pageTitle || $pageShort}
+            {if $titleAndShortPos == 'page' && ($pageTitle || $pageShort)}
             <div class="main-header my-8">
                 {if $pageTitle}
                 <h1 class="main-header-title">{$Site->getAttribute('title')}</h1>

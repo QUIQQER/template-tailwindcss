@@ -5,6 +5,7 @@
         <attribute>site.settings.pageTitle</attribute>
         <attribute>site.settings.pageShort</attribute>
         <attribute>site.settings.pageHeader</attribute>
+        <attribute>site.settings.pageTitleAndShortPos</attribute>
         <attribute>site.settings.pageBreadcrumb</attribute>
     </attributes>
 
@@ -73,6 +74,26 @@
                     <option value="hide">
                         <locale group="quiqqer/template-tailwindcss"
                                 var="general.settings.locale.hide"/>
+                    </option>
+                </select>
+
+                <!-- TITLE AND SHORT POSITION -->
+                <select conf="site.settings.pageTitleAndShortPos">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageTitleAndShortPos"/>
+                    </text>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.default"/>
+                    </option>
+                    <option value="header">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.titleAndShortPos.header"/>
+                    </option>
+                    <option value="page">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.titleAndShortPos.page"/>
                     </option>
                 </select>
 

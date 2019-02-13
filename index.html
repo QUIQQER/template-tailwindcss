@@ -48,19 +48,15 @@
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
 
 {* <!--top bar / navigation--> *}
-{fetch template="template/topBar.html"
-        navBackground=$navBackground
-        MegaMenu=$MegaMenu
-        SlideOutMenu=$SlideOutMenu
-        logoUrl=$logoUrl
-        logoAlt=$logoAlt
-}
+{fetch template="template/topBar.html" navBackground=$navBackground MegaMenu=$MegaMenu
+        SlideOutMenu=$SlideOutMenu logoUrl=$logoUrl logoAlt=$logoAlt}
 
 <!-- page -->
 <div class="body-container {$bodyPadding}">
 
     {* <!--page header --> *}
-    {fetch template="template/header.html" Site=$Site pageHeader=$pageHeader pageTitle=$pageTitle pageShort=$pageShort}
+    {fetch template="template/header.html" Site=$Site pageHeader=$pageHeader pageTitle=$pageTitle pageShort=$pageShort
+            titleAndShortPos=$titleAndShortPos}
 
     {foreach $header as $Brick}
         {assign var=fullWidth value=''}

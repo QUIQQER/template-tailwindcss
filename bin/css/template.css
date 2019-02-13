@@ -135,6 +135,23 @@
     width: 100%;
 }
 
+.page-header-inner .container {
+    padding-top: 80px; /* nav height */
+}
+
+.page-header-content {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+    .page-header-inner .container {
+        padding-top: 1rem;
+    }
+}
 
 /****************/
 /* heading icon */

@@ -2,23 +2,22 @@
 {strip}
 <header class="page-header" style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1});">
     <div class="page-header-inner">
-        {*
-        <div class="page-header-container grid-container">
-            {if $pageTitle}
-            <h1 class="page-header-text-title">
-                {$Site->getAttribute('title')}
-            </h1>
-            {/if}
 
-            {if $pageShort && $Site->getAttribute('short')}
-            <div class="page-header-text-wrapper">
-                <div class="page-header-text-wrapper-short">
+        {if $titleAndShortPos == 'header' && ($pageTitle || $pageShort)}
+        <div class="container">
+            <div class="page-header-content pb-4 pt-8">
+                {if $pageTitle}
+                <h1 class="page-header-content-title font-normal">{$Site->getAttribute('title')}</h1>
+                {/if}
+
+                {if $pageShort}
+                <div class="page-header-content-short font-normal">
                     {$Site->getAttribute('short')}
                 </div>
+                {/if}
             </div>
-            {/if}
         </div>
-        *}
+        {/if}
     </div>
 </header>
 {/strip}

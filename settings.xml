@@ -15,6 +15,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="startPage.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
+                    </conf>
                     <conf name="startPage.header">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
@@ -32,6 +36,10 @@
                     <conf name="noSidebar.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="noSidebar.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
                     </conf>
                     <conf name="noSidebar.header">
                         <type><![CDATA[bool]]></type>
@@ -51,6 +59,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="noSidebarThin.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
+                    </conf>
                     <conf name="noSidebarThin.header">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -69,6 +81,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="leftSidebar.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
+                    </conf>
                     <conf name="leftSidebar.header">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -86,6 +102,10 @@
                     <conf name="rightSidebar.short">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="rightSidebar.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
                     </conf>
                     <conf name="rightSidebar.header">
                         <type><![CDATA[bool]]></type>
@@ -149,6 +169,24 @@
                                     />
                                 </text>
                             </input>
+                            <select conf="settings.page.startPage.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
                             <input conf="settings.page.startPage.header" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"
@@ -183,6 +221,24 @@
                                     />
                                 </text>
                             </input>
+                            <select conf="settings.page.noSidebar.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
                             <input conf="settings.page.noSidebar.header" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"
@@ -217,6 +273,24 @@
                                     />
                                 </text>
                             </input>
+                            <select conf="settings.page.noSidebarThin.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
                             <input conf="settings.page.noSidebarThin.header" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"
@@ -251,6 +325,24 @@
                                     />
                                 </text>
                             </input>
+                            <select conf="settings.page.leftSidebar.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
                             <input conf="settings.page.leftSidebar.header" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"
@@ -285,6 +377,24 @@
                                     />
                                 </text>
                             </input>
+                            <select conf="settings.page.rightSidebar.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
                             <input conf="settings.page.rightSidebar.header" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"

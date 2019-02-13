@@ -30,7 +30,6 @@ $colorMainButton = $Convert->colorBrightness($colorMain, 0.7);
 $headerHeight = (int)$Project->getConfig('settings.header.height');
 $headerImagePosition = $Project->getConfig('settings.header.imagePosition');
 
-QUI\System\Log::writeRecursive('<-------------------------------------->' . $headerImagePosition);
 ob_start();
 
 ?>

@@ -332,6 +332,10 @@
             <de><![CDATA[Kurzbeschreibung]]></de>
             <en><![CDATA[Short descriptions]]></en>
         </locale>
+        <locale name="site.settings.pageTitleAndShortPos">
+            <de><![CDATA[Titel und Kurzbeschreibung Position]]></de>
+            <en><![CDATA[Position of title and short description]]></en>
+        </locale>
         <locale name="site.settings.pageHeader">
             <de><![CDATA[Header]]></de>
             <en><![CDATA[Header]]></en>
@@ -353,6 +357,19 @@
         <locale name="general.settings.locale.hide">
             <de><![CDATA[Verstecken]]></de>
             <en><![CDATA[Hide]]></en>
+        </locale>
+
+        <locale name="general.settings.titleAndShortPos.text">
+            <de><![CDATA[Wo sollen die Titel und Kurzbeschreibung angezeigt werden?]]></de>
+            <en><![CDATA[Where should title and short description be displayed?]]></en>
+        </locale>
+        <locale name="general.settings.titleAndShortPos.header">
+            <de><![CDATA[Im Header (oben auf der Seite)]]></de>
+            <en><![CDATA[In header (top of the site)]]></en>
+        </locale>
+        <locale name="general.settings.titleAndShortPos.page">
+            <de><![CDATA[Vor dem Seiteninhalt]]></de>
+            <en><![CDATA[Before the page content]]></en>
         </locale>
     </groups>
 
