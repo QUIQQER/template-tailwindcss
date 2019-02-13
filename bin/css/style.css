@@ -691,14 +691,14 @@ li {
 
 /*******************/
 
-/* header nav item */
+/* Mega Menu */
 
 /*******************/
 
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
   font-weight: 400;
-  margin-left: .75rem;
-  margin-right: .75rem;
+  margin-left: .25rem;
+  margin-right: .25rem;
   margin-top: 0;
   margin-bottom: 0;
   height: 100%;
@@ -708,34 +708,38 @@ li {
 }
 
 .header-bar-nav-item a {
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
   align-items: center;
-  height: 100%;
+  color: #f1f5f8;
   display: flex !important;
+  border-radius: 5px;
 }
 
 .header-bar-nav-item a:hover {
-  color: inherit;
+  background: rgba(0, 0, 0, .075);
+}
+
+.quiqqer-menu-megaMenu-list-item--current a,
+.quiqqer-menu-megaMenu-list-item--current a:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.quiqqer-menu-megaMenu-list-item-menu {
+  color: #22292f;
 }
 
 /* header nav alt */
 
-.header-bar-alt,
-.quiqqer-menu-megaMenu-children-standard {
-  color: #3d4852;
+.header-bar-alt .header-bar-nav-item a {
+  color: #22292f;
 }
 
-.header-bar-nav-item:hover {
+.header-bar-alt .quiqqer-menu-megaMenu-list-item--current a {
+  background: #e6ebf1;
 }
-
-/*************/
-
-/* Mega Menu */
-
-/*************/
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
