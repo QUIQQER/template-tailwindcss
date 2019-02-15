@@ -122,7 +122,7 @@
         </section>
     {/foreach}
 
-    {if $Site->getId() == 1}
+    {if $Site->getId() == 9999}
 
     <section class="bg-white pt-16 pb-32 nrservices-0 relative overflow-hidden">
         <div class="container">
@@ -440,7 +440,7 @@
 
 
 
-    <footer class="bg-grey-lightest py-8">
+    <!--<footer class="bg-grey-lightest py-8">
         <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between px-8">
             <small class="block text-sm text-grey">
                 &copy; CompanyName
@@ -453,16 +453,17 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
     <!-- footer -->
     {if $Template->getAttribute('template-footer')}
-    <footer class="page-footer clear-fix">
+    <footer class="page-footer clear-fix bg-grey-darkest py-8">
+        <div class="page-footer-wrapper">
+            {* <!--footer bricks--> *}
+            {fetch template="template/footerBricks.html" Site=$Site BricksManager=$BricksManager}
 
-        {* <!--footer bricks--> *}
-        {fetch template="template/footerBricks.html" Site=$Site BricksManager=$BricksManager}
-
-        {* <!--footer copyright--> *}
-        {fetch template="template/footerCopyright.html"}
+            {* <!--footer copyright--> *}
+            {fetch template="template/footerCopyright.html"}
+        </div>
     </footer>
     {/if}
 </div>

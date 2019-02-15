@@ -689,11 +689,11 @@ li {
   border-color: transparent;
 }
 
-/*******************/
+/*************/
 
 /* Mega Menu */
 
-/*******************/
+/*************/
 
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
   font-weight: 400;
@@ -733,12 +733,29 @@ li {
 
 /* header nav alt */
 
+.header-bar-alt {
+  border-color: #dae1e7 !important;
+  border-bottom-width: 1px;
+}
+
 .header-bar-alt .header-bar-nav-item a {
   color: #22292f;
 }
 
 .header-bar-alt .quiqqer-menu-megaMenu-list-item--current a {
   background: #e6ebf1;
+}
+
+/**************/
+
+/* breadcrumb */
+
+/**************/
+
+.breadcrumb {
+  border-bottom-width: 1px;
+  border-color: #dae1e7;
+  background-color: #f8fafc;
 }
 
 /**

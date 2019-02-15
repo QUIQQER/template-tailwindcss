@@ -62,7 +62,7 @@
 
 .header-bar-alt {
     background: #fff;
-    border-bottom: 1px solid #ebebeb;
+    /*border-bottom: 1px solid #ebebeb;*/
     color: #333;
 }
 
@@ -151,6 +151,14 @@
     .page-header-inner .container {
         padding-top: 1rem;
     }
+}
+
+
+/**********/
+/* footer */
+/**********/
+.page-footer {
+    color: #fff;
 }
 
 /****************/

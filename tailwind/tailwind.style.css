@@ -45,23 +45,6 @@ body {
     @apply my-8;
 }
 
-a {
-    @apply text-grey-darkest font-normal;
-    /*color: #154a95;*/
-}
-
-a:hover {
-    color: #276ccc;
-}
-
-ul, ol {
-    @apply mb-4 pl-5 pr-0;
-}
-
-li {
-    @apply mb-2;
-}
-
 .btn {
     @apply py-3 px-5 rounded font-bold border-2 shadow-md inline-block;
     transition: 0.25s all;
@@ -115,9 +98,9 @@ li {
     @apply bg-white text-grey-darkest border-transparent;
 }
 
-/*******************/
+/*************/
 /* Mega Menu */
-/*******************/
+/*************/
 .header-bar-nav-item.quiqqer-menu-megaMenu-list-item {
     @apply font-normal mx-1 my-0 h-full flex items-center;
     padding: 0 !important;
@@ -143,12 +126,23 @@ li {
 }
 
 /* header nav alt */
+.header-bar-alt {
+    @apply border-grey-light !important;
+    @apply border-b;
+}
 .header-bar-alt .header-bar-nav-item a {
     @apply text-black;
 }
 
 .header-bar-alt .quiqqer-menu-megaMenu-list-item--current a {
     background: #e6ebf1;
+}
+
+/**************/
+/* breadcrumb */
+/**************/
+.breadcrumb {
+    @apply border-b border-grey-light bg-grey-lightest;
 }
 
 
@@ -177,6 +171,23 @@ li {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+a {
+    @apply text-grey-darkest font-normal;
+    /*color: #154a95;*/
+}
+
+a:hover {
+    color: #276ccc;
+}
+
+ul, ol {
+    @apply mb-4 pl-5 pr-0;
+}
+
+li {
+    @apply mb-2;
+}
 
 h1, h2, h3, h4, h5 {
     @apply font-light leading-tight;
