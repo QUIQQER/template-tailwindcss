@@ -1,0 +1,136 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="qui-control-childrenlist-default control-template"
+>
+    <link property="mainEntityOfPage" href="{url site=$Site}">
+
+    {assign var=counter value=1}
+
+    {foreach from=$children item=Child}
+    {assign var=_Child value=$Child->load()}
+    <article itemscope
+             itemprop="itemListElement"
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             class="childrenlist-default-entry flex my-12 w-full flex-col sm:flex-row"
+    >
+        <meta itemprop="position" content="{$counter}"/>
+        {assign var=counter value=$counter+1}
+
+        <!-- entry image -->
+
+        {assign var=marginToImage value="ml-0"}
+        {assign var=noShortClass value=" qui-control-childrenlist-default-entry-image-noShort"}
+
+        {if $this->getAttribute('showImages')}
+            {assign var=marginToImage value="ml-0 sm:ml-8"}
+        {/if}
+
+        {if $this->getAttribute('showShort')}
+            {assign var=noShortClass value=""}
+        {/if}
+
+        {if $this->getAttribute('showImages')}
+        <div class="childrenlist-default-entry-image flex-no-shrink text-center w-full sm:w-2/5 md:w-1/3 mb-4 sm:mb-0">
+            <a itemprop="url" href="{url site=$Child}">
+                {image src=$Child->getAttribute('image_site') width="500" type="resize"
+                title="{$Child->getAttribute('title')}"}
+            </a>
+        </div>
+        {/if}
+        <!-- entry content -->
+        <div class="w-full sm:w-3/5 md:w-2/3 childrenlist-default-entry-content {$marginToImage}">
+
+            {if $this->getAttribute('showHeader')}
+            <header>
+                <h1 itemprop="name" class="text-2xl">
+                    <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')}"
+                       class="font-normal">
+                        {$Child->getAttribute('title')}
+                    </a>
+                </h1>
+            </header>
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+            <div class="childrenlist-default-entry-content-short mb-4 text-grey-darker">
+                {$Child->getAttribute('short')|nl2br}
+            </div>
+            {/if}
+
+            <div class="childrenlist-default-entry-content-footer border-t border-grey-light py-2 flex justify-between items-center"
+                 {if !$this->getAttribute('showCreator') && !$this->getAttribute('showDate') &&
+                     !$this->getAttribute('showDate')}
+                    style="border-bottom: none; border-top: none;"
+                {/if}>
+                {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') ||
+                    $this->getAttribute('showTime')}
+                <div class="childrenlist-default-entry-content-footer-credentials inline text-grey-dark">
+
+                    {if $this->getAttribute('showCreator')}
+                    <span class="childrenlist-default-entry-content-footer-credentials-author mr-4">
+                        {user id=$Child->getAttribute('c_user') var=User}
+                        <span class="fa fa-user mr-2"></span>
+                        {if $User->getId() && $User->getAttribute('firstname')}
+                            {$User->getAttribute('firstname')}
+                        {else if $User->getId()}
+                            {$User->getname()}
+                        {/if}
+                    </span>
+                    {/if}
+
+                    {if $this->getAttribute('showDate')}
+                    <span class="childrenlist-default-entry-content-footer-credentials-date mr-4">
+                        {if $Child->getAttribute('release_from') &&
+                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                            <span class="fa fa-calendar mr-2"></span>
+                            <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
+                            itemprop="datePublished">
+                                {locale_date date=$Child->getAttribute('release_from')}
+                            </time>
+                        {else}
+                            <time datetime="{$Child->getAttribute('c_date')|date_format:" c"}"
+                            itemprop="datePublished"
+                            >
+                                {locale_date date=$Child->getAttribute('c_date')}
+                            </time>
+                        {/if}
+                    </span>
+                    {/if}
+
+                    {if $this->getAttribute('showTime')}
+                        <span class="childrenlist-default-entry-content-footer-credentials-time">
+                            <span class="fa fa-clock-o mr-2"></span>
+                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                        </span>
+                    {/if}
+                </div>
+                {/if}
+
+                <a itemprop="url" href="{url site=$Child}" class="childrenlist-default-entry-content-footer-button">
+                    {locale group="quiqqer/sitetypes" value="list.more"}
+                </a>
+            </div>
+
+        </div>
+
+    </article>
+
+    {/foreach}
+</section>
+
+{if $this->getAttribute('showSheets') && $sheets > 1}
+{$Pagination->create()}
+{/if}

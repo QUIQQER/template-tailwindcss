@@ -40,6 +40,10 @@ body {
     @apply font-open-sans h-screen text-grey-darkest leading-normal font-light text-base;
 }
 
+.slideout-panel {
+    @apply bg-white !important;
+}
+
 .content-body,
 .content-template {
     @apply my-8;
@@ -143,6 +147,15 @@ body {
 /**************/
 .breadcrumb {
     @apply border-b border-grey-light bg-grey-lightest;
+}
+
+/**************/
+/* pagination */
+/**************/
+.quiqqer-sheets-desktop a:hover,
+.quiqqer-sheets-desktop-limits a.active, .quiqqer-sheets-desktop-current {
+    background-color: #276ccc !important;
+    @apply text-white !important;
 }
 
 

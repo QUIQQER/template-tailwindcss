@@ -161,6 +161,14 @@
     color: #fff;
 }
 
+/**************/
+/* pagination */
+/**************/
+.quiqqer-sheets-desktop a, .quiqqer-sheets-desktop span {
+    width: 30px !important;
+    margin: 0 2px !important;
+}
+
 /****************/
 /* heading icon */
 /****************/
