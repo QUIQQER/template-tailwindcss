@@ -82,7 +82,7 @@
                     {if $this->getAttribute('showCreator')}
                     <span class="childrenlist-default-entry-content-footer-credentials-author mr-4">
                         {user id=$Child->getAttribute('c_user') var=User}
-                        <span class="fa fa-user mr-2"></span>
+                        <span class="fa fa-user mr-2 sm:inline"></span>
                         {if $User->getId() && $User->getAttribute('firstname')}
                             {$User->getAttribute('firstname')}
                         {else if $User->getId()}
@@ -95,7 +95,7 @@
                     <span class="childrenlist-default-entry-content-footer-credentials-date mr-4">
                         {if $Child->getAttribute('release_from') &&
                         $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                            <span class="fa fa-calendar mr-2"></span>
+                            <span class="fa fa-calendar mr-2 hidden sm:inline"></span>
                             <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
                             itemprop="datePublished">
                                 {locale_date date=$Child->getAttribute('release_from')}
@@ -112,7 +112,7 @@
 
                     {if $this->getAttribute('showTime')}
                         <span class="childrenlist-default-entry-content-footer-credentials-time">
-                            <span class="fa fa-clock-o mr-2"></span>
+                            <span class="fa fa-clock-o mr-2 sm:inline"></span>
                             {$Child->getAttribute('release_from')|date_format:"%H:%M"}
                         </span>
                     {/if}
