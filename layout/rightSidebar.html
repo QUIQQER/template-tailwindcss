@@ -59,21 +59,22 @@
     </div>
 
     <div class="page-multiple-right page-multiple-sidebar w-full md:w-1/4 pl-0 md:pl-4">
-
-        {foreach from=$rightSideBar item=Brick}
-        <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="brick-wrapper brick-rightSidebar my-8">
-                {if $Brick->getAttribute('frontendTitle') &&
-                    $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
-                }
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                {/if}
-                {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {/if}
-                {$Brick->create()}
-            </div>
-        </section>
-        {/foreach}
+        <div class="page-multiple-sidebar-wrapper">
+            {foreach from=$rightSideBar item=Brick}
+            <section class="brick-id-{$Brick->getAttribute('id')}">
+                <div class="brick-wrapper brick-rightSidebar my-8">
+                    {if $Brick->getAttribute('frontendTitle') &&
+                        $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
+                    }
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                    {/if}
+                    {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                    {/if}
+                    {$Brick->create()}
+                </div>
+            </section>
+            {/foreach}
+        </div>
     </div>
 </main>
