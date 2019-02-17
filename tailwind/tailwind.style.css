@@ -40,8 +40,8 @@ body {
     @apply font-open-sans h-screen text-grey-darkest leading-normal font-light text-base;
 }
 
-.slideout-panel {
-    @apply bg-white !important;
+.body-container {
+    @apply bg-white;
 }
 
 .content-body,

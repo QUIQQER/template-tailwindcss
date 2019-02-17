@@ -1,7 +1,7 @@
 <nav class="hide-on-mobile h-full">
     {$prepend}
 
-    <ul class="header-bar-nav w-auto text-sm flex items-center justify-center h-full quiqqer-menu-megaMenu-list">
+    <ul class="header-bar-nav w-auto text-sm flex items-center md:justify-end lg:justify-center h-full quiqqer-menu-megaMenu-list">
         {if $this->getAttribute('showStart')}
         <li class="quiqqer-menu-megaMenu-list-item{if $Site->getId() == $Start->getId()} quiqqer-menu-megaMenu-list-item--current{/if}">
             <a href="{url site=$Start}" title="{$Start->getAttribute('title')|escape:" html"}">
@@ -46,12 +46,11 @@
 
     {$append}
 </nav>
+
 <div class="hide-on-desktop">
     {$prepend}
-
     <div class="quiqqer-menu-megaMenu-mobile">
         <span class="fa fa-bars"></span>
-        <span>Menü</span>
     </div>
 
     {$append}

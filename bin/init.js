@@ -58,7 +58,7 @@ window.addEvent("domready", function () {
          */
         var HeaderBar = document.getElement('.header-bar');
 
-        if (HeaderBar) {
+        if (HeaderBar && QUI.getWindowSize().x >= 767) {
             setHeaderBarPos(HeaderBar, QUI);
         }
     });

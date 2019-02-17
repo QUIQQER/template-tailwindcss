@@ -579,8 +579,8 @@ body {
   font-size: .875rem;
 }
 
-.slideout-panel {
-  background-color: #fff !important;
+.body-container {
+  background-color: #fff;
 }
 
 .content-body,

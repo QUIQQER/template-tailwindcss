@@ -103,11 +103,4 @@ $templateSettings['logoAlt'] = $logoAlt;
 $templateSettings['navBackground']    = '';
 
 
-/******************/
-/* Slide out menu */
-/******************/
-$SlideOutMenu = new QUI\Menu\SlideOut();
-
-$templateSettings['SlideOutMenu'] = $SlideOutMenu;
-
 $Engine->assign($templateSettings);
