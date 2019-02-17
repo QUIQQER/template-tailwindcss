@@ -15,7 +15,6 @@ if ($Site->getAttribute('templateTailwindCss.showTitle') ||
 }
 
 
-
 /**
  * Breadcrumb
  */
@@ -65,6 +64,51 @@ switch ($Template->getLayoutType()) {
 }
 
 /**
+ * Dropdown Language switch
+ */
+/*$showDropDownFlag = true;
+$DropDownFlag     = '';
+$showFlags        = false;
+$showText         = false;
+
+switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
+    case 'flag':
+        $showFlags        = true;
+        $showDropDownFlag = true;
+        break;
+
+    case 'text':
+        $showText         = true;
+        $showDropDownFlag = true;
+        break;
+
+    case 'flagAndText':
+        $showFlags        = true;
+        $showText         = true;
+        $showDropDownFlag = true;
+        break;
+}
+
+if ($showDropDownFlag) {
+
+    $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown(array(
+        'Site'      => $Site,
+        'showFlags' => $showFlags,
+        'showText'  => $showText
+    ));
+
+    $DropDownFlag = $DropDown->create();
+}*/
+
+$LangSwitch = new QUI\Bricks\Controls\LanguageSwitches\Flags([
+    'Site'      => $Site,
+    'showFlags' => true,
+    'showText'  => false
+]);
+
+$templateSettings['LangSwitch'] = $LangSwitch;
+
+/**
  * Mega menu
  */
 $MegaMenu = false;
@@ -73,9 +117,9 @@ if ($Template->getAttribute('template-header')) {
     /**
      * Mega menu
      */
-    $MegaMenu = new QUI\Menu\MegaMenu(array(
+    $MegaMenu = new QUI\Menu\MegaMenu([
         'showStart' => false
-    ));
+    ]);
 }
 $templateSettings['MegaMenu'] = $MegaMenu;
 
@@ -93,14 +137,14 @@ $logoUrl = $Project->getMedia()->getPlaceholder();
 
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
-    $logoAlt     = $Logo->getAttribute('title');
+    $logoAlt = $Logo->getAttribute('title');
     $logoUrl = $Logo->getSizeCacheUrl(400, 300);
 }
 
 $templateSettings['logoUrl'] = $logoUrl;
 $templateSettings['logoAlt'] = $logoAlt;
 
-$templateSettings['navBackground']    = '';
+$templateSettings['navBackground'] = '';
 
 
 $Engine->assign($templateSettings);

@@ -2,7 +2,7 @@
     {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
     {if !empty($footer)}
     <div class="grid-children">
-        <div class="grid-children-container">
+        <div class="grid-children-container pb-8 block sm:flex flex-wrap">
             {foreach from=$footer item=Brick}
             {if !$Brick->hasCSSClass('grid-*')}
             {$Brick->addCSSClass('grid-100')}

@@ -194,6 +194,14 @@ a:hover {
     color: #276ccc;
 }
 
+.page-footer a {
+    @apply text-grey-dark;
+}
+
+.page-footer a:hover {
+    @apply text-grey;
+}
+
 ul, ol {
     @apply mb-4 pl-5 pr-0;
 }

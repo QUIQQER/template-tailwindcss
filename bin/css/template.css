@@ -152,7 +152,15 @@
 /* footer */
 /**********/
 .page-footer {
-    color: #fff;
+    /*color: #fff;*/
+}
+
+.page-footer-copyright {
+    background: rgba(0,0,0,0.1);
+}
+
+.page-footer-copyright .quiqqer-bricks-languageswitch-flag-entry {
+    padding: 0 6px;
 }
 
 /**************/

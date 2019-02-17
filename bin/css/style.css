@@ -6534,6 +6534,14 @@ a:hover {
   color: #276ccc;
 }
 
+.page-footer a {
+  color: #8795a1;
+}
+
+.page-footer a:hover {
+  color: #b8c2cc;
+}
+
 ul,
 ol {
   margin-bottom: 1rem;

@@ -455,13 +455,13 @@
     </footer>-->
     <!-- footer -->
     {if $Template->getAttribute('template-footer')}
-    <footer class="page-footer clear-fix bg-grey-darkest py-8">
+    <footer class="page-footer clear-fix bg-grey-darkest pt-12 text-grey-dark">
         <div class="page-footer-wrapper">
             {* <!--footer bricks--> *}
             {fetch template="template/footerBricks.html" Site=$Site BricksManager=$BricksManager}
 
             {* <!--footer copyright--> *}
-            {fetch template="template/footerCopyright.html"}
+            {fetch template="template/footerCopyright.html" LangSwitch=$LangSwitch}
         </div>
     </footer>
     {/if}
