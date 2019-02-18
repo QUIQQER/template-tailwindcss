@@ -28,6 +28,28 @@
                         <defaultvalue>0</defaultvalue>
                     </conf>
 
+                    <!--product landing page -->
+                    <conf name="productLandingPage.title">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="productLandingPage.short">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="productLandingPage.titleAndShortPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>page</defaultvalue>
+                    </conf>
+                    <conf name="productLandingPage.header">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="productLandingPage.breadcrumb">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
                     <!--no sidebar -->
                     <conf name="noSidebar.title">
                         <type><![CDATA[bool]]></type>
@@ -198,6 +220,58 @@
                                 <text>
                                     <locale group="quiqqer/template-tailwindcss"
                                             var="settings.page.startPage.breadcrumb"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- no product landing page -->
+                            <text>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.page.productLandingPage.text" />
+                            </text>
+                            <input conf="settings.page.productLandingPage.title" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.productLandingPage.title"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.productLandingPage.short" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.productLandingPage.short"
+                                    />
+                                </text>
+                            </input>
+                            <select conf="settings.page.productLandingPage.titleAndShortPos">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.text"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.header"
+                                    />
+                                </option>
+                                <option value="page">
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="general.settings.titleAndShortPos.page"
+                                    />
+                                </option>
+                            </select>
+                            <input conf="settings.page.productLandingPage.header" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.productLandingPage.header"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="settings.page.productLandingPage.breadcrumb" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.page.productLandingPage.breadcrumb"
                                     />
                                 </text>
                             </input>
@@ -463,7 +537,7 @@
         </settings>
 
         <wysiwyg class="page-content">
-            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-tailwindcss/bin/css/style.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-tailwindcss/bin/css/editor.css"/>
         </wysiwyg>

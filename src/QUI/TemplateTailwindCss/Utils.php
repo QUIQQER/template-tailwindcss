@@ -56,6 +56,14 @@ class Utils
                 $breadcrumb       = $Project->getConfig('settings.page.startPage.breadcrumb');
                 break;
 
+            case 'layout/productLandingPage':
+                $title            = $Project->getConfig('settings.page.productLandingPage.title');
+                $short            = $Project->getConfig('settings.page.productLandingPage.short');
+                $titleAndShortPos = $Project->getConfig('settings.page.productLandingPage.titleAndShortPos');
+                $header           = $Project->getConfig('settings.page.productLandingPage.header');
+                $breadcrumb       = $Project->getConfig('settings.page.productLandingPage.breadcrumb');
+                break;
+
             case 'layout/noSidebar':
                 $title            = $Project->getConfig('settings.page.noSidebar.title');
                 $short            = $Project->getConfig('settings.page.noSidebar.short');
@@ -154,5 +162,51 @@ class Utils
         );
 
         return $config;
+    }
+
+    /**
+     * @param $Site \QUI\Projects\Site
+     * @param $type - layout type
+     * @return \QUI\Projects\Site|bool
+     */
+    public static function getFirstSiteOfType($Site , $type) {
+        echo 1;
+        if (!$Site && $Site instanceof QUI\Projects\Site) {
+            return false;
+        }
+
+        echo 2;
+        if (!$type) {
+            return false;
+        }
+
+        echo 3;
+        if ($Site->getParent()) {
+            echo 4;
+            $NewSite = $Site->getParent();
+//            QUI\System\Log::writeRecursive($Site->getAttribute('layout'));
+
+            if (!$NewSite) {
+                return $Site;
+            }
+
+            if ($Site->getAttribute('layout') !== $type) {
+                echo 5;
+                return false;
+            }
+            echo 6;
+
+            if (!self::getFirstSiteOfType($NewSite, $type)) {
+                echo 7;
+                return array(
+                    'layout' => $Site->getAttribute('layout'),
+                    'id' => $Site->getAttribute('id'),
+                    'title' => $Site->getAttribute('title')
+                );
+            };
+        }
+
+        return false;
+
     }
 }

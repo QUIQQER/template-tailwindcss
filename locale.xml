@@ -112,8 +112,8 @@
             <en><![CDATA[Product landing page]]></en>
         </locale>
         <locale name="admin.layout.productLandingPage.description">
-            <de><![CDATA[Seitenlayout für Darstellung von Produkt oder App auf einer Landingpage. Das Layout kann das Menü überschreiben (Template Einstellungen).]]></de>
-            <en><![CDATA[Page layout for presenting a product or app on a landing page. The layout can overwrite the menu (template settings).]]></en>
+            <de><![CDATA[Seitenlayout für Darstellung von Produkt oder App auf einer Landingpage. Das Layout überschreibt das Menü. Im Menü werden nur die Unterseiten dieser Seite angezeigt.]]></de>
+            <en><![CDATA[Page layout for presenting a product or app on a landing page. The layout overwrites the menu. In the menu, only the subpages of this page are displayed.]]></en>
         </locale>
 
         <locale name="admin.layout.noSidebar">
@@ -205,6 +205,28 @@
             <en><![CDATA[Header]]></en>
         </locale>
         <locale name="settings.page.startPage.breadcrumb">
+            <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+
+        <!-- product landing page -->
+        <locale name="settings.page.productLandingPage.text" html="true">
+            <de><![CDATA[<strong>Produkt Landingpage</strong><br>Schalten Sie ein oder aus folgende Komponente. Die Einstellungen können von jeder Seite überschreiben werden.]]></de>
+            <en><![CDATA[Page layout: product landing page.<br>Enable or disable the following components. Any page cancan overwrite this settings.]]></en>
+        </locale>
+        <locale name="settings.page.productLandingPage.title" html="true">
+            <de><![CDATA[Title]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.page.productLandingPage.short">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.page.productLandingPage.header">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="settings.page.productLandingPage.breadcrumb">
             <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
             <en><![CDATA[Breadcrumb]]></en>
         </locale>

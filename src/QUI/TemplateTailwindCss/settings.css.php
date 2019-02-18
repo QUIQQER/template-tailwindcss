@@ -49,11 +49,13 @@ body,
 
 <?php if ($headerHeight) { ?>
 .page-header {
-    height: <?php echo $headerHeight; ?>px;
+    min-height: <?php echo $headerHeight; ?>px;
     background-position: <?php echo $headerImagePosition; ?>;
 }
 
-
+.page-header-inner {
+    min-height: <?php echo $headerHeight; ?>px;
+}
 <?php };
 ?>
 

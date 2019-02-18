@@ -31,19 +31,18 @@ $templateSettings = QUI\TemplateTailwindCss\Utils::getConfig([
 
 
 /**
- * body class
+ * body class, productPageMenu
  */
-$bodyClass = '';
-$startPage = false;
-
+$bodyClass       = '';
+$productPageMenu = false;
 switch ($Template->getLayoutType()) {
     case 'layout/startPage':
         $bodyClass = 'start-page';
-        $startPage = true;
         break;
 
     case 'layout/productLandingPage':
-        $bodyClass = 'product-landing-page';
+        $bodyClass       = 'product-landing-page';
+        $productPageMenu = true;
         break;
 
     case 'layout/noSidebar':
@@ -117,9 +116,31 @@ if ($Template->getAttribute('template-header')) {
     /**
      * Mega menu
      */
+    $Start = false;
+    $Start = $Site;
+
+    QUI\System\Log::writeRecursive('<-------------------------------------->');
+    QUI\System\Log::writeRecursive(QUI\TemplateTailwindCss\Utils::getFirstSiteOfType($Site, 'layout/productLandingPage'));
+
+    /*if ($Start->getParent()) {
+//        QUI\System\Log::writeRecursive($Start->getParent());
+        QUI\System\Log::writeRecursive('hzuhuhuhuhuhuhuhuhu');
+    } else {
+        QUI\System\Log::writeRecursive("nie ma wiecej rodzicow");
+    }
+
+    if ($productPageMenu) {
+        $Start = $Site;
+        QUI\System\Log::writeRecursive('<-------------------------------------->');
+//        QUI\System\Log::writeRecursive($Start->getParent()->getAttribute('layout'));
+
+    }*/
+
     $MegaMenu = new QUI\Menu\MegaMenu([
-        'showStart' => false
+        'showStart' => false,
+        'Start'     => $Start->getParent()
     ]);
+
 }
 $templateSettings['MegaMenu'] = $MegaMenu;
 
@@ -127,7 +148,6 @@ $templateSettings['MegaMenu'] = $MegaMenu;
 $templateSettings['BricksManager'] = QUI\Bricks\Manager::init();
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['bodyClass']     = $bodyClass;
-$templateSettings['startPage']     = $startPage;
 
 
 /* neu for tailwindcss */

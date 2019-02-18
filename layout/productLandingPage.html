@@ -1,0 +1,55 @@
+
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
+
+<main class="container main-product-landing-page">
+    {if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper my-8">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">
+                        {$Brick->getAttribute('frontendTitle')}
+                    </h1>
+                {/if}
+
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+    {/foreach}
+    {/if}
+
+    <div role="main" class="main-container">
+        {if $titleAndShortPos == 'page' && ($pageTitle || $pageShort)}
+        <div class="main-header my-8">
+            {if $pageTitle}
+            <h1 class="main-header-title">{$Site->getAttribute('title')}</h1>
+            {/if}
+
+            {if $pageShort}
+            <div class="main-header-short">
+                {$Site->getAttribute('short')}
+            </div>
+            {/if}
+        </div>
+        {/if}
+
+        {$Template->getBody()}
+    </div>
+
+    {if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper my-8">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                {/if}
+                
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+    {/foreach}
+    {/if}
+</main>
