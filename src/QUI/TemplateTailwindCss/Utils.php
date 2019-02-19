@@ -142,6 +142,17 @@ class Utils
                 $breadcrumb = false;
         }
 
+        $showStart = $Project->getConfig('settings.nav.showStart');
+
+        /* site own show / hide start entry in nav */
+        switch ($params['Site']->getAttribute('site.settings.pageShowStart')) {
+            case 'show':
+                $showStart = true;
+                break;
+            case 'hide':
+                $showStart = false;
+        }
+
         $settingsCSS = include 'settings.css.php';
 
         $config += [
@@ -152,6 +163,7 @@ class Utils
             'titleAndShortPos' => $titleAndShortPos,
             'pageHeader'       => $header,
             'pageBreadcrumb'   => $breadcrumb,
+            'showStart'        => $showStart,
             'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
         ];
 
@@ -165,48 +177,40 @@ class Utils
     }
 
     /**
+     * Get the latest parent of the given page and specyfic layout type
+     *
      * @param $Site \QUI\Projects\Site
-     * @param $type - layout type
+     * @param $layout - layout type, if false --> there is no parent with this layout.
+     *
      * @return \QUI\Projects\Site|bool
      */
-    public static function getFirstSiteOfType($Site , $type) {
-        echo 1;
+    public static function getFirstSiteOfLayout($Site, $layout)
+    {
         if (!$Site && $Site instanceof QUI\Projects\Site) {
             return false;
         }
 
-        echo 2;
-        if (!$type) {
+        if (!$layout) {
             return false;
         }
 
-        echo 3;
         if ($Site->getParent()) {
-            echo 4;
-            $NewSite = $Site->getParent();
-//            QUI\System\Log::writeRecursive($Site->getAttribute('layout'));
+            $Parent  = $Site->getParent();
+            $AppPage = false;
 
-            if (!$NewSite) {
-                return $Site;
+            if ($Site->getAttribute('layout') === $layout) {
+                $AppPage = $Site;
             }
 
-            if ($Site->getAttribute('layout') !== $type) {
-                echo 5;
-                return false;
-            }
-            echo 6;
+            $ParentSite = self::getFirstSiteOfLayout($Parent, $layout);
 
-            if (!self::getFirstSiteOfType($NewSite, $type)) {
-                echo 7;
-                return array(
-                    'layout' => $Site->getAttribute('layout'),
-                    'id' => $Site->getAttribute('id'),
-                    'title' => $Site->getAttribute('title')
-                );
-            };
+            if ($ParentSite) {
+                return $ParentSite;
+            }
+
+            return $AppPage;
         }
 
         return false;
-
     }
 }

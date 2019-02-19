@@ -7,6 +7,7 @@
         <attribute>site.settings.pageHeader</attribute>
         <attribute>site.settings.pageTitleAndShortPos</attribute>
         <attribute>site.settings.pageBreadcrumb</attribute>
+        <attribute>site.settings.pageShowStart</attribute>
     </attributes>
 
     <settings>
@@ -103,6 +104,26 @@
                     <text>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="site.settings.pageBreadcrumb"/>
+                    </text>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="general.settings.locale.hide"/>
+                    </option>
+                </select>
+
+                <!-- BREADCRUMB -->
+                <select conf="site.settings.pageShowStart">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageShowStart"/>
                     </text>
                     <option value="default">
                         <locale group="quiqqer/template-tailwindcss"

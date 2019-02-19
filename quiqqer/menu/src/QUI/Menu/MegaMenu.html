@@ -3,7 +3,7 @@
 
     <ul class="header-bar-nav w-auto text-sm flex items-center md:justify-end lg:justify-center h-full quiqqer-menu-megaMenu-list">
         {if $this->getAttribute('showStart')}
-        <li class="quiqqer-menu-megaMenu-list-item{if $Site->getId() == $Start->getId()} quiqqer-menu-megaMenu-list-item--current{/if}">
+        <li class="header-bar-nav-item quiqqer-menu-megaMenu-list-item{if $Site->getId() == $Start->getId()} quiqqer-menu-megaMenu-list-item--current{/if}">
             <a href="{url site=$Start}" title="{$Start->getAttribute('title')|escape:" html"}">
             {$Start->getAttribute('title')}
             </a>

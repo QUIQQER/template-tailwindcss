@@ -345,6 +345,20 @@
                 <en><![CDATA[Bottom]]></en>
             </locale>
 
+        <!-- nav settings -->
+        <locale name="settings.nav.title">
+            <de><![CDATA[Navigation Einstellungen]]></de>
+            <en><![CDATA[Navigation settings]]></en>
+        </locale>
+        <locale name="settings.nav.showStart">
+            <de><![CDATA[Zeige Startseite in der Navigation an]]></de>
+            <en><![CDATA[Show the start page in der navigation]]></en>
+        </locale>
+        <locale name="settings.nav.showStart.text" htmnl="true">
+            <de><![CDATA[Die Einstellung kann überschrieben werden. Wenn der Seitenlayout ein "Produkt Landingpage" ist, ist die erste Seite <strong>nicht</strong> die erste Projektseite, sondern die erste Seite mit diesem Seitentyp.]]></de>
+            <en><![CDATA[The setting can be overwritten. If the page layout is a "Product landing page", the first page is <strong>not</strong> the first project page, but the first page with this page type.]]></en>
+        </locale>
+
 
         <!-- PAGE SETTINGS -->
         <locale name="site.settings">
@@ -370,6 +384,10 @@
         <locale name="site.settings.pageBreadcrumb">
             <de><![CDATA[Brotkrümelnavigation (breadcrumb)]]></de>
             <en><![CDATA[Breadcrumb]]></en>
+        </locale>
+        <locale name="site.settings.pageShowStart">
+            <de><![CDATA[Zeige Startseite in der Navigation an]]></de>
+            <en><![CDATA[Show the start page in der navigation]]></en>
         </locale>
 
         <!--GENERAL SETGINGS LOCALE -->

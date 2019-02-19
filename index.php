@@ -114,31 +114,21 @@ $MegaMenu = false;
 
 if ($Template->getAttribute('template-header')) {
     /**
+     * If the current site (or one of the parents)
+     * has layout type layout/productLandingPage,
+     * set the start id for the mega menu to the page (see README.md -> Features)
+     */
+    $ProductPage = QUI\TemplateTailwindCss\Utils::getFirstSiteOfLayout(
+        $Site,
+        'layout/productLandingPage'
+    );
+
+    /**
      * Mega menu
      */
-    $Start = false;
-    $Start = $Site;
-
-    QUI\System\Log::writeRecursive('<-------------------------------------->');
-    QUI\System\Log::writeRecursive(QUI\TemplateTailwindCss\Utils::getFirstSiteOfType($Site, 'layout/productLandingPage'));
-
-    /*if ($Start->getParent()) {
-//        QUI\System\Log::writeRecursive($Start->getParent());
-        QUI\System\Log::writeRecursive('hzuhuhuhuhuhuhuhuhu');
-    } else {
-        QUI\System\Log::writeRecursive("nie ma wiecej rodzicow");
-    }
-
-    if ($productPageMenu) {
-        $Start = $Site;
-        QUI\System\Log::writeRecursive('<-------------------------------------->');
-//        QUI\System\Log::writeRecursive($Start->getParent()->getAttribute('layout'));
-
-    }*/
-
     $MegaMenu = new QUI\Menu\MegaMenu([
-        'showStart' => false,
-        'Start'     => $Start->getParent()
+        'showStart' => $templateSettings['showStart'],
+        'Start'     => $ProductPage
     ]);
 
 }

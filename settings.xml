@@ -150,6 +150,13 @@
                     </conf>
                 </section>
 
+                <section name="settings.nav">
+                    <conf name="showStart">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                </section>
+
             </config>
 
             <window>
@@ -528,6 +535,31 @@
                                     />
                                 </option>
                             </select>
+                        </settings>
+
+                        <!-- nav settings-->
+                        <settings title="settings.nav"
+                                  name="settings.nav">
+                            <title>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.nav.title"
+                                />
+                            </title>
+
+                            <!-- nav: show start entry in nav? -->
+                            <input conf="settings.nav.showStart"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.nav.showStart"
+                                    />
+                                </text>
+                            </input>
+                            <text>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.nav.showStart.text"
+                                />
+                            </text>
                         </settings>
 
                     </category>
