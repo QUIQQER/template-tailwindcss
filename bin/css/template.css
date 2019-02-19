@@ -1,3 +1,9 @@
+.clear- fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /********************/
 /* template styling */
 /********************/
@@ -321,4 +327,15 @@
     font-size: 1.2em;
     line-height: 1.2em;
     margin-bottom: 0;
+}
+
+/*******/
+/* FAQ */
+/*******/
+.quiqqer-faq article {
+    margin: 4rem 0;
+}
+
+.quiqqer-faq .quiqqer-faq-list-linkToTop {
+    margin-top: 0;
 }
