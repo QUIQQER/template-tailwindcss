@@ -16,23 +16,23 @@ window.addEvent("domready", function () {
 
 
         /**
-         * toTop button
+         * PageToTop button
          */
         if (document.getElements('[href=#top]')) {
-            var toTop         = document.getElements('[href=#top]'),
+            var PageToTop         = document.getElements('[href=#top]'),
                 buttonVisible = false;
 
             // show on load after 1s delay
             if (QUI.getScroll().y > 300) {
-                toTop.addClass('toTop__show');
+                PageToTop.addClass('PageToTop__show');
                 buttonVisible = true;
             }
 
-            // show button toTop after scrolling down
+            // show button PageToTop after scrolling down
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > 300) {
                     if (!buttonVisible) {
-                        toTop.addClass('toTop__show');
+                        PageToTop.addClass('PageToTop__show');
                         buttonVisible = true;
                     }
                     return;
@@ -41,12 +41,12 @@ window.addEvent("domready", function () {
                 if (!buttonVisible) {
                     return;
                 }
-                toTop.removeClass('toTop__show');
+                PageToTop.removeClass('PageToTop__show');
                 buttonVisible = false;
             });
 
             // scroll to top
-            toTop.addEvent('click', function (event) {
+            PageToTop.addEvent('click', function (event) {
                 event.stop();
                 new Fx.Scroll(window).toTop();
             });

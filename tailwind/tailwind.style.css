@@ -94,7 +94,7 @@ button:hover {
 
 .btn-white,
 .btn-white:hover {
-    @apply bg-white border-white text-grey-darker;
+    @apply bg-white border-white text-grey-darkest;
 }
 
 
