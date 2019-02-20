@@ -49,57 +49,65 @@ body {
     @apply my-8;
 }
 
-.btn {
-    @apply py-3 px-5 rounded font-bold border-2 shadow-md inline-block;
+/***********/
+/* buttons */
+/***********/
+.btn,
+.button,
+button {
+    @apply py-2 px-3 rounded font-bold border-2 shadow-none inline-block;
     transition: 0.25s all;
 }
 
-.btn-small {
-    @apply py-2 px-3 text-sm;
+.btn:hover,
+.button:hover,
+button:hover {
+    @apply text-white shadow-sm no-underline;
+    opacity: 0.85;
 }
 
+/*******************/
+/* buttons: colors */
+/*******************/
+.btn,
 .btn-primary {
-    @apply bg-blue text-white;
+    @apply bg-blue border-blue text-white ;
 }
 
-.btn-outline {
-    @apply bg-transparent text-blue-dark border border-blue;
-
+.btn-primary-outline,
+.btn-primary-outline:hover {
+    @apply bg-transparent border-blue text-blue;
 }
 
-.btn-outline:hover {
-    @apply bg-blue text-white border-transparent;
+.btn-secondary {
+    @apply bg-grey-darker border-grey-darker text-white;
 }
 
-.btn-red {
-    @apply bg-red text-white border-red;
+.btn-secondary-outline,
+.btn-secondary-outline:hover {
+    @apply bg-transparent border-grey-darker text-grey-darker;
 }
 
-.btn-red:hover {
-    @apply shadow-lg border-red-dark bg-red-dark text-white;
+.btn-success {
+    @apply bg-green-dark border-green-dark text-white;
 }
 
-.btn-blue {
-    background-color: #62b1f9;
-    color: #fff;
-}
-
-.btn-white {
-    @apply bg-white text-grey-darkest border-transparent;
-}
-
+.btn-white,
 .btn-white:hover {
-    @apply shadow-lg text-grey-darkest;
+    @apply bg-white border-white text-grey-darker;
 }
 
-/* outline white */
-.btn-outline-white {
-    @apply text-white border-2;
-    background-color: rgba(255,255,255, 0.1);
+
+/*****************/
+/* button: sizes */
+/*****************/
+.btn-small {
+    @apply py-1 px-2 text-sm;
 }
 
-.btn-outline-white:hover {
-    @apply bg-white text-grey-darkest border-transparent;
+.btn-large {
+    @apply py-3 px-4 text-lg;
+
 }
 
 /*************/
@@ -120,11 +128,6 @@ body {
     background: rgba(0,0,0,0.075);
 }
 
-.quiqqer-menu-megaMenu-list-item--current a,
-.quiqqer-menu-megaMenu-list-item--current a:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
 .quiqqer-menu-megaMenu-list-item-menu {
     @apply text-black;
 }
@@ -136,10 +139,6 @@ body {
 }
 .header-bar-alt .header-bar-nav-item a {
     @apply text-black;
-}
-
-.header-bar-alt .quiqqer-menu-megaMenu-list-item--current a {
-    background: #e6ebf1;
 }
 
 /**************/
@@ -186,12 +185,11 @@ body {
  */
 
 a {
-    @apply text-grey-darkest font-normal;
-    /*color: #154a95;*/
+    @apply text-blue font-normal;
 }
 
 a:hover {
-    color: #276ccc;
+    @apply text-blue-darker underline;
 }
 
 .page-footer a {

@@ -4,6 +4,13 @@
     clear: both;
 }
 
+nav a:hover,
+li a:hover,
+.header-bar a:hover,
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+
 /********************/
 /* template styling */
 /********************/
@@ -90,11 +97,19 @@
     position: initial !important; /* so hat das Untermenü volle Breite */
 }
 
+.header-bar-nav-item a {
+    color: inherit;
+}
 
+.quiqqer-menu-megaMenu-list-item--current a {
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* submenu */
 .quiqqer-menu-megaMenu-list-item-menu {
     max-width: 100% !important;
 }
-
 
 /* megaMenu-children-standard-icon */
 .quiqqer-menu-megaMenu-children-standard-icon {

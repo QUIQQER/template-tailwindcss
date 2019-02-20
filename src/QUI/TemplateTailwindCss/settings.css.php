@@ -6,24 +6,33 @@ $Convert = new \QUI\Utils\Convert();
 /**
  * colors
  */
-$colorFooterBackground = '#414141';
-$colorFooterFont       = '#D1D1D1';
-$colorMain             = '#dd151b';
-$buttonFontColor       = '#ffffff';
-$colorFooterLinks      = '#E6E6E6';
-$colorMainContentBg    = '#ffffff';
-$colorMainContentFont  = '#5d5d5d';
+$colorPrimary = false;
+$colorButtonPrimary = false;
+$colorButtonSecondary = false;
+$colorButtonSuccess = '';
+$colorButtonDanger = '';
+$colorButtonWarning = '';
+$colorButtonInfo = '';
+$colorButtonLight = '';
+$colorButtonDark = '';
+$colorButtonLink = '';
+$colorButtonInfo = '';
+$colorButtonWhite = '';
 
-$navBarMainColorLighter = $Convert->colorBrightness($colorFooterBackground, 0.9);
+//$navBarMainColorLighter = $Convert->colorBrightness($colorFooterBackground, 0.9);
 
 
-if ($Project->getConfig('templateTailwindCss.settings.colorMainContentFont')) {
-    $colorMainContentFont = $Project->getConfig('templateTailwindCss.settings.colorMainContentFont');
+if ($Project->getConfig('settings.color.button.primary')) {
+    $colorButtonPrimary = $Project->getConfig('settings.color.button.primary');
+}
+
+if ($Project->getConfig('settings.color.button.secondary')) {
+    $colorButtonSecondary = $Project->getConfig('settings.color.button.secondary');
 }
 
 $navBarHeight = (int)$Project->getConfig('templateTailwindCss.settings.navBarHeight');
 $navPos = $Project->getConfig('templateTailwindCss.settings.navPos');
-$colorMainButton = $Convert->colorBrightness($colorMain, 0.7);
+//$colorMainButton = $Convert->colorBrightness($colorMain, 0.7);
 
 
 /* template tailwind css */
@@ -33,19 +42,41 @@ $headerImagePosition = $Project->getConfig('settings.header.imagePosition');
 ob_start();
 
 ?>
-/**
- * Farbeinstellungen
- */
-
-
-.color-main {
-    /*color: */<?php //echo $colorMain; ?>/*;*/
+/*******************/
+/* buttons: colors */
+/*******************/
+/* color: primary */
+<?php if ($colorButtonPrimary) { ?>
+.btn-primary {
+    background-color: <?php echo $colorButtonPrimary; ?>;
+    border-color: <?php echo $colorButtonPrimary; ?>;
 }
 
-body,
-.mainFontColor {
-    /*color: */<?php //echo $colorMainContentFont; ?>/* !important;*/
+.btn-primary-outline,
+.btn-primary-outline:hover {
+    background-color: transparent;
+    color: <?php echo $colorButtonPrimary; ?>;
+    border-color: <?php echo $colorButtonPrimary; ?>;
 }
+<?php };
+?>
+
+/* color: secondary */
+<?php if ($colorButtonSecondary) { ?>
+.btn-secondary {
+    background-color: <?php echo $colorButtonSecondary; ?>;
+    border-color: <?php echo $colorButtonSecondary; ?>;
+}
+
+.btn-secondary-outline,
+.btn-secondary-outline:hover {
+    background-color: transparent;
+    color: <?php echo $colorButtonSecondary; ?>;
+    border-color: <?php echo $colorButtonSecondary; ?>;
+}
+<?php };
+?>
+
 
 <?php if ($headerHeight) { ?>
 .page-header {

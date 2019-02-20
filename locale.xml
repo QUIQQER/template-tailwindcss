@@ -359,6 +359,40 @@
             <en><![CDATA[The setting can be overwritten. If the page layout is a "Product landing page", the first page is <strong>not</strong> the first project page, but the first page with this page type.]]></en>
         </locale>
 
+        <!-- color management -->
+        <locale name="settings.color.title">
+            <de><![CDATA[Farbverwaltung]]></de>
+            <en><![CDATA[Color management]]></en>
+        </locale>
+        <locale name="settings.color.primary">
+            <de><![CDATA[Hautpfarbe]]></de>
+            <en><![CDATA[Main color]]></en>
+        </locale>
+        <locale name="settings.color.primary.desc" html="true">
+            <de><![CDATA[Hauptfarbe einfache Links im Tekst und Elemente mit der CSS Klasse <strong>.control-background</strong>.]]></de>
+            <en><![CDATA[Main color for simple links in text (a elements) as well as elements with css class <strong>.control-background</strong>.]]></en>
+        </locale>
+        <locale name="settings.color.button.text" html="true">
+            <de><![CDATA[Hier können die Farben von Schaltflächen (Buttons) geändert werden. Die Namen der Farben orientiernen sich nach dem Bootstrap Style (primary, secondary, etc.).<br>Wenn Sie die Standardttemplate Einstellungen verwenden möchten, lassen Sie die Eingabefelder leer. Das gleiche gilt für den Fall, wenn Sie die Farben mit Tailwind Configurationsdatei neu definieren möchten.]]></de>
+            <en><![CDATA[Here you can change the colors of template buttons. The names of the colors follow the bootstrap style guide (primary, secondary, etc.).]]></en>
+        </locale>
+        <locale name="settings.color.button.primary">
+            <de><![CDATA[Primary]]></de>
+            <en><![CDATA[Primary]]></en>
+        </locale>
+        <locale name="settings.color.button.primary.desc" html="true">
+            <de><![CDATA[Farbe für Links (a-Elemente), Buttons, Elemente mit der CSS-Klasse <strong>.btn-primary, .btn-primary-outline, .control-background</strong>, sowie hover Effekte von Links.]]></de>
+            <en><![CDATA[Color for links (a elements), buttons, elements with css class <strong>.btn-primary, .btn-primary-outline, .control-background</strong> as well as link hover effects.]]></en>
+        </locale>
+        <locale name="settings.color.button.secondary">
+            <de><![CDATA[Secondary]]></de>
+            <en><![CDATA[Secondary]]></en>
+        </locale>
+        <locale name="settings.color.button.secondary.desc" html="true">
+            <de><![CDATA[Farbe für Elemente mit der CSS-Klasse <strong>.btn-secondary, .btn-secondary-outline, .control-background</strong>, sowie hover Effekte von Links.]]></de>
+            <en><![CDATA[Color for elements with css class <strong>.btn-secondary, .btn-secondary-outline, .control-background</strong> as well as link hover effects.]]></en>
+        </locale>
+
 
         <!-- PAGE SETTINGS -->
         <locale name="site.settings">
@@ -390,7 +424,7 @@
             <en><![CDATA[Show the start page in der navigation]]></en>
         </locale>
 
-        <!--GENERAL SETGINGS LOCALE -->
+        <!-- GENERAL SETTINGS LOCALE -->
         <locale name="general.settings.locale.default">
             <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
             <en><![CDATA[Default template setting]]></en>
@@ -415,6 +449,25 @@
         <locale name="general.settings.titleAndShortPos.page">
             <de><![CDATA[Vor dem Seiteninhalt]]></de>
             <en><![CDATA[Before the page content]]></en>
+        </locale>
+
+        <!-- WYSIWYG EDITOR -->
+
+        <locale name="editor.button.primary">
+            <de><![CDATA[Template Button: Primary]]></de>
+            <en><![CDATA[Template Button: Primary]]></en>
+        </locale>
+        <locale name="editor.button.secondary">
+            <de><![CDATA[Template Button: Secondary]]></de>
+            <en><![CDATA[Template Button: Secondary]]></en>
+        </locale>
+        <locale name="editor.button.primary.outline">
+            <de><![CDATA[Template Button: Primary outline]]></de>
+            <en><![CDATA[Template Button: Primary outline]]></en>
+        </locale>
+        <locale name="editor.button.secondary.outline">
+            <de><![CDATA[Template Button: Secondary outline]]></de>
+            <en><![CDATA[Template Button: Secondary outline]]></en>
         </locale>
     </groups>
 

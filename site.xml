@@ -119,7 +119,7 @@
                     </option>
                 </select>
 
-                <!-- BREADCRUMB -->
+                <!-- SHOW START IN NAV -->
                 <select conf="site.settings.pageShowStart">
                     <text>
                         <locale group="quiqqer/template-tailwindcss"

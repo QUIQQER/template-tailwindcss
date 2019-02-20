@@ -139,6 +139,7 @@
                     </conf>
                 </section>
 
+                <!-- header -->
                 <section name="settings.header">
                     <conf name="height">
                         <type><![CDATA[number]]></type>
@@ -150,10 +151,45 @@
                     </conf>
                 </section>
 
+                <!-- navigation -->
                 <section name="settings.nav">
                     <conf name="showStart">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
+                    </conf>
+                </section>
+
+                <!-- color management -->
+                <section name="settings.color">
+                    <conf name="primary">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.primary">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.secondary">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.success">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.danger">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.warning">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.info">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.light">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.dark">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="button.link">
+                        <type><![CDATA[string]]></type>
                     </conf>
                 </section>
 
@@ -562,6 +598,70 @@
                             </text>
                         </settings>
 
+                        <!-- color management -->
+                        <settings title="settings.color"
+                                  name="settings.color">
+                            <title>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.color.title"
+                                />
+                            </title>
+
+
+                            <input conf="settings.color.primary"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.primary"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.primary.desc"
+                                    />
+                                </description>
+                            </input>
+
+
+                            <!-- buttons -->
+                            <text>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.color.button.text"
+                                />
+                            </text>
+
+                            <!-- primary -->
+                            <input conf="settings.color.button.primary"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.button.primary"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.button.primary.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <!-- secondary -->
+                            <input conf="settings.color.button.secondary"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.button.secondary"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.color.button.secondary.desc"
+                                    />
+                                </description>
+                            </input>
+
+                        </settings>
+
                     </category>
                 </categories>
 
@@ -569,10 +669,45 @@
         </settings>
 
         <wysiwyg class="page-content">
-            <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
             <css src="URL_OPT_DIR/quiqqer/template-tailwindcss/bin/css/style.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-tailwindcss/bin/css/editor.css"/>
-        </wysiwyg>
 
+            <styles>
+
+                <!-- BUTTONS -->
+                <!-- standard -->
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.primary"/>
+                    <attributes>
+                        <attribute name="class">btn btn-primary</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.secondary"/>
+                    <attributes>
+                        <attribute name="class">btn btn-primary</attribute>
+                    </attributes>
+                </style>
+
+                <!-- outline -->
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.primary.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-primary-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.secondary.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-secondary-outline</attribute>
+                    </attributes>
+                </style>
+            </styles>
+        </wysiwyg>
     </project>
 </quiqqer>

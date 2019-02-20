@@ -153,18 +153,27 @@ class Utils
                 $showStart = false;
         }
 
-        $settingsCSS = include 'settings.css.php';
+        $settingsCSS       = include 'settings.css.php';
+        $settingsCssInline = '';
+        $binDir            = OPT_DIR . 'quiqqer/template-tailwindcss/bin/css';
+
+        // todo mit mor besprechen
+        if (is_dir($binDir) === 'huhu') {
+            file_put_contents($binDir . '/settings.css', $settingsCSS);
+        } else {
+            $settingsCssInline = '<style>' . $settingsCSS . '</style>';
+        }
 
         $config += [
-            'quiTplType'       => $Project->getConfig('templateTailwindCss.settings.standardType'),
-            'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-            'pageTitle'        => $title,
-            'pageShort'        => $short,
-            'titleAndShortPos' => $titleAndShortPos,
-            'pageHeader'       => $header,
-            'pageBreadcrumb'   => $breadcrumb,
-            'showStart'        => $showStart,
-            'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
+            'quiTplType'         => $Project->getConfig('templateTailwindCss.settings.standardType'),
+            'typeClass'          => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'pageTitle'          => $title,
+            'pageShort'          => $short,
+            'titleAndShortPos'   => $titleAndShortPos,
+            'pageHeader'         => $header,
+            'pageBreadcrumb'     => $breadcrumb,
+            'showStart'          => $showStart,
+            'settingsCssInline' => $settingsCssInline
         ];
 
         // set cache
