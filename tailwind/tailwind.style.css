@@ -55,7 +55,7 @@ body {
 .btn,
 .button,
 button {
-    @apply py-2 px-3 rounded font-bold border-2 shadow-none inline-block;
+    @apply py-2 px-3 rounded font-bold border-2 shadow-none inline-block leading-normal;
     transition: 0.25s all;
 }
 
@@ -66,11 +66,23 @@ button:hover {
     opacity: 0.85;
 }
 
+.btn.disabled,
+.btn:disabled,
+.button.disabled,
+.button:disabled,
+button.disabled,
+button:disabled {
+    @apply opacity-50 shadow-none cursor-default;
+
+}
+
 /*******************/
 /* buttons: colors */
 /*******************/
+/* primary */
 .btn,
-.btn-primary {
+.btn-primary,
+button {
     @apply bg-blue border-blue text-white ;
 }
 
@@ -79,6 +91,7 @@ button:hover {
     @apply bg-transparent border-blue text-blue;
 }
 
+/* secondary */
 .btn-secondary {
     @apply bg-grey-darker border-grey-darker text-white;
 }
@@ -88,13 +101,82 @@ button:hover {
     @apply bg-transparent border-grey-darker text-grey-darker;
 }
 
+/* success */
 .btn-success {
     @apply bg-green-dark border-green-dark text-white;
 }
 
+.btn-success-outline,
+.btn-success-outline:hover {
+    @apply bg-transparent border-green-dark text-green-dark;
+}
+
+/* danger */
+.btn-danger {
+    @apply bg-red border-red text-white;
+}
+
+.btn-danger-outline,
+.btn-danger-outline:hover {
+    @apply bg-transparent border-red text-red;
+}
+
+/* warning */
+.btn-warning {
+    @apply bg-orange border-orange text-white;
+}
+
+.btn-warning-outline,
+.btn-warning-outline:hover {
+    @apply bg-transparent border-orange text-orange;
+}
+
+/* info */
+.btn-info {
+    @apply bg-blue-light border-blue-light text-white;
+}
+
+.btn-info-outline,
+.btn-info-outline:hover {
+    @apply bg-transparent border-blue-light text-blue-light;
+}
+
+/* light */
+.btn-light,
+.btn-light:hover {
+    @apply bg-grey-light border-grey-light text-grey-darker;
+}
+
+.btn-light-outline,
+.btn-light-outline:hover {
+    @apply bg-transparent border-grey-light text-grey-light;
+}
+
+/* dark */
+.btn-dark {
+    @apply bg-black border-black text-white;
+}
+
+.btn-dark-outline,
+.btn-dark-outline:hover {
+    @apply bg-transparent border-black text-black;
+}
+
+/* link */
+.btn-link,
+.btn-link:hover {
+    @apply bg-transparent border-0 text-blue shadow-none;
+}
+
+/* white */
 .btn-white,
 .btn-white:hover {
     @apply bg-white border-white text-grey-darkest;
+}
+
+.btn-white-outline,
+.btn-white-outline:hover {
+    @apply bg-transparent border-white text-white;
 }
 
 

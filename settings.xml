@@ -691,6 +691,62 @@
                         <attribute name="class">btn btn-primary</attribute>
                     </attributes>
                 </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.success"/>
+                    <attributes>
+                        <attribute name="class">btn btn-success</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.danger"/>
+                    <attributes>
+                        <attribute name="class">btn btn-danger</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.warning"/>
+                    <attributes>
+                        <attribute name="class">btn btn-warning</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.info"/>
+                    <attributes>
+                        <attribute name="class">btn btn-info</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.light"/>
+                    <attributes>
+                        <attribute name="class">btn btn-light</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.dark"/>
+                    <attributes>
+                        <attribute name="class">btn btn-dark</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.link"/>
+                    <attributes>
+                        <attribute name="class">btn btn-link</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.white"/>
+                    <attributes>
+                        <attribute name="class">btn btn-white</attribute>
+                    </attributes>
+                </style>
 
                 <!-- outline -->
                 <style element="a">
@@ -705,6 +761,55 @@
                             var="editor.button.secondary.outline"/>
                     <attributes>
                         <attribute name="class">btn btn-secondary-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.success.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-success-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.danger.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-danger-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.warning.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-warning-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.info.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-info-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.light.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-light-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.dark.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-dark-outline</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.button.white.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-white-outline</attribute>
                     </attributes>
                 </style>
             </styles>

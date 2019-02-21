@@ -452,7 +452,7 @@
         </locale>
 
         <!-- WYSIWYG EDITOR -->
-
+        <!-- button standard -->
         <locale name="editor.button.primary">
             <de><![CDATA[Template Button: Primary]]></de>
             <en><![CDATA[Template Button: Primary]]></en>
@@ -461,6 +461,40 @@
             <de><![CDATA[Template Button: Secondary]]></de>
             <en><![CDATA[Template Button: Secondary]]></en>
         </locale>
+        <locale name="editor.button.success">
+            <de><![CDATA[Template Button: Success]]></de>
+            <en><![CDATA[Template Button: Success]]></en>
+        </locale>
+        <locale name="editor.button.danger">
+            <de><![CDATA[Template Button: Danger]]></de>
+            <en><![CDATA[Template Button: Danger]]></en>
+        </locale>
+        <locale name="editor.button.warning">
+            <de><![CDATA[Template Button: Warning]]></de>
+            <en><![CDATA[Template Button: Warning]]></en>
+        </locale>
+        <locale name="editor.button.info">
+            <de><![CDATA[Template Button: Info]]></de>
+            <en><![CDATA[Template Button: Info]]></en>
+        </locale>
+        <locale name="editor.button.light">
+            <de><![CDATA[Template Button: Light]]></de>
+            <en><![CDATA[Template Button: Light]]></en>
+        </locale>
+        <locale name="editor.button.dark">
+            <de><![CDATA[Template Button: Dark]]></de>
+            <en><![CDATA[Template Button: Dark]]></en>
+        </locale>
+        <locale name="editor.button.link">
+            <de><![CDATA[Template Button: Link]]></de>
+            <en><![CDATA[Template Button: Link]]></en>
+        </locale>
+        <locale name="editor.button.white">
+            <de><![CDATA[Template Button: White]]></de>
+            <en><![CDATA[Template Button: White]]></en>
+        </locale>
+
+        <!-- button outline -->
         <locale name="editor.button.primary.outline">
             <de><![CDATA[Template Button: Primary outline]]></de>
             <en><![CDATA[Template Button: Primary outline]]></en>
@@ -468,6 +502,34 @@
         <locale name="editor.button.secondary.outline">
             <de><![CDATA[Template Button: Secondary outline]]></de>
             <en><![CDATA[Template Button: Secondary outline]]></en>
+        </locale>
+        <locale name="editor.button.success.outline">
+            <de><![CDATA[Template Button: Success outline]]></de>
+            <en><![CDATA[Template Button: Success outline]]></en>
+        </locale>
+        <locale name="editor.button.danger.outline">
+            <de><![CDATA[Template Button: Danger outline]]></de>
+            <en><![CDATA[Template Button: Danger outline]]></en>
+        </locale>
+        <locale name="editor.button.warning.outline">
+            <de><![CDATA[Template Button: Warning outline]]></de>
+            <en><![CDATA[Template Button: Warning outline]]></en>
+        </locale>
+        <locale name="editor.button.info.outline">
+            <de><![CDATA[Template Button: Info outline]]></de>
+            <en><![CDATA[Template Button: Info outline]]></en>
+        </locale>
+        <locale name="editor.button.light.outline">
+            <de><![CDATA[Template Button: Light outline]]></de>
+            <en><![CDATA[Template Button: Light outline]]></en>
+        </locale>
+        <locale name="editor.button.dark.outline">
+            <de><![CDATA[Template Button: Dark outline]]></de>
+            <en><![CDATA[Template Button: Dark outline]]></en>
+        </locale>
+        <locale name="editor.button.white.outline">
+            <de><![CDATA[Template Button: White outline]]></de>
+            <en><![CDATA[Template Button: White outline]]></en>
         </locale>
     </groups>
 
