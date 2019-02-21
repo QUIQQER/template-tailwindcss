@@ -183,13 +183,20 @@ button {
 /*****************/
 /* button: sizes */
 /*****************/
-.btn-small {
+.btn-xs {
+    @apply py-0 px-1 text-sm font-normal;
+}
+
+.btn-sm {
     @apply py-1 px-2 text-sm;
 }
 
-.btn-large {
+.btn-lg {
     @apply py-3 px-4 text-lg;
+}
 
+.btn-xl {
+    @apply py-3 px-5 text-2xl;
 }
 
 /*************/

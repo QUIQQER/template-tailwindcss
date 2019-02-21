@@ -792,7 +792,16 @@ button {
 
 /*****************/
 
-.btn-small {
+.btn-xs {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.btn-sm {
   padding-top: .25rem;
   padding-bottom: .25rem;
   padding-left: .5rem;
@@ -800,12 +809,20 @@ button {
   font-size: .75rem;
 }
 
-.btn-large {
+.btn-lg {
   padding-top: .75rem;
   padding-bottom: .75rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1rem;
+}
+
+.btn-xl {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: 1.25rem;
 }
 
 /*************/
