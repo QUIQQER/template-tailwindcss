@@ -98,7 +98,7 @@ li a:hover,
 /*************/
 .quiqqer-menu-megaMenu {
     height: 100%;
-    position: initial !important; /* so hat das Untermenü volle Breite */
+    position: initial !important;
 }
 
 .header-bar-nav-item a {
