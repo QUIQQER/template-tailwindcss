@@ -79,6 +79,10 @@ li a:hover,
     color: #333;
 }
 
+.header-bar-wrapper {
+    max-width: 1600px;
+}
+
 .brick-wrapper.my-0 {
     padding-bottom: 0;
     padding-top: 0;
