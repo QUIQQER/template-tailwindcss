@@ -1,7 +1,7 @@
 .clear- fix:after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
 }
 
 nav a:hover,
@@ -68,9 +68,9 @@ li a:hover,
 /* Header bar */
 /**************/
 .header-bar {
+    background: transparent;
     border-bottom: 1px solid transparent;
     transition: 0.3s border-bottom-color, 0.3s background-color, 0.3s color;
-    background: transparent;
 }
 
 .header-bar-alt {
@@ -112,9 +112,9 @@ li a:hover,
 
 /* submenu */
 .quiqqer-menu-megaMenu-list-item-menu {
-    max-width: 100% !important;
-    box-shadow: none !important;
     border: 1px solid #ddd;
+    box-shadow: none !important;
+    max-width: 100% !important;
 }
 
 /* submenu: standard */
@@ -147,7 +147,7 @@ li a:hover,
 }
 
 .quiqqer-menu-megaMenu-children-standard-list-entry-short li:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .quiqqer-menu-megaMenu-children-standard-list-entry-short a {
@@ -157,18 +157,20 @@ li a:hover,
 /* submenu: simple */
 .quiqqer-menu-megaMenu-children-simple {
     background: #fff;
+    min-width: 220px;
 }
+
 .quiqqer-menu-megaMenu-children-simple:after {
-    content: '';
-    position: absolute;
     background: #fff !important;
     border: 1px solid #ddd !important;
-    z-index: -1;
-    transform: rotate(45deg) translateY(-30px) translateX(15px);
-    top: 0 !important;
-    left: 0 !important;
-    width: 20px;
+    content: '';
     height: 20px;
+    left: 0 !important;
+    position: absolute;
+    top: 0 !important;
+    transform: rotate(45deg) translateY(-30px) translateX(15px);
+    width: 20px;
+    z-index: -1;
 }
 
 .quiqqer-menu-megaMenu-children-simple-entry {
@@ -176,12 +178,11 @@ li a:hover,
 }
 
 .quiqqer-menu-megaMenu-children-simple-entry:hover {
-    background: rgba(0,0,0,0.05) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .quiqqer-menu-megaMenu-children-simple-entry a {
     color: inherit !important;
-    min-width: 250px;
     padding: 1rem 1.25rem !important;
 }
 
@@ -203,11 +204,11 @@ li a:hover,
 }
 
 .page-header-content {
-    text-align: center;
     color: #fff;
-    width: 100%;
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -225,7 +226,7 @@ li a:hover,
 }
 
 .page-footer-copyright {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .page-footer-copyright .quiqqer-bricks-languageswitch-flag-entry {
@@ -236,8 +237,8 @@ li a:hover,
 /* pagination */
 /**************/
 .quiqqer-sheets-desktop a, .quiqqer-sheets-desktop span {
-    width: 30px !important;
     margin: 0 2px !important;
+    width: 30px !important;
 }
 
 /****************/
