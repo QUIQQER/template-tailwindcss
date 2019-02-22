@@ -82,6 +82,7 @@ button:disabled {
 /* primary */
 .btn,
 .btn-primary,
+.button,
 button {
     @apply bg-blue border-blue text-white ;
 }
@@ -361,4 +362,8 @@ p {
     h4 {
         @apply text-2xl;
     }
+}
+
+.page-multiple-sidebar-wrapper .brick-title {
+    @apply text-xl;
 }

@@ -31,7 +31,6 @@ li a:hover,
     max-width: 800px;
 }
 
-
 /**********************/
 /* scroll to top icon */
 /**********************/
@@ -396,6 +395,18 @@ li a:hover,
 /*******/
 /* FAQ */
 /*******/
+/* list (1 lev) */
+.content-template-faq-list-category {
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fafafa !important;
+}
+
+.quiqqer-navigation-link {
+    color: inherit;
+}
+
+/* category (2 lev) */
 .quiqqer-faq article {
     margin: 4rem 0;
 }
