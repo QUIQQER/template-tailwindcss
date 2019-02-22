@@ -47,8 +47,6 @@ ob_start();
 /*******************/
 /* color: primary */
 <?php if ($colorButtonPrimary) { ?>
-.btn,
-.btn-primary,
 .button,
 button,
 .btn-primary {
