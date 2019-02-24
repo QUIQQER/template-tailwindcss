@@ -102,7 +102,7 @@
     {* <!--main content--> *}
     {$Template->getLayout()}
 
-    {foreach $footerPrefix as $Brick}4
+    {foreach $footerPrefix as $Brick}
         {assign var=brickFullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
             {assign var=fullWidth value='force-full-width px-0'}
