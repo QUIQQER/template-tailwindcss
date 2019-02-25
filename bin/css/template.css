@@ -185,6 +185,14 @@ li a:hover,
     padding: 1rem 1.25rem !important;
 }
 
+@media screen and (max-width: 767px) {
+    .quiqqer-menu-megaMenu {
+        display: flex;
+        align-items: center;
+        text-align: right;
+    }
+}
+
 
 /***************/
 /* page header */
