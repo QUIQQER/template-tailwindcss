@@ -24,7 +24,8 @@ window.addEvent("domready", function () {
 
             // show on load after 1s delay
             if (QUI.getScroll().y > 300) {
-                PageToTop.addClass('PageToTop__show');
+                console.log(1)
+                PageToTop.addClass('pageToTop__show');
                 buttonVisible = true;
             }
 
@@ -32,7 +33,7 @@ window.addEvent("domready", function () {
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > 300) {
                     if (!buttonVisible) {
-                        PageToTop.addClass('PageToTop__show');
+                        PageToTop.addClass('pageToTop__show');
                         buttonVisible = true;
                     }
                     return;
@@ -41,7 +42,7 @@ window.addEvent("domready", function () {
                 if (!buttonVisible) {
                     return;
                 }
-                PageToTop.removeClass('PageToTop__show');
+                PageToTop.removeClass('pageToTop__show');
                 buttonVisible = false;
             });
 
