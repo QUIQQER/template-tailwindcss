@@ -290,6 +290,10 @@ a:hover {
     @apply text-grey;
 }
 
+hr {
+    @apply border-b border-grey-light my-8;
+}
+
 ul, ol {
     @apply mb-4 pl-5 pr-0;
 }
