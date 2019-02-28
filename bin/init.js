@@ -24,7 +24,6 @@ window.addEvent("domready", function () {
 
             // show on load after 1s delay
             if (QUI.getScroll().y > 300) {
-                console.log(1)
                 PageToTop.addClass('pageToTop__show');
                 buttonVisible = true;
             }
