@@ -144,6 +144,7 @@
                                     />
                         </description>
                     </area>
+
                     <area name="suffixContent" inheritance="1" priority="4">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
