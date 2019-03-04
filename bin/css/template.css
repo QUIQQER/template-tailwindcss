@@ -92,6 +92,10 @@ li a:hover,
     max-height: 50px;
 }
 
+.header-bar-logo img {
+    max-height: 50px;
+}
+
 /*************/
 /* mega menu */
 /*************/
