@@ -50,11 +50,11 @@
             <en><![CDATA[Brick area before the content]]></en>
         </locale>
 
-        <locale name="area.contentSuffix.title">
+        <locale name="area.suffixContent.title">
             <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
             <en><![CDATA[Content suffix]]></en>
         </locale>
-        <locale name="area.contentSuffix.description">
+        <locale name="area.suffixContent.description">
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
             <en><![CDATA[Brick area after the content]]></en>
         </locale>
