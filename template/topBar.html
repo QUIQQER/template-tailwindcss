@@ -2,7 +2,11 @@
 <div class="header-bar absolute w-full text-white z-10 flex {$navBackground}" style="justify-content: stretch; height: 80px;">
     <div class="header-bar-wrapper px-4 mx-auto flex align-center w-full">
         <div class="header-bar-logo-container font-bold w-auto flex-grow md:w-1/5 text-xl flex items-center py-2">
+            {if !$altLogoTargetUrl}
             <a href="{url id=1}" class="header-bar-logo" title="{site id=1 attribute=title}">
+            {else}
+            <a href="{$altLogoTargetUrl}" class="header-bar-logo" title="{$Site->getAttribute('title')}">
+            {/if}
                 <img src="{$logoUrl}" alt="{$logoAlt}" />
             </a>
         </div>

@@ -8,6 +8,8 @@
         <attribute>site.settings.pageTitleAndShortPos</attribute>
         <attribute>site.settings.pageBreadcrumb</attribute>
         <attribute>site.settings.pageShowStart</attribute>
+        <attribute>site.settings.pageLogo</attribute>
+        <attribute>site.settings.pageLogoTargetUrl</attribute>
     </attributes>
 
     <settings>
@@ -138,6 +140,32 @@
                                 var="general.settings.locale.hide"/>
                     </option>
                 </select>
+
+                <!-- LOGO -->
+                <input conf="site.settings.pageLogo"
+                       type="text" class="media-image">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogo.text"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogo.description"/>
+                    </description>
+                </input>
+
+                <!-- LOGO TARGET URL -->
+                <input conf="site.settings.pageLogoTargetUrl"
+                       type="text" class="project-site" data-external="1">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogoTargetUrl.text"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogoTargetUrl.description"/>
+                    </description>
+                </input>
 
             </settings>
         </category>

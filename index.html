@@ -48,7 +48,8 @@
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
 
 {* <!--top bar / navigation--> *}
-{fetch template="template/topBar.html" navBackground=$navBackground MegaMenu=$MegaMenu logoUrl=$logoUrl logoAlt=$logoAlt}
+{fetch template="template/topBar.html" navBackground=$navBackground
+MegaMenu=$MegaMenu logoUrl=$logoUrl logoAlt=$logoAlt altLogoTargetUrl=$altLogoTargetUrl Site=$Site}
 
 <!-- page -->
 <div class="body-container {$bodyPadding}">

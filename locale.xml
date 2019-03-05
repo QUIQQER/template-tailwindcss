@@ -423,6 +423,22 @@
             <de><![CDATA[Zeige Startseite in der Navigation an]]></de>
             <en><![CDATA[Show the start page in der navigation]]></en>
         </locale>
+        <locale name="site.settings.pageLogo.text">
+            <de><![CDATA[Alternatives Logo]]></de>
+            <en><![CDATA[Alternative Logo]]></en>
+        </locale>
+        <locale name="site.settings.pageLogo.description">
+            <de><![CDATA[Benutzen Sie diese Option, wenn Sie auf dieser Seite ein anderes Logo als das Projektlogo anzeigen möchten. Beachten Sie, dass dieses Logo von den Unterseiten nicht vererbt wird.]]></de>
+            <en><![CDATA[Use this option if you want to display a logo other than the project logo on this page. Note that this logo is not inherited from the subpages.]]></en>
+        </locale>
+        <locale name="site.settings.pageLogoTargetUrl.text">
+            <de><![CDATA[Alternative Targetseite]]></de>
+            <en><![CDATA[Alternative target page]]></en>
+        </locale>
+        <locale name="site.settings.pageLogoTargetUrl.description">
+            <de><![CDATA[Benutzen Sie diese Option, wenn Sie beim Klick auf Logo nicht auf die Startseite von Ihrem Projekt leiten möchten. Wählen Sie eine Seite aus Ihrem Projekt oder tippen Sie eine externe Internetadresse ein.]]></de>
+            <en><![CDATA[Use this option if you do not want to redirect to the start page of your project when clicking on Logo. Select a page from your project or type an external Internet address.]]></en>
+        </locale>
 
         <!-- GENERAL SETTINGS LOCALE -->
         <locale name="general.settings.locale.default">

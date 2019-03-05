@@ -142,8 +142,8 @@ $templateSettings['bodyClass']     = $bodyClass;
 
 /* neu for tailwindcss */
 /* Logo in menu */
-$logoAlt = "QUIQQER Project";
-$logoUrl = $Project->getMedia()->getPlaceholder();
+$logoAlt          = "QUIQQER Project";
+$logoUrl          = $Project->getMedia()->getPlaceholder();
 
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
@@ -151,8 +151,48 @@ if ($Project->getMedia()->getLogoImage()) {
     $logoUrl = $Logo->getSizeCacheUrl(400, 300);
 }
 
-$templateSettings['logoUrl'] = $logoUrl;
-$templateSettings['logoAlt'] = $logoAlt;
+if ($Site->getAttribute('site.settings.pageLogo')) {
+    $Logo = QUI\Projects\Media\Utils::getImageByUrl(
+        $Site->getAttribute('site.settings.pageLogo')
+    );
+
+    $logoAlt = $Logo->getAttribute('title');
+    $logoUrl = $Logo->getSizeCacheUrl(400, 300);
+}
+
+// alternate target url by click on logo
+$altLogoTargetUrl = $Site->getAttribute('site.settings.pageLogoTargetUrl');
+
+if ($altLogoTargetUrl) {
+    try {
+        if (QUI\Projects\Site\Utils::isSiteLink($altLogoTargetUrl)) {
+            $Wanted = \QUI\Projects\Site\Utils::getSiteByLink($altLogoTargetUrl);
+
+            // so, we get the site with vhosts, and url dir
+            $Output = new QUI\Output();
+
+            $altLogoTargetUrl = $Output->getSiteUrl(array(
+                'site' => $Wanted
+            ));
+        } else {
+            $parts = parse_url($altLogoTargetUrl);
+
+            if (!isset($parts['host']) || empty($parts['host'])) {
+                $altLogoTargetUrl = HOST . $altLogoTargetUrl;
+            }
+
+            if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
+                $altLogoTargetUrl = '//' . $altLogoTargetUrl;
+            }
+        }
+    } catch (QUI\Exception $Exception) {
+    }
+
+}
+
+$templateSettings['logoUrl']          = $logoUrl;
+$templateSettings['logoAlt']          = $logoAlt;
+$templateSettings['altLogoTargetUrl'] = $altLogoTargetUrl;
 
 $templateSettings['navBackground'] = '';
 
