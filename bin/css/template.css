@@ -97,6 +97,18 @@ li a:hover,
     max-height: 100%;
 }
 
+.header-bar .header-bar-logo-secondary {
+    display: none;
+}
+
+.header-bar.header-bar-alt .header-bar-logo-primary {
+    display: none;
+}
+
+.header-bar.header-bar-alt .header-bar-logo-secondary {
+    display: inline;
+}
+
 /*************/
 /* mega menu */
 /*************/

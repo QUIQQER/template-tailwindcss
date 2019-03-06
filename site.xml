@@ -9,6 +9,7 @@
         <attribute>site.settings.pageBreadcrumb</attribute>
         <attribute>site.settings.pageShowStart</attribute>
         <attribute>site.settings.pageLogo</attribute>
+        <attribute>site.settings.pageLogoAlt</attribute>
         <attribute>site.settings.pageLogoTargetUrl</attribute>
     </attributes>
 
@@ -151,6 +152,18 @@
                     <description>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="site.settings.pageLogo.description"/>
+                    </description>
+                </input>
+                <!-- SECOND LOGO (ALT) -->
+                <input conf="site.settings.pageLogoAlt"
+                       type="text" class="media-image">
+                    <text>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogoAlt.text"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="site.settings.pageLogoAlt.description"/>
                     </description>
                 </input>
 

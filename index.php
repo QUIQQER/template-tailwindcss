@@ -140,24 +140,49 @@ $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['bodyClass']     = $bodyClass;
 
 
-/* neu for tailwindcss */
-/* Logo in menu */
-$logoAlt          = "QUIQQER Project";
-$logoUrl          = $Project->getMedia()->getPlaceholder();
+/**
+ * Logo in menu
+ */
+$logoText   = "QUIQQER Project";
+$logoUrl    = $Project->getMedia()->getPlaceholder();
+$logoUrlAlt = false; // second url logo for different background color (see template settings "altLogo")
 
+// Project logo (comes from PROJECT settings)
 if ($Project->getMedia()->getLogoImage()) {
-    $Logo    = $Project->getMedia()->getLogoImage();
-    $logoAlt = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(400, 300);
+    $Logo     = $Project->getMedia()->getLogoImage();
+    $logoText = $Logo->getAttribute('title');
+    $logoUrl  = $Logo->getSizeCacheUrl(400, 300);
 }
 
+// Second logo (comes from TEMPLATE settings)
+if ($Project->getConfig('settings.nav.logoAlt')) {
+    $LogoAlt = QUI\Projects\Media\Utils::getImageByUrl(
+        $Project->getConfig('settings.nav.logoAlt')
+    );
+
+    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(200, 150);
+}
+
+// Project logo (comes from SITE settings)
 if ($Site->getAttribute('site.settings.pageLogo')) {
     $Logo = QUI\Projects\Media\Utils::getImageByUrl(
         $Site->getAttribute('site.settings.pageLogo')
     );
 
-    $logoAlt = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(400, 300);
+    $logoText = $Logo->getAttribute('title');
+    $logoUrl  = $Logo->getSizeCacheUrl(200, 150);
+
+    // avoid the project logo showing up in .header-bar-alt
+    $logoUrlAlt = false;
+}
+
+// Second logo (comes form SITE settings)
+if ($Site->getAttribute('site.settings.pageLogoAlt')) {
+    $LogoAlt = QUI\Projects\Media\Utils::getImageByUrl(
+        $Site->getAttribute('site.settings.pageLogoAlt')
+    );
+
+    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(200, 150);
 }
 
 // alternate target url by click on logo
@@ -171,9 +196,9 @@ if ($altLogoTargetUrl) {
             // so, we get the site with vhosts, and url dir
             $Output = new QUI\Output();
 
-            $altLogoTargetUrl = $Output->getSiteUrl(array(
+            $altLogoTargetUrl = $Output->getSiteUrl([
                 'site' => $Wanted
-            ));
+            ]);
         } else {
             $parts = parse_url($altLogoTargetUrl);
 
@@ -187,14 +212,13 @@ if ($altLogoTargetUrl) {
         }
     } catch (QUI\Exception $Exception) {
     }
-
 }
 
 $templateSettings['logoUrl']          = $logoUrl;
-$templateSettings['logoAlt']          = $logoAlt;
+$templateSettings['logoText']         = $logoText;
 $templateSettings['altLogoTargetUrl'] = $altLogoTargetUrl;
+$templateSettings['logoUrlAlt']       = $logoUrlAlt;
 
 $templateSettings['navBackground'] = '';
-
 
 $Engine->assign($templateSettings);

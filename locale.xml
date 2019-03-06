@@ -356,7 +356,15 @@
         </locale>
         <locale name="settings.nav.showStart.text" htmnl="true">
             <de><![CDATA[Die Einstellung kann überschrieben werden. Wenn der Seitenlayout ein "Produkt Landingpage" ist, ist die erste Seite <strong>nicht</strong> die erste Projektseite, sondern die erste Seite mit diesem Seitentyp.]]></de>
-            <en><![CDATA[The setting can be overwritten. If the page layout is a "Product landing page", the first page is <strong>not</strong> the first project page, but the first page with this page type.]]></en>
+            <en><![CDATA[If the page layout is a "Product landing page", the first page is <strong>not</strong> the first project page, but the first page with this page type. The setting can be overwritten.]]></en>
+        </locale>
+        <locale name="settings.nav.pageLogoAlt">
+            <de><![CDATA[Alternatives Logo für andere Hintergrundfarbe]]></de>
+            <en><![CDATA[Alternative Logo for other background color]]></en>
+        </locale>
+        <locale name="settings.nav.pageLogoAlt.text">
+            <de><![CDATA[Wenn Ihre Seite oben im Headerbereich andere Hintergrundfarbe hat als die von der Navigation (z.B. nach Scrollen), können Sie hier ein alternatives Logo auswählen, das besser zu der Hintergrundfarbe passt. Die Einstellung kann von der Seite überschrieben werden.]]></de>
+            <en><![CDATA[If your page has a different background color at the top of the page (header) than that of the navigation (e.g. after scrolling), you can select an alternative logo here that better matches the background color. The setting can be overwritten.]]></en>
         </locale>
 
         <!-- color management -->
@@ -423,6 +431,7 @@
             <de><![CDATA[Zeige Startseite in der Navigation an]]></de>
             <en><![CDATA[Show the start page in der navigation]]></en>
         </locale>
+        <!-- page logo -->
         <locale name="site.settings.pageLogo.text">
             <de><![CDATA[Alternatives Logo]]></de>
             <en><![CDATA[Alternative Logo]]></en>
@@ -431,6 +440,15 @@
             <de><![CDATA[Benutzen Sie diese Option, wenn Sie auf dieser Seite ein anderes Logo als das Projektlogo anzeigen möchten. Beachten Sie, dass dieses Logo von den Unterseiten nicht vererbt wird.]]></de>
             <en><![CDATA[Use this option if you want to display a logo other than the project logo on this page. Note that this logo is not inherited from the subpages.]]></en>
         </locale>
+        <locale name="site.settings.pageLogoAlt.text">
+            <de><![CDATA[Alternatives Logo für andere Hintergrundfarbe]]></de>
+            <en><![CDATA[Alternative Logo for other background color]]></en>
+        </locale>
+        <locale name="site.settings.pageLogoAlt.description">
+            <de><![CDATA[Wenn Ihre Seite oben im Headerbereich andere Hintergrundfarbe hat als die von der Navigation (z.B. nach Scrollen), können Sie hier ein alternatives Logo auswählen, das besser zu der Hintergrundfarbe passt.]]></de>
+            <en><![CDATA[If your page has a different background color at the top of the page (header) than that of the navigation (e.g. after scrolling), you can select an alternative logo here that better matches the background color.]]></en>
+        </locale>
+        <!-- logo target url -->
         <locale name="site.settings.pageLogoTargetUrl.text">
             <de><![CDATA[Alternative Targetseite]]></de>
             <en><![CDATA[Alternative target page]]></en>

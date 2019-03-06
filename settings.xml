@@ -157,6 +157,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="logoAlt">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
                 </section>
 
                 <!-- color management -->
@@ -594,6 +598,21 @@
                             <text>
                                 <locale group="quiqqer/template-tailwindcss"
                                         var="settings.nav.showStart.text"
+                                />
+                            </text>
+
+                            <!-- nav: second logo -->
+                            <input conf="settings.nav.logoAlt"
+                                   type="text" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-tailwindcss"
+                                            var="settings.nav.pageLogoAlt"
+                                    />
+                                </text>
+                            </input>
+                            <text>
+                                <locale group="quiqqer/template-tailwindcss"
+                                        var="settings.nav.pageLogoAlt.text"
                                 />
                             </text>
                         </settings>
