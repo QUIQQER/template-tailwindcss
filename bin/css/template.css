@@ -87,9 +87,8 @@ li a:hover,
     padding-top: 0;
 }
 
-
 .header-bar-logo {
-    height: 90px;
+    height: 80px; /* nav / top bar height */
     max-height: 100%;
 }
 
