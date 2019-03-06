@@ -101,7 +101,7 @@ li a:hover,
     display: none;
 }
 
-.header-bar.header-bar-alt .header-bar-logo-primary {
+.header-bar.header-bar-alt .header-bar-logo-primary.hide {
     display: none;
 }
 

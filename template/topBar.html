@@ -8,7 +8,7 @@
             <a href="{$altLogoTargetUrl}" class="header-bar-logo" title="{$Site->getAttribute('title')}">
             {/if}
 
-                <img src="{$logoUrl}" alt="{$logoText}" class="header-bar-logo-primary" />
+                <img src="{$logoUrl}" alt="{$logoText}" class="header-bar-logo-primary {if $logoUrlAlt}hide{/if}" />
 
                 {if $logoUrlAlt}
                 <img src="{$logoUrlAlt}" alt="{$logoText}" class="header-bar-logo-secondary" />
