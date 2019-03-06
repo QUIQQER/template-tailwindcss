@@ -436,8 +436,8 @@
             <en><![CDATA[Alternative target page]]></en>
         </locale>
         <locale name="site.settings.pageLogoTargetUrl.description">
-            <de><![CDATA[Benutzen Sie diese Option, wenn Sie beim Klick auf Logo nicht auf die Startseite von Ihrem Projekt leiten möchten. Wählen Sie eine Seite aus Ihrem Projekt oder tippen Sie eine externe Internetadresse ein.]]></de>
-            <en><![CDATA[Use this option if you do not want to redirect to the start page of your project when clicking on Logo. Select a page from your project or type an external Internet address.]]></en>
+            <de><![CDATA[Benutzen Sie diese Option, wenn Sie bei Klick auf das Logo nicht auf die Startseite von Ihrem Projekt leiten möchten. Wählen Sie eine Seite aus Ihrem Projekt oder tippen Sie eine externe Internetadresse ein.]]></de>
+            <en><![CDATA[Use this option if you do not want to redirect to the start page of your project when clicking on the Logo. Select a page from your project or type an external Internet address.]]></en>
         </locale>
 
         <!-- GENERAL SETTINGS LOCALE -->

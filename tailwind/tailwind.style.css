@@ -275,7 +275,7 @@ button {
  */
 
 a {
-    @apply text-blue font-normal;
+    @apply text-blue font-normal outline-none;
 }
 
 a:hover {

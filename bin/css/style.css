@@ -6672,6 +6672,7 @@ button {
 a {
   color: #3490dc;
   font-weight: 400;
+  outline: 0;
 }
 
 a:hover {
