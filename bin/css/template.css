@@ -426,10 +426,6 @@ li a:hover,
     background: #fafafa !important;
 }
 
-.quiqqer-navigation-link {
-    color: inherit;
-}
-
 /* category (2 lev) */
 .quiqqer-faq article {
     margin: 4rem 0;
@@ -437,6 +433,18 @@ li a:hover,
 
 .quiqqer-faq .quiqqer-faq-list-linkToTop {
     margin-top: 0;
+}
+
+/***************/
+/* Sidebar nav */
+/***************/
+.quiqqer-navigation-link {
+    color: inherit;
+    font-weight: 300;
+}
+
+.quiqqer-navigation-active .quiqqer-navigation-link {
+    font-weight: bold;
 }
 
 /************************/
