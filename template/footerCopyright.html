@@ -1,16 +1,16 @@
 <div class="page-footer-copyright text-base py-3">
     <div class="container block sm:flex ">
-        <div class="page-footer-copyright-left w-full sm:w-1/3 text-left">
+        <div class="page-footer-copyright-left w-full sm:w-1/3 text-left mb-2 md:mb-0">
             {locale group="quiqqer/template-tailwindcss" var="copyright.text.left"}
         </div>
-        <div class="page-footer-copyright-center text-center w-full sm:w-1/3">
+        <div class="page-footer-copyright-center text-center w-full sm:w-1/3 mb-2 md:mb-0">
             {locale group="quiqqer/template-tailwindcss" var="copyright.text.center" year=$smarty.now|date_format:'%Y'}
         </div>
-        <div class="page-footer-copyright-right w-full sm:w-1/3 text-right flex justify-end flex-wrap">
+        <div class="page-footer-copyright-right w-full sm:w-1/3 md:text-right flex md:justify-end flex-wrap mb-2 md:mb-0">
             <div class="page-footer-copyright-right-content">
                 {locale group="quiqqer/template-tailwindcss" var="copyright.text.right"}
             </div>
-            <div class="page-footer-copyright-right-langswitch ml-4">
+            <div class="page-footer-copyright-right-langswitch md:ml-4">
                 {$LangSwitch->create()}
             </div>
         </div>
