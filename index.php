@@ -160,7 +160,7 @@ if ($Project->getConfig('settings.nav.logoAlt')) {
         $Project->getConfig('settings.nav.logoAlt')
     );
 
-    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(200, 150);
+    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(400, 300);
 }
 
 // Project logo (comes from SITE settings)
@@ -170,7 +170,7 @@ if ($Site->getAttribute('site.settings.pageLogo')) {
     );
 
     $logoText = $Logo->getAttribute('title');
-    $logoUrl  = $Logo->getSizeCacheUrl(200, 150);
+    $logoUrl  = $Logo->getSizeCacheUrl(400, 300);
 
     // avoid the project logo showing up in .header-bar-alt
     $logoUrlAlt = false;
@@ -182,7 +182,7 @@ if ($Site->getAttribute('site.settings.pageLogoAlt')) {
         $Site->getAttribute('site.settings.pageLogoAlt')
     );
 
-    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(200, 150);
+    $logoUrlAlt = $LogoAlt->getSizeCacheUrl(400, 300);
 }
 
 // alternate target url by click on logo
