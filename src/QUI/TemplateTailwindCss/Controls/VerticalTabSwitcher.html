@@ -1,0 +1,55 @@
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<div class="verticalTabSwitcher-entries py-8 my-8">
+
+    <div class="verticalTabSwitcher-nav w-2/5 pr-12 ">
+        {if $navTitle}
+        <h4 class="mb-10">{$navTitle}</h4>
+        {/if}
+
+        <ul class="list-reset">
+            {foreach from=$entries item=entry key=key}
+            <li class="verticalTabSwitcher-nav-entry mb-2 p-4 rounded-lg cursor-pointer
+                        {if $key == 0}text-black shadow-lg active{/if}"
+            data-entry-nav-pos="{$key}">
+                <span class="{$entry.entryTitleIcon} verticalTabSwitcher-nav-entry-icon mr-2 rounded-lg"
+                      {if $entry.entryTitleIconColor}
+                      data-qui-color="{$entry.entryTitleIconColor}"
+                          {if $key == 0}
+                            style="background-color: {$entry.entryTitleIconColor}; color: #fff;"
+                          {else}
+                            style="color: {$entry.entryTitleIconColor};"
+                          {/if}
+                      {/if}
+                ></span>
+                <span class="verticalTabSwitcher-nav-entry-label">{$entry.entryTitle}</span>
+            </li>
+            {assign var=modKey value=$key+1}
+            {/foreach}
+        </ul>
+    </div>
+
+
+    <div class="verticalTabSwitcher-entries-content w-3/5">
+        <ul class="list-reset">
+            {foreach from=$entries item=entry key=key}
+
+            <li class="verticalTabSwitcher-content-entry {if $key == 0}active{/if}"
+                    data-entry-content-pos="{$key}">
+                {$entry.entryContent}
+            </li>
+            {assign var=modKey value=$key+1}
+            {/foreach}
+        </ul>
+    </div>
+</div>

@@ -20,11 +20,11 @@
         <brick control="\QUI\TemplateTailwindCss\Controls\HeroHeader">
             <title>
                 <locale group="quiqqer/template-tailwindcss"
-                        var="brick.control.simpleContact.title"/>
+                        var="brick.heroHeader.title"/>
             </title>
             <description>
                 <locale group="quiqqer/template-tailwindcss"
-                        var="brick.control.simpleContact.description"/>
+                        var="brick.heroHeader.description"/>
             </description>
 
             <settings>
@@ -65,6 +65,45 @@
                     <option value="500px">500px</option>
                     <option value="550px">550px</option>
                     <option value="600px">600px</option>
+                </setting>
+            </settings>
+        </brick>
+
+        <!--Vertical Tab Switcher -->
+        <brick control="\QUI\TemplateTailwindCss\Controls\VerticalTabSwitcher">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.verticalTabSwitcher.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.verticalTabSwitcher.description"/>
+            </description>
+
+            <settings>
+                <setting name="imagePos" type="select">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.verticalTabSwitcher.imagePos"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.verticalTabSwitcher.imagePos.top"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.verticalTabSwitcher.imagePos.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="navTitle" type="text">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.verticalTabSwitcher.navTitle"/>
+                </setting>
+
+                <setting name="entries"
+                         data-qui="package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcherSettings">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.verticalTabSwitcher.entries"/>
                 </setting>
             </settings>
         </brick>

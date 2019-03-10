@@ -1,0 +1,17 @@
+.verticalTabSwitcher-entries {
+    display: flex;
+}
+
+.verticalTabSwitcher-nav-entry {
+    font-size: 1rem;
+}
+
+.verticalTabSwitcher-nav-entry .fa {
+    width: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.verticalTabSwitcher-entries-content ul>:not(.active) {
+    display: none;
+}

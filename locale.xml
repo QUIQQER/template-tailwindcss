@@ -173,6 +173,68 @@
             <en><![CDATA[]]></en>
         </locale>
 
+        <!-- TEMPLATE BRICKS -->
+
+        <!-- HERO HEADER -->
+        <locale name="brick.heroHeader.title">
+            <de><![CDATA[Hero Header]]></de>
+            <en><![CDATA[Hero Header]]></en>
+        </locale>
+
+        <!-- VERTICAL TAB SWITCHER -->
+        <locale name="brick.verticalTabSwitcher.title">
+            <de><![CDATA[Vertical Tab Switcher]]></de>
+            <en><![CDATA[Vertical Tab Switcher]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.description">
+            <de><![CDATA[...]]></de>
+            <en><![CDATA[...]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.imagePos">
+            <de><![CDATA[Bild-Position]]></de>
+            <en><![CDATA[Image position]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.imagePos.top">
+            <de><![CDATA[Über dem Inhalt]]></de>
+            <en><![CDATA[Before the content]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.imagePos.bottom">
+            <de><![CDATA[Nach dem Inhalt]]></de>
+            <en><![CDATA[After the content]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.navTitle">
+            <de><![CDATA[Text über der Tab-Navigation]]></de>
+            <en><![CDATA[Text before the tab navigation]]></en>
+        </locale>
+        <locale name="brick.verticalTabSwitcher.entries">
+            <de><![CDATA[Einträge]]></de>
+            <en><![CDATA[Entries]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.addButton">
+            <de><![CDATA[Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add entry]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.entryTitle">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.entryTitleIcon">
+            <de><![CDATA[Icon (vor dem Titel)]]></de>
+            <en><![CDATA[Icon (before the title)]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.entryTitleIconColor">
+            <de><![CDATA[Icon-Farbe]]></de>
+            <en><![CDATA[Icon color]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.entryContent">
+            <de><![CDATA[Inhalt]]></de>
+            <en><![CDATA[Content]]></en>
+        </locale>
+        <locale name="verticalTabSwitcher.entries.entryImage">
+            <de><![CDATA[Bild]]></de>
+            <en><![CDATA[Image]]></en>
+        </locale>
+
     </groups>
     <groups name="quiqqer/template-tailwindcss" datatype="php">
 
