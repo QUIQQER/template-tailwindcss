@@ -379,43 +379,6 @@ li a:hover,
     text-align: center;
 }
 
-/*************/
-/* news list */
-/*************/
-.news-section {
-    overflow: hidden;
-    position: relative;
-}
-
-.news-entry-header {
-    margin-bottom: 1.5em;
-}
-
-.news-entry-header-time {
-    color: #aab7c2;
-    display: flex;
-    flex-direction: column;
-    margin-right: 1.5em;
-}
-
-.news-entry-header-time-day {
-    font-size: 1.8em;
-    font-weight: normal;
-    line-height: 100%;
-    text-align: right;
-}
-
-.news-entry-header-time-month {
-    font-weight: normal;
-    line-height: 1.4em;
-}
-
-.news-entry-header-title {
-    font-size: 1.2em;
-    line-height: 1.2em;
-    margin-bottom: 0;
-}
-
 /*******/
 /* FAQ */
 /*******/

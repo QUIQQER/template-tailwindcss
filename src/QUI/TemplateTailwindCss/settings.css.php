@@ -60,6 +60,12 @@ button,
     color: <?php echo $colorButtonPrimary; ?>;
     border-color: <?php echo $colorButtonPrimary; ?>;
 }
+
+.btn-link,
+.btn-link:hover {
+    color: <?php echo $colorButtonPrimary; ?>;
+    border-color: <?php echo $colorButtonPrimary; ?>;
+}
 <?php };
 ?>
 

@@ -222,3 +222,4 @@ $templateSettings['logoUrlAlt']       = $logoUrlAlt;
 $templateSettings['navBackground'] = '';
 
 $Engine->assign($templateSettings);
+
