@@ -12,6 +12,11 @@
     text-align: center;
 }
 
-.verticalTabSwitcher-entries-content ul>:not(.active) {
+
+.verticalTabSwitcher-content ul>:not(.active) {
     display: none;
+}
+
+.verticalTabSwitcher-content-entry {
+    position: relative;
 }

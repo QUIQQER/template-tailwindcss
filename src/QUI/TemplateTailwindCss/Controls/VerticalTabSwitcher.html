@@ -14,7 +14,7 @@
 
     <div class="verticalTabSwitcher-nav w-2/5 pr-12 ">
         {if $navTitle}
-        <h4 class="mb-10">{$navTitle}</h4>
+        <h4 class="font-normal mb-8">{$navTitle}</h4>
         {/if}
 
         <ul class="list-reset">
@@ -22,6 +22,7 @@
             <li class="verticalTabSwitcher-nav-entry mb-2 p-4 rounded-lg cursor-pointer
                         {if $key == 0}text-black shadow-lg active{/if}"
             data-entry-nav-pos="{$key}">
+                {if $entry.entryTitleIcon}
                 <span class="{$entry.entryTitleIcon} verticalTabSwitcher-nav-entry-icon mr-2 rounded-lg"
                       {if $entry.entryTitleIconColor}
                       data-qui-color="{$entry.entryTitleIconColor}"
@@ -32,6 +33,7 @@
                           {/if}
                       {/if}
                 ></span>
+                {/if}
                 <span class="verticalTabSwitcher-nav-entry-label">{$entry.entryTitle}</span>
             </li>
             {assign var=modKey value=$key+1}
@@ -40,13 +42,27 @@
     </div>
 
 
-    <div class="verticalTabSwitcher-entries-content w-3/5">
+    <div class="verticalTabSwitcher-content w-3/5">
         <ul class="list-reset">
             {foreach from=$entries item=entry key=key}
 
             <li class="verticalTabSwitcher-content-entry {if $key == 0}active{/if}"
                     data-entry-content-pos="{$key}">
+                {if $entry.entryImage && $imagePos == 'top'}
+                <div class="verticalTabSwitcher-content-entry-image
+                            verticalTabSwitcher-content-entry-image__top mb-4">
+                    {image src=$entry.entryImage width=600}
+                </div>
+                {/if}
+
                 {$entry.entryContent}
+
+                {if $entry.entryImage && $imagePos == 'bottom'}
+                <div class="verticalTabSwitcher-content-entry-image
+                            verticalTabSwitcher-content-entry-image__bottom ">
+                    {image src=$entry.entryImage width=600}
+                </div>
+                {/if}
             </li>
             {assign var=modKey value=$key+1}
             {/foreach}

@@ -25,8 +25,9 @@ class VerticalTabSwitcher extends QUI\Control
         // default options
         $this->setAttributes([
             'class'     => 'quiqqer-verticalTabSwitcher',
-//            'qui-class' => 'package/quiqqer/bricks/bin/Controls/SimpleContact',
+            'qui-class' => 'package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher',
             'navTitle'  => false,
+            'imagePos'  => 'top',
             'entries'   => []
         ]);
 
@@ -47,10 +48,13 @@ class VerticalTabSwitcher extends QUI\Control
             $entries = json_decode($entries, true);
         }
 
+
+
         $Engine->assign([
             'this'       => $this,
             'entries'    => $entries,
-            'navTitle' => $this->getAttribute('navTitle')
+            'navTitle' => $this->getAttribute('navTitle'),
+            'imagePos' => $this->getAttribute('imagePos')
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/VerticalTabSwitcher.css');
