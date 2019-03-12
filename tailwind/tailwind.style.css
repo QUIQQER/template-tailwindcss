@@ -371,3 +371,7 @@ p {
 .page-multiple-sidebar-wrapper .brick-title {
     @apply text-xl;
 }
+
+.media-figure {
+    @apply mx-auto my-8 shadow-lg block;
+}

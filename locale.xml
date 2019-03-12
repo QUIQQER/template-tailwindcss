@@ -548,6 +548,12 @@
         </locale>
 
         <!-- WYSIWYG EDITOR -->
+        <!-- media figure / image -->
+        <locale name="editor.mediaFigure">
+            <de><![CDATA[Media: Bild im Text zentriert]]></de>
+            <en><![CDATA[Media: image centered in text]]></en>
+        </locale>
+
         <!-- button standard -->
         <locale name="editor.button.primary">
             <de><![CDATA[Template Button: Primary]]></de>

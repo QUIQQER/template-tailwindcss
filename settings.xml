@@ -694,6 +694,15 @@
 
             <styles>
 
+                <!-- MEDIA FIGURE / IMAGE-->
+                <style element="img">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.mediaFigure"/>
+                    <attributes>
+                        <attribute name="class">media-figure</attribute>
+                    </attributes>
+                </style>
+
                 <!-- BUTTONS -->
                 <!-- standard -->
                 <style element="a">
