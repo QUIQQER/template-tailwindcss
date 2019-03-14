@@ -12,7 +12,7 @@
 
 <div class="verticalTabSwitcher-entries py-8 my-8">
 
-    <div class="verticalTabSwitcher-nav w-2/5 pr-12 ">
+    <div class="verticalTabSwitcher-nav w-2/5 pr-12 hidden md:block">
         {if $navTitle}
         <h4 class="font-normal mb-8">{$navTitle}</h4>
         {/if}
@@ -42,12 +42,22 @@
     </div>
 
 
-    <div class="verticalTabSwitcher-content w-3/5">
+    <div class="verticalTabSwitcher-content w-full md:w-3/5">
         <ul class="list-reset">
             {foreach from=$entries item=entry key=key}
 
-            <li class="verticalTabSwitcher-content-entry {if $key == 0}active{/if}"
+            <li class="verticalTabSwitcher-content-entry mb-12 md:mb-4 {if $key == 0}active{/if}"
                     data-entry-content-pos="{$key}">
+                {if $entry.entryTitleIcon}
+
+                <h3 class="verticalTabSwitcher-content-entry-title mb-8 block md:hidden">
+                    <span class="{$entry.entryTitleIcon} verticalTabSwitcher-content-entry-title-icon mr-2 rounded-lg"
+                          {if $entry.entryTitleIconColor} style="color: #fff; background-color: {$entry.entryTitleIconColor};" {/if}
+                    ></span>
+                    {/if}
+                    <span class="verticalTabSwitcher-content-entry-title-label">{$entry.entryTitle}</span>
+                </h3>
+
                 {if $entry.entryImage && $imagePos == 'top'}
                 <div class="verticalTabSwitcher-content-entry-image
                             verticalTabSwitcher-content-entry-image__top mb-4">

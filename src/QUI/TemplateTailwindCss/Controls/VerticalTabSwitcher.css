@@ -6,15 +6,18 @@
     font-size: 1rem;
 }
 
-.verticalTabSwitcher-nav-entry .fa {
+.verticalTabSwitcher-nav-entry .fa,
+.verticalTabSwitcher-content-entry-title-icon {
     width: 2rem;
     line-height: 2rem;
     text-align: center;
 }
 
 
-.verticalTabSwitcher-content ul>:not(.active) {
-    display: none;
+@media screen and (min-width: 768px) {
+    .verticalTabSwitcher-content ul>:not(.active) {
+        display: none;
+    }
 }
 
 .verticalTabSwitcher-content-entry {
