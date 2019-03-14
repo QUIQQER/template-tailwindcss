@@ -256,6 +256,16 @@ li a:hover,
     padding: 0 6px;
 }
 
+@media screen and (max-width: 767px) {
+    .page-footer-copyright .quiqqer-bricks-languageswitch-flag-entry {
+        padding: 0;
+    }
+
+    .quiqqer-bricks-languageswitch-flag-entry-icon {
+        margin-right: 20px;
+    }
+}
+
 /**************/
 /* pagination */
 /**************/
