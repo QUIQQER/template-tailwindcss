@@ -169,6 +169,12 @@ button {
     @apply bg-transparent border-0 text-blue shadow-none;
 }
 
+/* link dark */
+.btn-link-dark,
+.btn-link-dark:hover {
+    @apply bg-transparent border-0 text-grey-darker shadow-none;
+}
+
 /* white */
 .btn-white,
 .btn-white:hover {

@@ -771,6 +771,16 @@ button {
   box-shadow: none;
 }
 
+/* link dark */
+
+.btn-link-dark,
+.btn-link-dark:hover {
+  background-color: transparent;
+  border-width: 0;
+  color: #606f7b;
+  box-shadow: none;
+}
+
 /* white */
 
 .btn-white,
