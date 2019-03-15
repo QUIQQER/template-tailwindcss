@@ -3,8 +3,8 @@
     {if !empty($footer)}
     <div class="-mx-4 pb-8 block sm:flex flex-wrap">
         {foreach from=$footer item=Brick}
-            {if !$Brick->hasCSSClass('mx-*')}
-                {$Brick->addCSSClass('mx-4')}
+            {if !$Brick->hasCSSClass('px-*')}
+                {$Brick->addCSSClass('px-4')}
             {/if}
             {$Brick->addCSSClass('page-footer-brick my-4')}
                 {$Brick->create()}
