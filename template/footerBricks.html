@@ -1,16 +1,14 @@
 <div class="page-footer-bricks container">
     {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
     {if !empty($footer)}
-    <div class="grid-children">
-        <div class="grid-children-container pb-8 block sm:flex flex-wrap">
-            {foreach from=$footer item=Brick}
-            {if !$Brick->hasCSSClass('grid-*')}
-            {$Brick->addCSSClass('grid-100')}
+    <div class="-mx-4 pb-8 block sm:flex flex-wrap">
+        {foreach from=$footer item=Brick}
+            {if !$Brick->hasCSSClass('mx-*')}
+                {$Brick->addCSSClass('mx-4')}
             {/if}
             {$Brick->addCSSClass('page-footer-brick my-4')}
-            {$Brick->create()}
-            {/foreach}
-        </div>
+                {$Brick->create()}
+        {/foreach}
     </div>
     {/if}
 </div>
