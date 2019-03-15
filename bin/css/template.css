@@ -313,3 +313,20 @@ li a:hover,
         padding: 7em 0 0 0 !important;
     }
 }
+
+/**************************/
+/* Children list: default */
+/**************************/
+.tpl-childrenlist-default-entry:last-child {
+    margin-bottom: 2rem;
+}
+
+.tpl-childrenlist-default-entry-image {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.tpl-childrenlist-default-meta-category {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

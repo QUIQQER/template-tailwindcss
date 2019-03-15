@@ -158,6 +158,10 @@
             <de><![CDATA[Nach oben]]></de>
             <en><![CDATA[To top]]></en>
         </locale>
+        <locale name="template.list.by">
+            <de><![CDATA[von]]></de>
+            <en><![CDATA[by]]></en>
+        </locale>
 
         <!-- COPYRIGHT -->
         <locale name="copyright.text.left" html="true">
