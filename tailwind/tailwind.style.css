@@ -66,6 +66,10 @@ button:hover {
     opacity: 0.85;
 }
 
+.btn:focus {
+    @apply outline-none;
+}
+
 .btn.disabled,
 .btn:disabled,
 .button.disabled,
