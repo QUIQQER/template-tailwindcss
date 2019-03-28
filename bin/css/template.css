@@ -74,12 +74,7 @@ li a:hover,
 
 .header-bar-alt {
     background: #fff;
-    /*border-bottom: 1px solid #ebebeb;*/
     color: #333;
-}
-
-.header-bar-wrapper {
-    max-width: 1600px;
 }
 
 .brick-wrapper.my-0 {
@@ -88,7 +83,7 @@ li a:hover,
 }
 
 .header-bar-logo {
-    height: 80px; /* nav / top bar height */
+    height: 80px; /* nav (top bar) height */
     max-height: 100%;
 }
 
@@ -113,7 +108,8 @@ li a:hover,
 /*************/
 .quiqqer-menu-megaMenu {
     height: 100%;
-    position: initial !important;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .header-bar-nav-item a {

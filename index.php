@@ -14,7 +14,6 @@ if ($Site->getAttribute('templateTailwindCss.showTitle') ||
     $Template->setAttribute('content-header', false);
 }
 
-
 /**
  * Breadcrumb
  */
@@ -28,7 +27,6 @@ $templateSettings = QUI\TemplateTailwindCss\Utils::getConfig([
     'Site'     => $Site,
     'Template' => $Template
 ]);
-
 
 /**
  * body class, productPageMenu
@@ -108,39 +106,6 @@ $LangSwitch = new QUI\Bricks\Controls\LanguageSwitches\Flags([
 $templateSettings['LangSwitch'] = $LangSwitch;
 
 /**
- * Mega menu
- */
-$MegaMenu = false;
-
-if ($Template->getAttribute('template-header')) {
-    /**
-     * If the current site (or one of the parents)
-     * has layout type layout/productLandingPage,
-     * set the start id for the mega menu to the page (see README.md -> Features)
-     */
-    $ProductPage = QUI\TemplateTailwindCss\Utils::getFirstSiteOfLayout(
-        $Site,
-        'layout/productLandingPage'
-    );
-
-    /**
-     * Mega menu
-     */
-    $MegaMenu = new QUI\Menu\MegaMenu([
-        'showStart' => $templateSettings['showStart'],
-        'Start'     => $ProductPage
-    ]);
-
-}
-$templateSettings['MegaMenu'] = $MegaMenu;
-
-
-$templateSettings['BricksManager'] = QUI\Bricks\Manager::init();
-$templateSettings['Breadcrumb']    = $Breadcrumb;
-$templateSettings['bodyClass']     = $bodyClass;
-
-
-/**
  * Logo in menu
  */
 $logoText   = "QUIQQER Project";
@@ -214,12 +179,72 @@ if ($altLogoTargetUrl) {
     }
 }
 
+/**
+ * Mega menu
+ */
+$MegaMenu = false;
+
+if ($Template->getAttribute('template-header')) {
+    /**
+     * If the current site (or one of the parents)
+     * has layout type layout/productLandingPage,
+     * set the start id for the mega menu to the page (see README.md -> Features)
+     */
+    $ProductPage = QUI\TemplateTailwindCss\Utils::getFirstSiteOfLayout(
+        $Site,
+        'layout/productLandingPage'
+    );
+
+    // Mega menu
+    $MegaMenu = new QUI\Menu\MegaMenu([
+        'showStart' => $templateSettings['showStart'],
+        'Start'     => $ProductPage
+    ]);
+
+
+    if ($ProductPage) {
+        // product page
+        $startPageUrl   = $ProductPage->getUrlRewritten();
+        $startPageTitle = $ProductPage->getAttribute('title');
+
+    } else {
+        // startpage
+        $StartPage      = $Project->get(1);
+        $startPageUrl   = $StartPage->getUrlRewritten();
+        $startPageTitle = $StartPage->getAttribute('title');
+    }
+
+    $hideLogo = '';
+    if ($logoUrlAlt) {
+        $hideLogo          = 'hide';
+        $alternateLogoHtml = '
+            <img src="' . $logoUrlAlt . '" alt="' . $logoText . '" class="header-bar-logo-secondary" />
+        ';
+    }
+
+    $EngineForMenu = QUI::getTemplateManager()->getEngine();
+
+    $EngineForMenu->assign([
+        'startPageUrl'      => $startPageUrl,
+        'startPageTitle'    => $startPageTitle,
+        'logoUrl'           => $logoUrl,
+        'logoText'          => $logoText,
+        'hideLogo'          => $hideLogo,
+        'alternateLogoHtml' => $alternateLogoHtml
+    ]);
+
+    $MegaMenu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));
+    $MegaMenu->appendHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuSuffix.html'));
+}
+
+$templateSettings['BricksManager']    = QUI\Bricks\Manager::init();
+$templateSettings['Breadcrumb']       = $Breadcrumb;
+$templateSettings['bodyClass']        = $bodyClass;
+$templateSettings['MegaMenu']         = $MegaMenu;
 $templateSettings['logoUrl']          = $logoUrl;
 $templateSettings['logoText']         = $logoText;
 $templateSettings['altLogoTargetUrl'] = $altLogoTargetUrl;
 $templateSettings['logoUrlAlt']       = $logoUrlAlt;
-
-$templateSettings['navBackground'] = '';
+$templateSettings['navBackground']    = '';
 
 $Engine->assign($templateSettings);
-
