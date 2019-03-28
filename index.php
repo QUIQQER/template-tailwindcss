@@ -214,7 +214,8 @@ if ($Template->getAttribute('template-header')) {
         $startPageTitle = $StartPage->getAttribute('title');
     }
 
-    $hideLogo = '';
+    $hideLogo          = '';
+    $alternateLogoHtml = '';
     if ($logoUrlAlt) {
         $hideLogo          = 'hide';
         $alternateLogoHtml = '
