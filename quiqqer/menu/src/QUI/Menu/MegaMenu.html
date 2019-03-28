@@ -1,4 +1,4 @@
-<nav class="hide-on-mobile h-full flex">
+<nav class="hide-on-mobile h-full flex px-4">
     {$prepend}
 
     <ul class="header-bar-nav w-auto lg:w-3/5 flex-grow flex-shrink text-sm flex items-center md:justify-end lg:justify-center h-full quiqqer-menu-megaMenu-list">
@@ -47,12 +47,12 @@
     {$append}
 </nav>
 
-<div class="hide-on-desktop flex h-full items-center">
+<div class="hide-on-desktop flex h-full items-center px-4">
     {$prepend}
     <div class="quiqqer-menu-megaMenu-mobile">
         <span class="fa fa-bars"></span>
     </div>
-
     {$append}
+
     {$Mobile->create()}
 </div>
