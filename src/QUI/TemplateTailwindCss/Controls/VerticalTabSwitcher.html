@@ -43,10 +43,10 @@
 
 
     <div class="verticalTabSwitcher-content w-full md:w-3/5">
-        <ul class="list-reset">
+        <ul class="list-reset overflow-hidden">
             {foreach from=$entries item=entry key=key}
 
-            <li class="verticalTabSwitcher-content-entry mb-12 md:mb-4 {if $key == 0}active{/if}"
+            <li class="verticalTabSwitcher-content-entry mb-12 md:mb-0 overflow-auto {if $key == 0}active{/if}"
                     data-entry-content-pos="{$key}">
                 {if $entry.entryTitleIcon}
 

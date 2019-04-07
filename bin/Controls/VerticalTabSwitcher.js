@@ -9,7 +9,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
 
 ], function (QUI, QUIControl) {
     "use strict";
-    
+
     return new Class({
 
         Extends: QUIControl,
@@ -22,11 +22,11 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
         initialize: function (options) {
             this.parent(options);
 
-            this.active = 0;
-            this.isAnimating = false;
-            this.Nav = null;
+            this.active           = 0;
+            this.isAnimating      = false;
+            this.Nav              = null;
             this.ContentContainer = null;
-            this.navEntries = null;
+            this.navEntries       = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -42,7 +42,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
 
             this.$Elm = this.getElm();
 
-            this.Nav = this.$Elm.getElement('.verticalTabSwitcher-nav ul');
+            this.Nav              = this.$Elm.getElement('.verticalTabSwitcher-nav ul');
             this.ContentContainer = this.$Elm.getElement('.verticalTabSwitcher-content ul');
 
             this.navEntries = this.Nav.getElements('.verticalTabSwitcher-nav-entry');
@@ -72,7 +72,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
                 return;
             }
 
-            var self = this;
+            var self         = this;
             this.isAnimating = true;
 
             this.navEntries.forEach(function (NavEntry) {
@@ -109,7 +109,12 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
             }
 
             this.hideContent(ContentActiveLast).then(function () {
-                return self.showContent(ContentActiveNew);
+                ContentActiveNew.addClass('active');
+
+                return Promise.all([
+                    self.setHeight(ContentActiveNew),
+                    self.showContent(ContentActiveNew)
+                ]);
             }).then(function () {
                 self.isAnimating = false;
             });
@@ -122,6 +127,9 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
          * @returns {Promise}
          */
         hideContent: function (Content) {
+            // avoid jump effect
+            this.ContentContainer.setStyle('height', Content.offsetHeight);
+
             return new Promise(function (resolve) {
                 moofx(Content).animate({
                     right  : -10,
@@ -148,8 +156,6 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
                 opacity: 0
             });
 
-            Content.addClass('active');
-
             return new Promise(function (resolve) {
                 moofx(Content).animate({
                     right  : 0,
@@ -157,6 +163,28 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/VerticalTabSwitcher', 
                 }, {
                     duration: 300,
                     callback: resolve
+                })
+            })
+        },
+
+        /**
+         * Set height of content container
+         *
+         * @param Content
+         * @returns {Promise}
+         */
+        setHeight: function (Content) {
+            var self   = this,
+                height = Content.offsetHeight;
+            return new Promise(function (resolve) {
+                moofx(self.ContentContainer).animate({
+                    height: height
+                }, {
+                    duration: 300,
+                    callback: function () {
+                        self.ContentContainer.setStyle('height', '');
+                        resolve();
+                    }
                 })
             })
         },

@@ -23,3 +23,7 @@
 .verticalTabSwitcher-content-entry {
     position: relative;
 }
+
+.verticalTabSwitcher-content ul {
+    /*border: 1px solid #333;*/
+}
