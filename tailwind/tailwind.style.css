@@ -257,6 +257,12 @@ button {
     @apply text-white !important;
 }
 
+/* simple contact */
+.quiqqer-simple-contact input,
+.quiqqer-simple-contact textarea {
+    @apply mb-8 !important;
+}
+
 
 
 /**
@@ -376,6 +382,44 @@ p {
     h4 {
         @apply text-2xl;
     }
+}
+
+/********/
+/* form */
+/********/
+input,
+select,
+textarea {
+    @apply bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight mb-4;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    @apply block w-full  appearance-none;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    @apply border-grey;
+}
+
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+    @apply outline-none bg-white border-grey;
+}
+
+label {
+    @apply block tracking-wide text-grey-darker font-normal mb-2;
 }
 
 .page-multiple-sidebar-wrapper .brick-title {

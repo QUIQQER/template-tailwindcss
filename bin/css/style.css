@@ -913,6 +913,13 @@ button {
   color: #fff !important;
 }
 
+/* simple contact */
+
+.quiqqer-simple-contact input,
+.quiqqer-simple-contact textarea {
+  margin-bottom: 2rem !important;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -6716,6 +6723,67 @@ p {
   h4 {
     font-size: 1.25rem;
   }
+}
+
+/********/
+
+/* form */
+
+/********/
+
+input,
+select,
+textarea {
+  background-color: #f1f5f8;
+  color: #606f7b;
+  border-width: 1px;
+  border-color: #f1f5f8;
+  border-radius: .25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #b8c2cc;
+}
+
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+  outline: 0;
+  background-color: #fff;
+  border-color: #b8c2cc;
+}
+
+label {
+  display: block;
+  letter-spacing: .05em;
+  color: #606f7b;
+  font-weight: 400;
+  margin-bottom: .5rem;
 }
 
 .page-multiple-sidebar-wrapper .brick-title {
