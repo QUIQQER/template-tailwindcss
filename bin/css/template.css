@@ -344,6 +344,10 @@ li a:hover,
     margin-right: 1rem;
 }
 
+.qui-search-result .qui-control-list {
+    margin-top: 2rem;
+}
+
 /*******/
 /* FAQ */
 /*******/
