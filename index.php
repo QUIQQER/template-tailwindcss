@@ -1,5 +1,8 @@
 <?php
 
+use QUI\Exception;
+use QUI\System\Log;
+
 $Locale = QUI::getLocale();
 
 /**
@@ -180,6 +183,71 @@ if ($altLogoTargetUrl) {
 }
 
 /**
+ * search
+ */
+$search      = '';
+$dataQui     = '';
+$inputSearch = '';
+
+if ($Template->getAttribute('template-header')) {
+
+    $types = [
+        'quiqqer/sitetypes:types/search'
+    ];
+
+    /* check if quiqqer search packet is installed */
+    if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+        $types = [
+            'quiqqer/sitetypes:types/search',
+            'quiqqer/search:types/search'
+        ];
+
+        // Suggest Search integrate
+        $dataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
+    }
+
+    $searchSites = $Project->getSites([
+        'where' => [
+            'type' => [
+                'type'  => 'IN',
+                'value' => $types
+            ]
+        ],
+        'limit' => 1
+    ]);
+
+    if (count($searchSites)) {
+        try {
+            $searchUrl  = $searchSites[0]->getUrlRewritten();
+            $searchForm = '';
+
+            $searchForm = '
+            <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get">
+                <div class="header-bar-suggestSearch-wrapper">
+                    <input type="search" name="search"
+                            class="input-and-icon" ' . $dataQui . ' 
+                            placeholder="'
+                . $Locale->get('quiqqer/template-tailwindcss', 'navbar.search.text') .
+                '"/>
+                </div>
+                <span class="fa fa-fw fa-search"></span>
+            </form>';
+
+            $search = $searchForm .
+                '<div class="quiqqer-menu-megaMenu-mobile-search block md:hidden"
+                                  style="width: auto; font-size: 30px !important;">
+                    <a href="' . $searchUrl . '"
+                    class="header-bar-search-link searchMobile">
+                        <i class="fa fa-search header-bar-search-icon"></i>
+                    </a>
+                </div>';
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addNotice($Exception->getMessage());
+        }
+    }
+}
+
+/**
  * Mega menu
  */
 $MegaMenu = false;
@@ -231,7 +299,8 @@ if ($Template->getAttribute('template-header')) {
         'logoUrl'           => $logoUrl,
         'logoText'          => $logoText,
         'hideLogo'          => $hideLogo,
-        'alternateLogoHtml' => $alternateLogoHtml
+        'alternateLogoHtml' => $alternateLogoHtml,
+        'search'            => $search
     ]);
 
     $MegaMenu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));

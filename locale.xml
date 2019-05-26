@@ -242,6 +242,11 @@
     </groups>
     <groups name="quiqqer/template-tailwindcss" datatype="php">
 
+        <locale name="navbar.search.text">
+            <de><![CDATA[Suchen]]></de>
+            <en><![CDATA[Search]]></en>
+        </locale>
+
         <!-- TEMPLATE SETTINGS-->
         <locale name="templateTailwindCss.settings.menu.title">
             <de><![CDATA[Template Einstellungen: Tailwind CSS]]></de>

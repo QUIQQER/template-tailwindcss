@@ -218,13 +218,15 @@ button {
     padding: 0 !important;
 }
 
-.header-bar-nav-item a {
+.header-bar-nav-item a,
+.header-bar-suggestSearch .fa {
     @apply px-4 py-2 items-center text-grey-lighter;
     @apply flex !important;
     border-radius: 5px;
 }
 
-.header-bar-nav-item a:hover {
+.header-bar-nav-item a:hover,
+.header-bar-suggestSearch .fa:hover {
     background: rgba(0,0,0,0.075);
 }
 
@@ -237,7 +239,9 @@ button {
     @apply border-grey-light !important;
     @apply border-b;
 }
-.header-bar-alt .header-bar-nav-item a {
+
+.header-bar-alt .header-bar-nav-item a ,
+.header-bar-alt .header-bar-suggestSearch .fa {
     @apply text-black;
 }
 
@@ -390,7 +394,7 @@ p {
 input,
 select,
 textarea {
-    @apply bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight mb-4;
+    @apply bg-grey-lighter text-grey-darkest border border-grey-lighter rounded py-3 px-4 leading-tight mb-4;
 }
 
 textarea {
@@ -406,7 +410,7 @@ input[type="number"] {
 input:hover,
 select:hover,
 textarea:hover {
-    @apply border-grey;
+    @apply border-grey-light;
 }
 
 input:focus,
