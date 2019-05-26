@@ -307,9 +307,41 @@ li a:hover,
 /**************/
 /* pagination */
 /**************/
+.quiqqer-pagination {
+    padding: 0;
+}
+
 .quiqqer-sheets-desktop a, .quiqqer-sheets-desktop span {
     margin: 0 2px !important;
     width: 30px !important;
+}
+
+/*******************/
+/* sitetype search */
+/*******************/
+.qui-search-result form {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 2rem);
+    position: relative;
+    left: -1rem;
+    margin: 4rem auto 1rem;
+    max-width: 800px;
+}
+
+.qui-search-result .form-field-search {
+    min-width: 250px;
+    flex-grow: 1;
+    width: 70%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.qui-search-result .qui-button {
+    flex-grow: 1;
+    min-width: 100px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /*******/

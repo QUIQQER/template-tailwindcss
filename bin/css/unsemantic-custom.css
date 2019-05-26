@@ -12,3 +12,7 @@
     left: -1rem !important;
     width: calc(100% + 2rem) !important;
 }
+
+.grid-parent  {
+    padding: 0;
+}
