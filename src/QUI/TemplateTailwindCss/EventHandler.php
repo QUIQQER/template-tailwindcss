@@ -74,4 +74,8 @@ class EventHandler
 
         return $Engine->fetch($path . $template);
     }
+
+    public static function onTemplateGetSiteTitle() {
+        QUI\System\Log::writeRecursive('<-------------------------------------->');
+    }
 }
