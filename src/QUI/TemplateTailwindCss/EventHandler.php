@@ -74,23 +74,4 @@ class EventHandler
 
         return $Engine->fetch($path . $template);
     }
-
-    /**
-     * Set project suffix
-     *
-     * Wenn Bug behoben wird, muss der Suffix in Projekteinstellungen gesetzt werden
-     * und das hier kann komplett weg.
-     * https://dev.quiqqer.com/quiqqer/quiqqer/issues/874
-     *
-     * @param $Template
-     * @param $Site
-     */
-    public static function onTemplateGetSiteTitle($Template, $Site)
-    {
-        $suffix = ' - NameRobot';
-        $Template->setAttribute('site_title_suffix', $suffix);
-
-        $seoTitle = $Site->getAttribute('meta.seotitle');
-        $Site->setAttribute('meta.seotitle', $seoTitle . $suffix);
-    }
 }
