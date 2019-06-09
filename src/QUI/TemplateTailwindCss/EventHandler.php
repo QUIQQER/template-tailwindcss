@@ -91,9 +91,6 @@ class EventHandler
         $Template->setAttribute('site_title_suffix', $suffix);
 
         $seoTitle = $Site->getAttribute('meta.seotitle');
-
         $Site->setAttribute('meta.seotitle', $seoTitle . $suffix);
-
-
     }
 }
