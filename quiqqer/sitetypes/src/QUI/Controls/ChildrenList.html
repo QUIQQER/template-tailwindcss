@@ -53,7 +53,7 @@
         <!-- entry content -->
         <div class="tpl-childrenlist-default-entry-content w-full sm:w-3/5 md:w-3/4 {$marginToImage}">
 
-            /* Tags */
+            {* Tags *}
             {object assign=TagManager class="\QUI\Tags\Manager" Project=$Project}
             {assign var=tags value=$Child->getAttribute('quiqqer.tags.tagList')}
             {assign var=tagsCounter value=1}
