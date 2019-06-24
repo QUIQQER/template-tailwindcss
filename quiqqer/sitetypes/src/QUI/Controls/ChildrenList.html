@@ -53,19 +53,22 @@
         <!-- entry content -->
         <div class="tpl-childrenlist-default-entry-content w-full sm:w-3/5 md:w-3/4 {$marginToImage}">
 
-
+            /* Tags */
+            {object assign=TagManager class="\QUI\Tags\Manager" Project=$Project}
             {assign var=tags value=$Child->getAttribute('quiqqer.tags.tagList')}
             {assign var=tagsCounter value=1}
 
             {foreach from=$tags item=tag}
                 {if $tagsCounter < 6}
                     {if $tag}
-                    <span class="tpl-childrenlist-default-meta-category px-3 rounded-sm text-white bg-grey-darkest font-normal mb-2 inline-block">{$tag}</span>
+                    <span class="tpl-childrenlist-default-meta-category px-3 rounded-sm text-white bg-grey-darkest font-normal mb-2 inline-block">
+                        {assign var=tagData value=$TagManager->get($tag)}
+                        {$tagData.title}
+                    </span>
                     {/if}
                 {/if}
                 {assign var=tagsCounter value=$tagsCounter+1}
             {/foreach}
-
 
             {if $this->getAttribute('showHeader')}
             <header>
