@@ -164,6 +164,11 @@ class Utils
             $settingsCssInline = '<style>' . $settingsCSS . '</style>';
         }
 
+        // disable title and short in site content - do not show it twice
+        if ($titleAndShortPos == 'header') {
+            $Template->setAttribute('content-header', false);
+        }
+
         $config += [
             'quiTplType'         => $Project->getConfig('templateTailwindCss.settings.standardType'),
             'typeClass'          => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
