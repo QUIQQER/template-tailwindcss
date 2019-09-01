@@ -115,7 +115,7 @@
     {foreach $footerPrefix as $Brick}
         {assign var=brickFullWidth value=''}
         {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=fullWidth value='force-full-width px-0'}
+            {assign var=brickFullWidth value='force-full-width px-0'}
         {/if}
 
         {assign var=margin value="my-8"}
