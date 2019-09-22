@@ -26,7 +26,12 @@
              itemtype="{$this->getAttribute('child-itemtype')}"
              class="tpl-childrenlist-default-entry flex mb-8 md:mb-16 w-full flex-col sm:flex-row"
     >
+        {$tmp = $MetaList->clear()}
+        {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+        {$MetaList->create()}
+        
         <meta itemprop="position" content="{$counter}"/>
+        <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
         {assign var=counter value=$counter+1}
 
         <!-- entry image -->
@@ -72,7 +77,7 @@
 
             {if $this->getAttribute('showHeader')}
             <header>
-                <h1 itemprop="name" class="text-3xl mb-1">
+                <h1 class="text-3xl mb-1">
                     <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')}"
                        class="font-normal text-grey-darker">
                         {$Child->getAttribute('title')}
