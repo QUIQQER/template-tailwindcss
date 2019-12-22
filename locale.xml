@@ -562,6 +562,14 @@
             <de><![CDATA[Media: Bild im Text zentriert]]></de>
             <en><![CDATA[Media: image centered in text]]></en>
         </locale>
+        <locale name="editor.mediaFigure.left">
+            <de><![CDATA[Media: Bild im Text auf der linken Seite]]></de>
+            <en><![CDATA[Media: image in text on the left side]]></en>
+        </locale>
+        <locale name="editor.mediaFigure.right">
+            <de><![CDATA[Media: Bild im Text auf der rechten Seite]]></de>
+            <en><![CDATA[Media: image in text on the right side]]></en>
+        </locale>
 
         <!-- button standard -->
         <locale name="editor.button.primary">

@@ -6804,6 +6804,35 @@ label {
   box-shadow: 0 5px 30px 1px rgba(0, 0, 0, .1);
 }
 
+.media-figure-left {
+  display: block;
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.media-figure-right {
+  display: block;
+  float: left;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .media-figure-left,
+  .media-figure-right {
+    display: block;
+    float: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1px;
+    border-color: #dae1e7;
+    box-shadow: 0 5px 30px 1px rgba(0, 0, 0, .1);
+  }
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

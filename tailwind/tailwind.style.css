@@ -434,3 +434,19 @@ label {
     @apply mx-auto my-8 block border border-grey-light;
     box-shadow: 0 5px 30px 1px rgba(0,0,0,0.1)
 }
+
+.media-figure-left {
+    @apply block float-left mr-8 mb-4;
+}
+
+.media-figure-right {
+    @apply block float-left ml-8 mb-4;
+}
+
+@media screen and (max-width: 767px) {
+    .media-figure-left,
+    .media-figure-right {
+        @apply block float-none my-8 mx-auto border border-grey-light;
+        box-shadow: 0 5px 30px 1px rgba(0, 0, 0, .1);
+    }
+}
