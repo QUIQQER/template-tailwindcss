@@ -2,5 +2,4 @@
 <events>
     <event on="onProjectConfigSave" fire="\QUI\TemplateTailwindCss\EventHandler::onProjectConfigSave" />
     <event on="onSiteSave" fire="\QUI\TemplateTailwindCss\EventHandler::onSiteSave"/>
-    <event on="onSmartyInit" fire="\QUI\TemplateTailwindCss\EventHandler::onSmartyInit"/>
 </events>

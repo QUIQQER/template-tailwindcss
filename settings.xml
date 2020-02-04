@@ -702,6 +702,22 @@
                         <attribute name="class">media-figure</attribute>
                     </attributes>
                 </style>
+                <!-- EDIA FIGURE / IMAGE: left -->
+                <style element="img">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.mediaFigure.left"/>
+                    <attributes>
+                        <attribute name="class">media-figure-left</attribute>
+                    </attributes>
+                </style>
+                <!-- EDIA FIGURE / IMAGE: right -->
+                <style element="img">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="editor.mediaFigure.right"/>
+                    <attributes>
+                        <attribute name="class">media-figure-right</attribute>
+                    </attributes>
+                </style>
 
                 <!-- BUTTONS -->
                 <!-- standard -->
