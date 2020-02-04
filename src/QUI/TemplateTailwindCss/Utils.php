@@ -11,10 +11,10 @@ use QUI;
 /**
  * Help Class for Template Tailwind CSS
  *
- * @package QUI\TemplateTailwindCss
+ * @return array
  * @author www.pcsg.de (Michael Danielczok)
  *
- * @return array
+ * @package QUI\TemplateTailwindCss
  */
 class Utils
 {
@@ -24,19 +24,19 @@ class Utils
      */
     public static function getConfig($params)
     {
+        /* @var $Project QUI\Projects\Project */
+        $Project   = $params['Project'];
+        $Template  = $params['Template'];
+        $cacheName = md5($params['Site']->getId() . $Project->getName(). $Project->getLang());
+
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateTailwindCss/' . $params['Site']->getId()
+                'quiqqer/templateTailwindCss/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
 
-
         $config = [];
-
-        /* @var $Project QUI\Projects\Project */
-        $Project  = $params['Project'];
-        $Template = $params['Template'];
 
         /**
          * General page settings: Title? Description? Header? Breadcrumb?
@@ -170,20 +170,20 @@ class Utils
         }
 
         $config += [
-            'quiTplType'         => $Project->getConfig('templateTailwindCss.settings.standardType'),
-            'typeClass'          => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-            'pageTitle'          => $title,
-            'pageShort'          => $short,
-            'titleAndShortPos'   => $titleAndShortPos,
-            'pageHeader'         => $header,
-            'pageBreadcrumb'     => $breadcrumb,
-            'showStart'          => $showStart,
+            'quiTplType'        => $Project->getConfig('templateTailwindCss.settings.standardType'),
+            'typeClass'         => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'pageTitle'         => $title,
+            'pageShort'         => $short,
+            'titleAndShortPos'  => $titleAndShortPos,
+            'pageHeader'        => $header,
+            'pageBreadcrumb'    => $breadcrumb,
+            'showStart'         => $showStart,
             'settingsCssInline' => $settingsCssInline
         ];
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateTailwindCss/' . $params['Site']->getId(),
+            'quiqqer/templateTailwindCss/' . $cacheName,
             $config
         );
 
