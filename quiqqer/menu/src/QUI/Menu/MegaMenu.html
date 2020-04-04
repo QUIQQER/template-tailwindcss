@@ -34,6 +34,7 @@
 
             {if $showMenu && $usedControl}
                 {control control=$usedControl Site=$Child assign=Control}
+                {assign var=t_ value=$this->addSubMenu($usedControl)}
                 {if $Control->count()}
                 <div class="quiqqer-menu-megaMenu-list-item-menu">
                     {$Control->create()}
