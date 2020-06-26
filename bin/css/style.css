@@ -6794,6 +6794,12 @@ input[type="number"] {
           appearance: none;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  margin-bottom: 0;
+  margin-right: 1rem;
+}
+
 input:hover,
 select:hover,
 textarea:hover {
@@ -6812,7 +6818,6 @@ textarea:active {
 }
 
 label {
-  display: block;
   letter-spacing: .05em;
   color: #606f7b;
   font-weight: 400;

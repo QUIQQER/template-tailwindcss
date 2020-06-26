@@ -1,4 +1,4 @@
-window.addEvent("domready", function () {
+var initTailwind = function () {
     "use strict";
 
     document.getElements('[href=#top]').addEvent('click', function (event) {
@@ -19,7 +19,7 @@ window.addEvent("domready", function () {
          * PageToTop button
          */
         if (document.getElements('[href=#top]')) {
-            var PageToTop         = document.getElements('[href=#top]'),
+            var PageToTop     = document.getElements('[href=#top]'),
                 buttonVisible = false;
 
             // show on load after 1s delay
@@ -100,7 +100,14 @@ window.addEvent("domready", function () {
             })
         }
     });
-});
+};
+
+if (typeof whenQuiLoaded !== 'undefined') {
+    whenQuiLoaded().then(initTailwind);
+} else {
+    window.addEvent("domready", initTailwind);
+}
+
 
 /**
  * Handle header bar position.

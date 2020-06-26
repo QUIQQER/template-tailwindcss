@@ -437,6 +437,11 @@ input[type="number"] {
     @apply block w-full  appearance-none;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+    @apply mb-0 mr-4;
+}
+
 input:hover,
 select:hover,
 textarea:hover {
@@ -453,7 +458,7 @@ textarea:active {
 }
 
 label {
-    @apply block tracking-wide text-grey-darker font-normal mb-2;
+    @apply tracking-wide text-grey-darker font-normal mb-2;
 }
 
 .page-multiple-sidebar-wrapper .brick-title {
