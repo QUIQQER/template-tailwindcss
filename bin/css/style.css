@@ -6797,7 +6797,7 @@ input[type="number"] {
 input[type="checkbox"],
 input[type="radio"] {
   margin-bottom: 0;
-  margin-right: 1rem;
+  margin-right: .5rem;
 }
 
 input:hover,
