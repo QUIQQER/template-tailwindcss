@@ -1,0 +1,82 @@
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
+<!-- page -->
+<div class="body-container {$bodyPadding}">
+
+    {* <!--page header --> *}
+    {fetch template="template/header.html"
+        Site=$Site
+        pageHeader=$pageHeader
+        pageTitle=$pageTitle
+        pageShort=$pageShort
+        titleAndShortPos=$titleAndShortPos
+    }
+
+    {foreach $headerBricks as $Brick}
+        {assign var=fullWidth value=''}
+        {if $Brick->getSetting('general.fullWidth')}
+            {assign var=fullWidth value='force-full-width px-0'}
+        {/if}
+
+        {assign var=margin value="my-8"}
+        {if $Brick->getSetting('general.noSpacing')}
+        {assign var=margin value="my-0"}
+        {/if}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$fullWidth}">
+                    {$Brick->create()}
+                </div>
+            </div>
+        </section>
+    {/foreach}
+
+    {* <!-- breadcrumb --> *}
+    {fetch template="template/breadcrumb.html" Site=$Site pageBreadcrumb=$pageBreadcrumb}
+
+    {foreach $headerSuffix as $Brick}
+        {assign var=fullWidth value=''}
+        {if $Brick->getSetting('general.fullWidth')}
+            {assign var=fullWidth value='force-full-width px-0'}
+        {/if}
+
+        {assign var=margin value="my-8"}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=margin value="my-0"}
+        {/if}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$fullWidth}">
+                    {$Brick->create()}
+                </div>
+            </div>
+        </section>
+    {/foreach}
+
+    {* <!--main content--> *}
+    {$Template->getLayout()}
+
+    {foreach $footerPrefix as $Brick}
+        {assign var=brickFullWidth value=''}
+        {if $Brick->getSetting('general.fullWidth')}
+            {assign var=brickFullWidth value='force-full-width px-0'}
+        {/if}
+
+        {assign var=margin value="my-8"}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=margin value="my-0"}
+        {/if}
+        <section class="brick-id-{$Brick->getAttribute('id')}">
+            <div class="brick-wrapper {$margin}">
+                <div class="container {$brickFullWidth}">
+                    {$Brick->create()}
+                </div>
+            </div>
+        </section>
+    {/foreach}
+
+    {if $Template->getAttribute('template-footer')}
+        {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site LangSwitch=$LangSwitch}
+    {/if}
+</div>
