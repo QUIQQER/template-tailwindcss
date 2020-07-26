@@ -64,47 +64,18 @@ switch ($Template->getLayoutType()) {
 }
 
 /**
- * Dropdown Language switch
+ * Language switch
  */
-/*$showDropDownFlag = true;
-$DropDownFlag     = '';
-$showFlags        = false;
-$showText         = false;
 
-switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
-    case 'flag':
-        $showFlags        = true;
-        $showDropDownFlag = true;
-        break;
+$LangSwitch = null;
 
-    case 'text':
-        $showText         = true;
-        $showDropDownFlag = true;
-        break;
-
-    case 'flagAndText':
-        $showFlags        = true;
-        $showText         = true;
-        $showDropDownFlag = true;
-        break;
-}
-
-if ($showDropDownFlag) {
-
-    $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown(array(
+if (\count($Project->getLanguages()) < 2) {
+    $LangSwitch = new QUI\Bricks\Controls\LanguageSwitches\Flags([
         'Site'      => $Site,
-        'showFlags' => $showFlags,
-        'showText'  => $showText
-    ));
-
-    $DropDownFlag = $DropDown->create();
-}*/
-
-$LangSwitch = new QUI\Bricks\Controls\LanguageSwitches\Flags([
-    'Site'      => $Site,
-    'showFlags' => true,
-    'showText'  => false
-]);
+        'showFlags' => true,
+        'showText'  => false
+    ]);
+}
 
 $templateSettings['LangSwitch'] = $LangSwitch;
 
