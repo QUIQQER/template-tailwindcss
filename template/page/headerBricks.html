@@ -1,0 +1,18 @@
+{foreach $headerBricks as $Brick}
+    {assign var=fullWidth value=''}
+        {if $Brick->getSetting('general.fullWidth')}
+    {assign var=fullWidth value='force-full-width px-0'}
+    {/if}
+
+    {assign var=margin value="my-8"}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=margin value="my-0"}
+    {/if}
+    <section class="brick-id-{$Brick->getAttribute('id')}">
+        <div class="brick-wrapper {$margin}">
+            <div class="container {$fullWidth}">
+                {$Brick->create()}
+            </div>
+        </div>
+    </section>
+{/foreach}
