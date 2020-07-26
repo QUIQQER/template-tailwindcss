@@ -9,10 +9,10 @@
     <!-- [begin] css combine -->
     {fontawesome}
     {unsemantic}
-    
-    <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="{$URL_TPL_DIR}bin/css/unsemantic-custom.css" rel="stylesheet" type="text/css"/>
-    <link href="{$URL_TPL_DIR}bin/css/template.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Template->getTemplateUrl('bin/css/style.css')}" rel="stylesheet" type="text/css"/>
+    <link href="{$Template->getTemplateUrl('bin/css/unsemantic-custom.css')}" rel="stylesheet" type="text/css"/>
+    <link href="{$Template->getTemplateUrl('bin/css/template.css')}" rel="stylesheet" type="text/css"/>
     
     <link rel="preload" href="{$URL_OPT_DIR}quiqqer/menu/bin/SlideOut.css?update={$lastUpdate|md5}" as="style" />
     <link rel="preload" href="{$URL_OPT_DIR}bin/qui/qui/controls/Control.css?update={$lastUpdate|md5}" as="style" />
@@ -143,7 +143,7 @@
 
 <!-- [begin] js combine -->
 <script src="{$URL_OPT_DIR}bin/require.js"></script>
-<script src="{$URL_TPL_DIR}bin/init.js"></script>
+<script src="{$Template->getTemplateUrl('bin/init.js')}"></script>
 <!-- [end] js combine -->
 
 </body>
