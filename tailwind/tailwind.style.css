@@ -485,3 +485,19 @@ label {
         box-shadow: 0 5px 30px 1px rgba(0, 0, 0, .1);
     }
 }
+
+/** QUI customize
+ ============================ */
+
+.qui-window-popup-title-close {
+    color: #3d4852;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.qui-window-popup-title-close:hover {
+    box-shadow: none;
+}
