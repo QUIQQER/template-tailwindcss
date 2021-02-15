@@ -161,7 +161,6 @@ $dataQui     = '';
 $inputSearch = '';
 
 if ($Template->getAttribute('template-header')) {
-
     $types = [
         'quiqqer/sitetypes:types/search'
     ];
@@ -245,7 +244,6 @@ if ($Template->getAttribute('template-header')) {
         // product page
         $startPageUrl   = $ProductPage->getUrlRewritten();
         $startPageTitle = $ProductPage->getAttribute('title');
-
     } else {
         // startpage
         $StartPage      = $Project->get(1);
