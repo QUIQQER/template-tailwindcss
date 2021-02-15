@@ -1,7 +1,7 @@
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
-{template_event name="quiqqer::template-tailwindcss::body::pageBegin" Template=$Template}
+{template_event name="quiqqer::template::body::pageBegin" Template=$Template}
 <div class="body-container {$bodyPadding}">
 
     {* <!--page header --> *}
@@ -12,7 +12,7 @@
         pageShort=$pageShort
         titleAndShortPos=$titleAndShortPos
     }
-    {template_event name="quiqqer::template-tailwindcss::body::afterHeader" Template=$Template}
+    {template_event name="quiqqer::template::body::afterHeader" Template=$Template}
 
 
     {* <!--header bricks --> *}
@@ -20,11 +20,11 @@
         Site=$Site
         headerBricks=$headerBricks
     }
-    {template_event name="quiqqer::template-tailwindcss::body::afterHeaderBricks" Template=$Template}
+    {template_event name="quiqqer::template::body::afterHeaderBricks" Template=$Template}
 
     {* <!-- breadcrumb --> *}
     {fetch template="template/page/breadcrumb.html" Site=$Site pageBreadcrumb=$pageBreadcrumb}
-    {template_event name="quiqqer::template-tailwindcss::body::afterBreadcrumb" Template=$Template}
+    {template_event name="quiqqer::template::body::afterBreadcrumb" Template=$Template}
 
     {foreach $headerSuffix as $Brick}
         {assign var=fullWidth value=''}
@@ -46,9 +46,9 @@
     {/foreach}
 
     {* <!--main content--> *}
-    {template_event name="quiqqer::template-tailwindcss::body::beforeMain" Template=$Template}
+    {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
     {$Template->getLayout()}
-    {template_event name="quiqqer::template-tailwindcss::body::afterMain" Template=$Template}
+    {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
     {foreach $footerPrefix as $Brick}
         {assign var=brickFullWidth value=''}
@@ -69,10 +69,10 @@
         </section>
     {/foreach}
 
-    {template_event name="quiqqer::template-tailwindcss::body::beforeFooter" Template=$Template}
+    {template_event name="quiqqer::template::body::beforeFooter" Template=$Template}
     {if $Template->getAttribute('template-footer')}
         {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site LangSwitch=$LangSwitch}
     {/if}
-    {template_event name="quiqqer::template-tailwindcss::body::afterFooter" Template=$Template}
+    {template_event name="quiqqer::template::body::afterFooter" Template=$Template}
 </div>
-{template_event name="quiqqer::template-tailwindcss::body::pageEnd" Template=$Template}
+{template_event name="quiqqer::template::body::pageEnd" Template=$Template}

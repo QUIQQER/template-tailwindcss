@@ -1,7 +1,7 @@
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
-    {template_event name="quiqqer::template-businessPro::header::begin" Template=$Template}
+    {template_event name="quiqqer::template::header::begin" Template=$Template}
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
 
@@ -9,12 +9,12 @@
     {$Template->getHeader()}
 
     {fetch template="template/head/styles.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR lastUpdate=$lastUpdate}
-    {template_event name="quiqqer::template-tailwindcss::header::afterCSSStyles" Template=$Template}
+    {template_event name="quiqqer::template::header::afterCSSStyles" Template=$Template}
 
     {$settingsCssInline}
-    {template_event name="quiqqer::template-tailwindcss::header::afterSettingsCSS" Template=$Template}
+    {template_event name="quiqqer::template::header::afterSettingsCSS" Template=$Template}
 
-    {template_event name="quiqqer::template-tailwindcss::header::end" Template=$Template}
+    {template_event name="quiqqer::template::header::end" Template=$Template}
 
 </head>
 {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
@@ -25,7 +25,7 @@
 {/if}
 
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
-{template_event name="quiqqer::template-tailwindcss::body::begin" Template=$Template}
+{template_event name="quiqqer::template::body::begin" Template=$Template}
 
 {* <!--top bar / navigation--> *}
 {fetch template="template/topBar.html"
@@ -38,7 +38,7 @@
     logoUrlAlt=$logoUrlAlt
 }
 
-{template_event name="quiqqer::template-tailwindcss::body::afterMenu" Template=$Template}
+{template_event name="quiqqer::template::body::afterMenu" Template=$Template}
 
 {fetch template="template/page.html"
     BricksManager=$BricksManager
@@ -60,6 +60,6 @@
 {* javascript *}
 {fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
 
-{template_event name="quiqqer::template-tailwindcss::body::end" Template=$Template}
+{template_event name="quiqqer::template::body::end" Template=$Template}
 </body>
 </html>
