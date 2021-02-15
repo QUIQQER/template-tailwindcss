@@ -10,9 +10,11 @@
             <div class="page-footer-copyright-right-content">
                 {locale group="quiqqer/template-tailwindcss" var="copyright.text.right"}
             </div>
+            {if $LangSwitch}
             <div class="page-footer-copyright-right-langswitch md:ml-4">
                 {$LangSwitch->create()}
             </div>
+            {/if}
         </div>
     </div>
 </div>

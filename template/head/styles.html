@@ -1,0 +1,24 @@
+<!-- [begin] css combine -->
+{fontawesome}
+{unsemantic}
+
+<link href="{$Template->getTemplateUrl('bin/css/style.css')}" rel="stylesheet" type="text/css"/>
+<link href="{$Template->getTemplateUrl('bin/css/unsemantic-custom.css')}" rel="stylesheet" type="text/css"/>
+<link href="{$Template->getTemplateUrl('bin/css/template.css')}" rel="stylesheet" type="text/css"/>
+
+<link as="font" crossorigin type="font/woff2" rel="preload" href="{$Template->getTemplateUrl('bin/fonts/open-sans-v15-latin-300.woff2')}" />
+<link as="font" crossorigin type="font/woff2" rel="preload" href="{$Template->getTemplateUrl('bin/fonts/open-sans-v15-latin-regular.woff2')}" />
+<link as="font" crossorigin type="font/woff2" rel="preload" href="{$Template->getTemplateUrl('bin/fonts/open-sans-v15-latin-700.woff2')}" />
+<link rel="preload" href="{$URL_OPT_DIR}quiqqer/menu/bin/SlideOut.css?update={$lastUpdate|md5}" as="style" />
+<link rel="preload" href="{$URL_OPT_DIR}bin/qui/qui/controls/Control.css?update={$lastUpdate|md5}" as="style" />
+
+<!-- [end] css combine -->
+
+<style>
+
+    .prefix-suffix-nofull-width .quiqqer-bricks-promoslider-wallpaper .grid-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+</style>

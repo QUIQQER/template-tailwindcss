@@ -1,48 +1,31 @@
 <!doctype html>
-<html lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage">
+<html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
+    {template_event name="quiqqer::template::header::begin" Template=$Template}
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
 
     {pace}
     {$Template->getHeader()}
 
-    <!-- [begin] css combine -->
-    {fontawesome}
-    {unsemantic}
-    
-    <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="{$URL_TPL_DIR}bin/css/unsemantic-custom.css" rel="stylesheet" type="text/css"/>
-    <link href="{$URL_TPL_DIR}bin/css/template.css" rel="stylesheet" type="text/css"/>
-    
-    <link rel="preload" href="{$URL_OPT_DIR}quiqqer/menu/bin/SlideOut.css?update={$lastUpdate|md5}" as="style" />
-    <link rel="preload" href="{$URL_OPT_DIR}bin/qui/qui/controls/Control.css?update={$lastUpdate|md5}" as="style" />
-
-    <!-- [end] css combine -->
-
-    <style>
-
-        .prefix-suffix-nofull-width .quiqqer-bricks-promoslider-wallpaper .grid-container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-    </style>
+    {fetch template="template/head/styles.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR lastUpdate=$lastUpdate}
+    {template_event name="quiqqer::template::header::afterCSSStyles" Template=$Template}
 
     {$settingsCssInline}
+    {template_event name="quiqqer::template::header::afterSettingsCSS" Template=$Template}
+
+    {template_event name="quiqqer::template::header::end" Template=$Template}
 
 </head>
-
-{assign var=header value=$BricksManager->getBricksByArea('header', $Site)}
-{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-
+{assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
 {assign var=bodyPadding value=''}
-{if empty($header) && !$pageHeader}
+{if empty($headerBricks) && !$pageHeader}
     {assign var=bodyPadding value='body-padding'}
     {assign var=navBackground value='header-bar-alt'}
 {/if}
 
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
+{template_event name="quiqqer::template::body::begin" Template=$Template}
 
 {* <!--top bar / navigation--> *}
 {fetch template="template/topBar.html"
@@ -52,99 +35,31 @@
     logoText=$logoText
     Site=$Site
     altLogoTargetUrl=$altLogoTargetUrl
-    logoUrlAlt=$logoUrlAlt}
+    logoUrlAlt=$logoUrlAlt
+}
 
-<!-- page -->
-<div class="body-container {$bodyPadding}">
+{template_event name="quiqqer::template::body::afterMenu" Template=$Template}
 
-    {* <!--page header --> *}
-    {fetch template="template/header.html" Site=$Site pageHeader=$pageHeader pageTitle=$pageTitle pageShort=$pageShort
-            titleAndShortPos=$titleAndShortPos}
-
-    {foreach $header as $Brick}
-        {assign var=fullWidth value=''}
-        {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=fullWidth value='force-full-width px-0'}
-        {/if}
-
-        {assign var=margin value="my-8"}
-        {if $Brick->getSetting('general.noSpacing')}
-            {assign var=margin value="my-0"}
-        {/if}
-        <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="brick-wrapper {$margin}">
-                <div class="container {$fullWidth}">
-                    {$Brick->create()}
-                </div>
-            </div>
-        </section>
-    {/foreach}
-
-    {* <!-- breadcrumb --> *}
-    {fetch template="template/breadcrumb.html" Site=$Site pageBreadcrumb=$pageBreadcrumb}
-
-
-    {foreach $headerSuffix as $Brick}
-        {assign var=fullWidth value=''}
-        {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=fullWidth value='force-full-width px-0'}
-        {/if}
-
-        {assign var=margin value="my-8"}
-        {if $Brick->getSetting('general.noSpacing')}
-            {assign var=margin value="my-0"}
-        {/if}
-        <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="brick-wrapper {$margin}">
-                <div class="container {$fullWidth}">
-                    {$Brick->create()}
-                </div>
-            </div>
-        </section>
-    {/foreach}
-
-    {* <!--main content--> *}
-    {$Template->getLayout()}
-
-    {foreach $footerPrefix as $Brick}
-        {assign var=brickFullWidth value=''}
-        {if $Brick->getSetting( 'general.fullWidth' )}
-            {assign var=brickFullWidth value='force-full-width px-0'}
-        {/if}
-
-        {assign var=margin value="my-8"}
-        {if $Brick->getSetting('general.noSpacing')}
-            {assign var=margin value="my-0"}
-        {/if}
-        <section class="brick-id-{$Brick->getAttribute('id')}">
-            <div class="brick-wrapper {$margin}">
-                <div class="container {$brickFullWidth}">
-                    {$Brick->create()}
-                </div>
-            </div>
-        </section>
-    {/foreach}
-
-    {if $Template->getAttribute('template-footer')}
-    <footer class="page-footer clear-fix bg-grey-darkest pt-12 text-grey-dark">
-        <div class="page-footer-wrapper">
-            {* <!--footer bricks--> *}
-            {fetch template="template/footerBricks.html" Site=$Site BricksManager=$BricksManager}
-
-            {* <!--footer copyright--> *}
-            {fetch template="template/footerCopyright.html" LangSwitch=$LangSwitch}
-        </div>
-    </footer>
-    {/if}
-</div>
+{fetch template="template/page.html"
+    BricksManager=$BricksManager
+    Site=$Site
+    Template=$Template
+    bodyPadding=$bodyPadding
+    pageHeader=$pageHeader
+    pageTitle=$pageTitle
+    pageShort=$pageShort
+    titleAndShortPos=$titleAndShortPos
+    pageBreadcrumb=$pageBreadcrumb
+    LangSwitch=$LangSwitch
+    headerBricks=$headerBricks
+}
 
 {* to top icon *}
 {fetch template="template/toTop.html"}
 
-<!-- [begin] js combine -->
-<script src="{$URL_OPT_DIR}bin/require.js"></script>
-<script src="{$URL_TPL_DIR}bin/init.js"></script>
-<!-- [end] js combine -->
+{* javascript *}
+{fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
 
+{template_event name="quiqqer::template::body::end" Template=$Template}
 </body>
 </html>
