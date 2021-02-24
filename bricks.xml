@@ -108,6 +108,58 @@
             </settings>
         </brick>
 
+        <!-- Separator element -->
+        <brick control="\QUI\TemplateTailwindCss\Controls\Separator">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.Separator.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.Separator.description"/>
+            </description>
+
+            <settings>
+                <setting name="design" type="select">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.design"/>
+
+                    <option value="simple" selected="selected">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.simple"/>
+                    </option>
+                    <option value="lines">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.lines"/>
+                    </option>
+                    <option value="quote">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.quote"/>
+                    </option>
+                    <option value="dark">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.dark"/>
+                    </option>
+                    <option value="iconLeft">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconLeft"/>
+                    </option>
+                    <option value="iconCenter">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconCenter"/>
+                    </option>
+                    <option value="iconRight">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconRight"/>
+                    </option>
+                </setting>
+
+                <setting type="text" name="icon" class="media-image" data-qui-options-selectable_types="icon" data-qui-options-cssclasses="1">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.icon"/>
+                </setting>
+            </settings>
+        </brick>
 
         <!-- defined areas in the template -->
         <templateAreas>
