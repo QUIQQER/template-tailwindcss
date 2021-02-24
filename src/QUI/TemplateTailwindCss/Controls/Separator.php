@@ -10,7 +10,6 @@ use QUI;
 
 /**
  * Class Separator
- * 
  *
  * @package quiqqer/bricks
  */
@@ -64,8 +63,8 @@ class Separator extends QUI\Control
     }
 
     /**
-     * Get the css classes depend on design 
-     * 
+     * Get the css classes depend on design
+     *
      * @return string - css classes
      */
     public function getDesignCSSClasses()
@@ -100,7 +99,7 @@ class Separator extends QUI\Control
                 $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__icon quiqqer-control-separator__icon__right rounded-lg';
                 break;
         }
-        
+
         return $cssClasses;
     }
 }
