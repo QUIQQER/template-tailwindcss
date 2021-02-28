@@ -1,0 +1,91 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="qui-control-siteListPreview-container qui-control-siteListPreview__default control-template"
+>
+    <link property="mainEntityOfPage" href="{url site=$Site}">
+
+    {assign var=counter value=1}
+
+    {foreach from=$children item=Child}
+    {assign var=_Child value=$Child->load()}
+    <article itemscope
+             itemprop="{$this->getAttribute('child-itemprop')}"
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             class="qui-control-siteListPreview-entry"
+    >
+        {$tmp = $MetaList->clear()}
+        {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+        {$MetaList->create()}
+
+        <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+        <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
+        <meta itemprop="position" content="{$counter}"/>
+
+
+        <header class="qui-control-siteListPreview-entry-header font-bold text-lg mb-1">
+            <span class="qui-control-siteListPreview-entry-header-pos mr-1">
+                <span class="qui-control-siteListPreview-entry-header-pos-number">{$counter}</span>
+                <span class="qui-control-siteListPreview-entry-header-pos-icon">
+                    <span class="fa fa-angle-left"></span>
+                </span>
+            </span>
+            <a href="{url site=$Child}"
+               title="{$Child->getAttribute('title')}"
+               class="qui-control-siteListPreview-entry-header-title hover:no-underline">
+                {$Child->getAttribute('title')}
+            </a>
+        </header>
+        <p class="qui-control-siteListPreview-entry-short text-grey-darker text-sm">Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit.</p>
+
+        {*
+        <a href="{url site=$Child}">
+            {image src=$Child->getAttribute('image_site') width="500" type="resize"
+            title="{$Child->getAttribute('title')}"}
+        </a>
+
+        <!-- entry content -->
+        <div class="">
+            <a href="{url site=$Child}"
+               title="{$Child->getAttribute('title')}"
+               class="qui-control-childrenlist-default-entry-content-headerLink"
+            >
+                {$Child->getAttribute('title')}
+            </a>
+
+
+            {if $this->getAttribute('showShort')}
+            <div class="qui-control-childrenlist-default-entry-content-short{$noImageClass}">
+                {$Child->getAttribute('short')|nl2br}
+            </div>
+            {/if}
+
+
+            <a href="{url site=$Child}"
+               title="{$Child->getAttribute('title')}"
+               class="button qui-control-childrenlist-default-entry-content-footer-link"
+            >
+                {locale group="quiqqer/sitetypes" value="list.more"}
+            </a>
+
+        </div>
+        *}
+
+    </article>
+
+    {assign var=counter value=$counter+1}
+    {/foreach}
+</section>

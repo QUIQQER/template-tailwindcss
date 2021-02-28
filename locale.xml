@@ -284,6 +284,40 @@
             <de><![CDATA[Icon]]></de>
             <en><![CDATA[Icon]]></en>
         </locale>
+
+        <!-- Site list preview -->
+        <locale name="brick.SiteListPreview.title">
+            <de><![CDATA[TailwindCSS: Sidebar Seiten-Liste mit Vorschau]]></de>
+            <en><![CDATA[TailwindCSS: Sidebar site list with preview]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.description">
+            <de><![CDATA[Eine einfache Seiten-Liste. Ein Klick auf den Eintrag öffnet ein kleines Popup mit mehr Informationen.]]></de>
+            <en><![CDATA[A simple page list. Clicking on the entry opens a small popup with more information.]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.site">
+            <de><![CDATA[Seiten]]></de>
+            <en><![CDATA[Sites]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.order">
+            <de><![CDATA[Sortierung]]></de>
+            <en><![CDATA[Sort]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.template">
+            <de><![CDATA[Vorlage (Template)]]></de>
+            <en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.template.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.template.limit">
+            <de><![CDATA[Limit]]></de>
+            <en><![CDATA[Limit]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.moreLink">
+            <de><![CDATA[Link zu weiteren Seiten]]></de>
+            <en><![CDATA[Link to more pages]]></en>
+        </locale>
     </groups>
 
     <groups name="quiqqer/template-tailwindcss" datatype="php">
