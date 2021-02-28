@@ -318,6 +318,12 @@
             <de><![CDATA[Link zu weiteren Seiten]]></de>
             <en><![CDATA[Link to more pages]]></en>
         </locale>
+
+        <!-- button -->
+        <locale name="btn.learMmore">
+            <de><![CDATA[Mehr erfahren]]></de>
+            <en><![CDATA[Learn more]]></en>
+        </locale>
     </groups>
 
     <groups name="quiqqer/template-tailwindcss" datatype="php">

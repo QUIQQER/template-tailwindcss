@@ -1,5 +1,3 @@
-{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
-
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <header class="control-header">
     <h1>{$this->getAttribute('frontendTitle')}</h1>
@@ -24,7 +22,7 @@
     <article itemscope
              itemprop="{$this->getAttribute('child-itemprop')}"
              itemtype="{$this->getAttribute('child-itemtype')}"
-             class="qui-control-siteListPreview-entry"
+             class="qui-control-siteListPreview-entry relative"
     >
         {$tmp = $MetaList->clear()}
         {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
@@ -44,46 +42,42 @@
             </span>
             <a href="{url site=$Child}"
                title="{$Child->getAttribute('title')}"
-               class="qui-control-siteListPreview-entry-header-title hover:no-underline">
+               class="qui-control-siteListPreview-entry-header-title hover:no-underline" onclick="event.preventDefault();">
                 {$Child->getAttribute('title')}
             </a>
         </header>
-        <p class="qui-control-siteListPreview-entry-short text-grey-darker text-sm">Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.</p>
+        <p class="qui-control-siteListPreview-entry-short text-grey-darker text-sm">
+            {$Child->getAttribute('short')|nl2br}
+        </p>
 
-        {*
-        <a href="{url site=$Child}">
-            {image src=$Child->getAttribute('image_site') width="500" type="resize"
-            title="{$Child->getAttribute('title')}"}
-        </a>
+        <div class="qui-control-siteListPreview-preview rounded-lg shadow-lg border">
+            <div class="qui-control-siteListPreview-preview-container flex">
+                <span class="fa fa-close qui-control-siteListPreview-preview-close"></span>
 
-        <!-- entry content -->
-        <div class="">
-            <a href="{url site=$Child}"
-               title="{$Child->getAttribute('title')}"
-               class="qui-control-childrenlist-default-entry-content-headerLink"
-            >
-                {$Child->getAttribute('title')}
-            </a>
+                <div class="qui-control-siteListPreview-preview-image">
+                    {if $Child->getAttribute('image_site')}
+                    {image src=$Child->getAttribute('image_site') width="128" type="resize"
+                    title="{$Child->getAttribute('title')}" class="rounded-full m-4 w-32 h-32"}
+                    {/if}
+                </div>
+                <div class="qui-control-siteListPreview-preview-content p-4">
+                    <header class="qui-control-siteListPreview-preview-content-title font-bold mt-4 mb-1 mt-0 text-xl">
+                        {$Child->getAttribute('title')}
+                    </header>
 
+                    <p class="qui-control-siteListPreview-preview-content-short text-grey-darker text-sm">
+                        {$Child->getAttribute('short')|nl2br}
+                    </p>
 
-            {if $this->getAttribute('showShort')}
-            <div class="qui-control-childrenlist-default-entry-content-short{$noImageClass}">
-                {$Child->getAttribute('short')|nl2br}
+                    <a href="{url site=$Child}"
+                       title="{$Child->getAttribute('title')}"
+                       class="qui-control-siteListPreview-preview-link font-bold text-sm hover:no-underline"
+                    >
+                        {locale group="quiqqer/template-tailwindcss" var="btn.learMore"}
+                    </a>
+                </div>
             </div>
-            {/if}
-
-
-            <a href="{url site=$Child}"
-               title="{$Child->getAttribute('title')}"
-               class="button qui-control-childrenlist-default-entry-content-footer-link"
-            >
-                {locale group="quiqqer/sitetypes" value="list.more"}
-            </a>
-
         </div>
-        *}
-
     </article>
 
     {assign var=counter value=$counter+1}

@@ -26,6 +26,7 @@ class SiteListPreview extends QUI\Control
         // default options
         $this->setAttributes([
             'class'           => 'qui-control-siteListPreview',
+            'qui-class'       => 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
             'limit'           => 3,
             'order'           => 'c_date DESC',
             'Site'            => false,
