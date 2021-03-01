@@ -17,6 +17,39 @@ use QUI\Projects\Site\Utils;
 class SiteListPreview extends QUI\Control
 {
     /**
+     * Path to list html file
+     *
+     * @var string
+     */
+    private $listHTMLFile = '';
+
+    /**
+     * Path to list css file
+     *
+     * @var string
+     */
+    private $listCSSFile = '';
+
+    /**
+     * Path to preview html file
+     *
+     * @var string
+     */
+    private $previewHTMLFile = '';
+
+    /**
+     * Path to preview css file
+     *
+     * @var string
+     */
+    private $previewCSSFile = '';
+
+    /**
+     * @var QUI\Interfaces\Template\EngineInterface
+     */
+    private $Engine = null;
+
+    /**
      * constructor
      *
      * @param array $attributes
@@ -25,27 +58,36 @@ class SiteListPreview extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'class'           => 'qui-control-siteListPreview',
-            'qui-class'       => 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
-            'limit'           => 3,
-            'order'           => 'c_date DESC',
-            'Site'            => false,
-            'site'            => false,
+            'nodeName'              => 'section',
+            'class'                 => 'qui-control-siteListPreview',
+            'qui-class'             => 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
+            'limit'                 => 3,
+            'order'                 => 'c_date DESC',
+            'Site'                  => false,
+            'site'                  => false,
             // if true returns all sites of certain type
-            'byType'          => false,
-            'where'           => false,
-            'itemtype'        => 'http://schema.org/ItemList',
-            'child-itemtype'  => 'https://schema.org/ListItem',
-            'child-itemprop'  => 'itemListElement',
-            // layout / design
-            'display'         => 'default',
-            // Custom children template (path to html file); overwrites "display"
-            'displayTemplate' => false,
-            // Custom children template css (path to css file); overwrites "display"
-            'displayCss'      => false,
-            'nodeName'        => 'section',
+            'byType'                => false,
+            'where'                 => false,
+            'itemtype'              => 'http://schema.org/ItemList',
+            'child-itemtype'        => 'https://schema.org/ListItem',
+            'child-itemprop'        => 'itemListElement',
+            // list layout / design
+            'listTemplate'          => 'default',
+            // preview layout / design
+            'previewTemplate'       => 'default',
+
+            // overwrite
+            // Custom list template (path to html file); overwrites "listTemplate"
+            'customListTemplate'    => false,
+            // Custom list template css (path to css file); overwrites "listTemplate"
+            'customListCss'         => false,
+            // Custom preview template (path to html file); overwrites "listTemplate"
+            'customPreviewTemplate' => false,
+            // Custom preview template css (path to css file); overwrites "listTemplate"
+            'customPreviewCss'      => false,
+
             // list of sites to display,
-            'children'        => false
+            'children'              => false
         ]);
 
         parent::__construct($attributes);
@@ -59,10 +101,10 @@ class SiteListPreview extends QUI\Control
      *
      * @throws QUI\Exception
      */
-    public function getBody()
+    public function getBody(): string
     {
         try {
-            $Engine = QUI::getTemplateManager()->getEngine();
+            $this->Engine = QUI::getTemplateManager()->getEngine();
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
 
@@ -103,7 +145,7 @@ class SiteListPreview extends QUI\Control
             return '';
         }
 
-        $Engine->assign([
+        $this->Engine->assign([
             'this'     => $this,
             'Site'     => $this->getSite(),
             'Project'  => $this->getProject(),
@@ -112,50 +154,100 @@ class SiteListPreview extends QUI\Control
             'Events'   => $this->Events
         ]);
 
+        switch ($this->getAttribute('listTemplate')) {
+            case 'default':
+                $this->listCSSFile  = \dirname(__FILE__).'/SiteListPreview.List.'.$this->getAttribute('listTemplate').'.css';
+                $this->listHTMLFile = \dirname(__FILE__).'/SiteListPreview.List.'.$this->getAttribute('listTemplate').'.html';
+                break;
+
+            default:
+                $this->listCSSFile  = \dirname(__FILE__).'/SiteListPreview.List.default.css';
+                $this->listHTMLFile = \dirname(__FILE__).'/SiteListPreview.List.default.html';
+                break;
+        }
+
+        switch ($this->getAttribute('previewTemplate')) {
+            case 'circle':
+                $this->previewCSSFile  = \dirname(__FILE__).'/SiteListPreview.Preview.'.$this->getAttribute('previewTemplate').'.css';
+                $this->previewHTMLFile = \dirname(__FILE__).'/SiteListPreview.Preview.'.$this->getAttribute('previewTemplate').'.html';
+                break;
+
+            default:
+                $this->previewCSSFile  = \dirname(__FILE__).'/SiteListPreview.Preview.circle.css';
+                $this->previewHTMLFile = \dirname(__FILE__).'/SiteListPreview.Preview.circle.html';
+                break;
+        }
+
         // load custom template (if set)
-        if ($this->getAttribute('displayTemplate')
-            && \file_exists($this->getAttribute('displayTemplate'))
-        ) {
-            if ($this->getAttribute('displayCss')
-                && \file_exists($this->getAttribute('displayCss'))
-            ) {
-                $this->addCSSFile($this->getAttribute('displayCss'));
-            }
+        $this->setCustomTemplates();
 
-            return $Engine->fetch($this->getAttribute('displayTemplate'));
-        }
+//        $this->addCSSFiles([
+//            $this->getCSSFile(),
+//            $this->getPreviewCSSFile()
+//        ]);
 
-        switch ($this->getAttribute('display')) {
-            default:
-            case 'default':
-                $css      = \dirname(__FILE__).'/SiteListPreview.css';
-                $template = \dirname(__FILE__).'/SiteListPreview.html';
-                break;
-        }
+        $this->addCSSFile($this->getCSSFile());
+        $this->addCSSFile($this->getPreviewCSSFile());
 
-        $this->addCSSFile($css);
-
-        return $Engine->fetch($template);
+        return $this->Engine->fetch($this->getHTMLFile());
     }
 
-    public function getTemplate()
+    /**
+     * Get path to css file
+     *
+     * @return string
+     */
+    public function getCSSFile(): string
     {
-        /*switch ($this->getAttribute('display')) {
-            default:
-            case 'default':
-                $css      = \dirname(__FILE__).'/SiteListPreview.css';
-                $template = \dirname(__FILE__).'/SiteListPreview.html';
-                break;
-        }
-
-        return $template;*/
+        return $this->listCSSFile;
     }
 
+    /**
+     * Get path to html file
+     *
+     * @return string
+     */
+    public function getHTMLFile(): string
+    {
+        return $this->listHTMLFile;
+    }
+
+    /**
+     * Get path to preview css file
+     *
+     * @return string
+     */
+    public function getPreviewCSSFile(): string
+    {
+        return $this->previewCSSFile;
+    }
+
+    /**
+     * Get path to preview html file
+     *
+     * @return string
+     */
+    public function getPreviewHTMLFile(): string
+    {
+        return $this->previewHTMLFile;
+    }
+
+    /**
+     * Get html template
+     *
+     * @return string
+     */
+    public function getPreview($params = []): string
+    {
+        $this->Engine->assign($params);
+
+        return $this->Engine->fetch($this->getPreviewHTMLFile());
+    }
 
     /**
      * @return mixed|QUI\Projects\Site
      */
-    protected function getSite()
+    protected function getSite(): QUI\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
@@ -166,5 +258,37 @@ class SiteListPreview extends QUI\Control
         $this->setAttribute('Site', $Site);
 
         return $Site;
+    }
+
+    /**
+     * Set custom files
+     */
+    protected function setCustomTemplates()
+    {
+        // list template
+        if ($this->getAttribute('customListTemplate')
+            && \file_exists($this->getAttribute('customListTemplate'))
+        ) {
+            if ($this->getAttribute('customListCss')
+                && \file_exists($this->getAttribute('customListCss'))
+            ) {
+                $this->listCSSFile = $this->getAttribute('customListCss');
+            }
+
+            $this->listHTMLFile = $this->getAttribute('customListTemplate');
+        }
+
+        // preview template
+        if ($this->getAttribute('customPreviewTemplate')
+            && \file_exists($this->getAttribute('customPreviewTemplate'))
+        ) {
+            if ($this->getAttribute('customPreviewCss')
+                && \file_exists($this->getAttribute('customPreviewCss'))
+            ) {
+                $this->listCSSFile = $this->getAttribute('customPreviewCss');
+            }
+
+            $this->listHTMLFile = $this->getAttribute('customPreviewTemplate');
+        }
     }
 }

@@ -33,7 +33,7 @@
         <meta itemprop="position" content="{$counter}"/>
 
 
-        <header class="qui-control-siteListPreview-entry-header font-bold text-lg mb-1">
+        <header class="qui-control-siteListPreview-entry-header font-bold text-lg mb-1 ">
             <span class="qui-control-siteListPreview-entry-header-pos mr-1">
                 <span class="qui-control-siteListPreview-entry-header-pos-number">{$counter}</span>
                 <span class="qui-control-siteListPreview-entry-header-pos-icon">
@@ -50,34 +50,10 @@
             {$Child->getAttribute('short')|nl2br}
         </p>
 
-        <div class="qui-control-siteListPreview-preview rounded-lg shadow-lg border">
-            <div class="qui-control-siteListPreview-preview-container flex">
-                <span class="fa fa-close qui-control-siteListPreview-preview-close"></span>
+        {$this->getPreview([
+        'Child' => $Child
+        ])}
 
-                <div class="qui-control-siteListPreview-preview-image">
-                    {if $Child->getAttribute('image_site')}
-                    {image src=$Child->getAttribute('image_site') width="128" type="resize"
-                    title="{$Child->getAttribute('title')}" class="rounded-full m-4 w-32 h-32"}
-                    {/if}
-                </div>
-                <div class="qui-control-siteListPreview-preview-content p-4">
-                    <header class="qui-control-siteListPreview-preview-content-title font-bold mt-4 mb-1 mt-0 text-xl">
-                        {$Child->getAttribute('title')}
-                    </header>
-
-                    <p class="qui-control-siteListPreview-preview-content-short text-grey-darker text-sm">
-                        {$Child->getAttribute('short')|nl2br}
-                    </p>
-
-                    <a href="{url site=$Child}"
-                       title="{$Child->getAttribute('title')}"
-                       class="qui-control-siteListPreview-preview-link font-bold text-sm hover:no-underline"
-                    >
-                        {locale group="quiqqer/template-tailwindcss" var="btn.learMore"}
-                    </a>
-                </div>
-            </div>
-        </div>
     </article>
 
     {assign var=counter value=$counter+1}

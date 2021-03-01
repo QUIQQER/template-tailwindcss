@@ -24,6 +24,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             this.active      = 0;
             this.isAnimating = false;
+            this.activeEntry = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -35,16 +36,36 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
          * event : on import
          */
         $onImport: function () {
+            var self = this;
+
             this.$Elm    = this.getElm();
             this.entries = this.$Elm.getElements('.qui-control-siteListPreview-entry');
+            this.previews = this.$Elm.getElements('.qui-control-siteListPreview-preview');
 
-            if (this.entries) {
+            if (this.entries && this.entries.length > 0) {
                 this.entries.addEvent('click', this.toggle);
+            }
+
+            if (this.previews && this.previews.length > 0) {
+                this.previews.forEach(function (Preview) {
+                    var Close = Preview.getElement('.qui-control-siteListPreview-preview-close');
+
+
+                    if (Close) {
+                        Close.addEvent('click', function () {
+                            self.hide(Preview);
+                        });
+                    }
+                });
+
+                this.previews.addEvent('click', function (event) {
+                    event.stopPropagation();
+                });
             }
         },
 
         /**
-         * Toggle status
+         * Toggle preview
          *
          * @param event
          */
@@ -62,13 +83,13 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             var self            = this,
                 LastActiveEntry = this.$Elm.getElement('.qui-control-siteListPreview-entry.active'),
-                ActivePreview   = Target.getElement('.qui-control-siteListPreview-preview');
+                Preview   = Target.getElement('.qui-control-siteListPreview-preview');
 
             // close active
             if (Target.hasClass('active')) {
                 this.isAnimating = true;
 
-                this.hide(ActivePreview).then(function () {
+                this.hide(Preview).then(function () {
                     LastActiveEntry.removeClass('active');
                     self.isAnimating = false;
                 });
@@ -82,7 +103,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 self.isAnimating = true;
                 Target.addClass('active');
 
-                this.show(ActivePreview).then(function () {
+                this.show(Preview).then(function () {
                     self.isAnimating = false;
                 });
 
@@ -93,7 +114,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             this.hide(LastActivePreview).then(function () {
                 LastActiveEntry.removeClass('active');
-                self.show(ActivePreview);
+                self.show(Preview);
             }).then(function () {
                 self.isAnimating = false;
                 Target.addClass('active');
@@ -101,13 +122,20 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         },
 
         /**
-         * Hide content with animation
+         * Hide site preview
          *
          * @param Preview HTMLNode
+         * @param Entry HTMLNode
          * @returns {Promise}
          */
-        hide: function (Preview) {
+        hide: function (Preview, Entry) {
             Preview.setStyle('pointer-events', 'none');
+
+            if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
+                Entry = Preview.getParent('.qui-control-siteListPreview-entry')
+            }
+
+            Entry.removeClass('active');
 
             return new Promise(function (resolve) {
                 moofx(Preview).animate({
@@ -124,16 +152,23 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         },
 
         /**
-         * Show content with animation
+         * Show site preview
          *
          * @param Preview HTMLNode
+         * @param Entry HTMLNode
          * @returns {Promise}
          */
-        show: function (Preview) {
+        show: function (Preview, Entry) {
             Preview.setStyles({
                 display      : 'block',
                 pointerEvents: null
             });
+
+            if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
+                Entry = Preview.getParent('.qui-control-siteListPreview-entry')
+            }
+
+            Entry.addClass('active');
 
             return new Promise(function (resolve) {
                 moofx(Preview).animate({

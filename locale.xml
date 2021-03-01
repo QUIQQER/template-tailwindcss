@@ -320,7 +320,7 @@
         </locale>
 
         <!-- button -->
-        <locale name="btn.learMmore">
+        <locale name="btn.learnMore">
             <de><![CDATA[Mehr erfahren]]></de>
             <en><![CDATA[Learn more]]></en>
         </locale>

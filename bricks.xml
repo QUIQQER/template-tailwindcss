@@ -219,10 +219,17 @@
                 </setting>
 
 
-                <setting name="template" type="select">
-                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.template"/>
+                <setting name="listTemplate" type="select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate"/>
                     <option value="default">
-                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.template.default"/>
+                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate.default"/>
+                    </option>
+                </setting>
+
+                <setting name="previewTemplate" type="select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate"/>
+                    <option value="circle">
+                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate.default"/>
                     </option>
                 </setting>
 
