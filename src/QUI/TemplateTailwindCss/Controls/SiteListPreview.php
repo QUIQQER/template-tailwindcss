@@ -181,13 +181,10 @@ class SiteListPreview extends QUI\Control
         // load custom template (if set)
         $this->setCustomTemplates();
 
-//        $this->addCSSFiles([
-//            $this->getCSSFile(),
-//            $this->getPreviewCSSFile()
-//        ]);
-
-        $this->addCSSFile($this->getCSSFile());
-        $this->addCSSFile($this->getPreviewCSSFile());
+        $this->addCSSFiles([
+            $this->getCSSFile(),
+            $this->getPreviewCSSFile()
+        ]);
 
         return $this->Engine->fetch($this->getHTMLFile());
     }
