@@ -4,7 +4,7 @@
 
         <div class="qui-control-siteListPreview-preview-image">
             {if $Child->getAttribute('image_site')}
-            {image src=$Child->getAttribute('image_site') width="128" type="resize"
+            {image src=$Child->getAttribute('image_site') width="128" type="resize" loading="lazy"
             title="{$Child->getAttribute('title')}" class="rounded-full m-4 w-32 h-32"}
             {/if}
         </div>
