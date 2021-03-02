@@ -25,6 +25,10 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             this.active      = 0;
             this.isAnimating = false;
             this.activeEntry = null;
+            this.$right      = null;
+            this.$left       = null;
+            this.$top        = 0;
+            this.$maxWidth   = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -38,8 +42,10 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         $onImport: function () {
             var self = this;
 
-            this.$Elm    = this.getElm();
-            this.entries = this.$Elm.getElements('.qui-control-siteListPreview-entry');
+            this.calcSizes();
+
+            this.$Elm     = this.getElm();
+            this.entries  = this.$Elm.getElements('.qui-control-siteListPreview-entry');
             this.previews = this.$Elm.getElements('.qui-control-siteListPreview-preview');
 
             if (this.entries && this.entries.length > 0) {
@@ -48,6 +54,11 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             if (this.previews && this.previews.length > 0) {
                 this.previews.forEach(function (Preview) {
+                    Preview.setStyles({
+                        left : self.$left ? self.$left - 15 : self.left,
+                        right: self.$right ? self.$right - 15 : self.$right,
+                    });
+
                     var Close = Preview.getElement('.qui-control-siteListPreview-preview-close');
 
 
@@ -77,13 +88,14 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             var Target = event.target;
 
             if (Target.className !== 'qui-control-siteListPreview-entry') {
-                console.log()
                 Target = Target.getParent('.qui-control-siteListPreview-entry')
             }
 
+            console.log(Target)
+            console.log(this.$Elm)
             var self            = this,
                 LastActiveEntry = this.$Elm.getElement('.qui-control-siteListPreview-entry.active'),
-                Preview   = Target.getElement('.qui-control-siteListPreview-preview');
+                Preview         = Target.getElement('.qui-control-siteListPreview-preview');
 
             // close active
             if (Target.hasClass('active')) {
@@ -121,7 +133,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             });
         },
 
-        /**
+        /**$maxWidth
          * Hide site preview
          *
          * @param Preview HTMLNode
@@ -137,11 +149,18 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             Entry.removeClass('active');
 
+            var animation = {
+                opacity: 0
+            };
+
+            if (this.$left) {
+                animation.left = this.$left - 15;
+            } else {
+                animation.right = this.$right - 15;
+            }
+
             return new Promise(function (resolve) {
-                moofx(Preview).animate({
-                    transform: 'translateX(-15px)',
-                    opacity  : 0
-                }, {
+                moofx(Preview).animate(animation, {
                     duration: 250,
                     callback: function () {
                         Preview.setStyle('display', 'none');
@@ -161,7 +180,10 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         show: function (Preview, Entry) {
             Preview.setStyles({
                 display      : 'block',
-                pointerEvents: null
+                pointerEvents: null,
+                left         : this.$left ? this.$left - 15 : this.left,
+                right        : this.$right ? this.$right - 15 : this.$right,
+                maxWidth     : this.$maxWidth ? this.$maxWidth - 20 : this.$maxWidth
             });
 
             if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
@@ -170,15 +192,70 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
 
             Entry.addClass('active');
 
+            var animation = {
+                opacity: 1
+            };
+
+            if (this.$left) {
+                animation.left = this.$left;
+            } else {
+                animation.right = this.$right;
+            }
+
             return new Promise(function (resolve) {
-                moofx(Preview).animate({
-                    transform: 'translateX(0)',
-                    opacity  : 1
-                }, {
+                moofx(Preview).animate(animation, {
                     duration: 250,
                     callback: resolve
                 })
             })
+        },
+
+        calcSizes: function () {
+            if (QUI.getBodyScrollSize().x < 768) {
+                // mobile
+                return;
+            }
+            var windowWidth  = QUI.getBodyScrollSize().x,
+                controlWidth = this.getElm().getSize().x,
+                controlPos   = this.getElm().getPosition().x, // left corner pos
+                Preview      = this.getElm().getElement('.qui-control-siteListPreview-preview'),
+                previewWidth = 0,
+                previewPos   = 0;
+
+            if (!Preview) {
+                return;
+            }
+
+
+            previewWidth = Preview.measure(function () {
+                return this.getSize().x;
+            });
+
+            previewPos = Preview.measure(function () {
+                return this.getPosition().x;
+            });
+
+            // show preview on left side
+            if (controlPos > windowWidth - controlPos + controlWidth) {
+                this.$right = controlWidth + 20;
+                this.$left  = null;
+
+                console.log(previewPos)
+
+                if (previewPos < 20) {
+                    console.log("huhu")
+                    this.$maxWidth = previewWidth - 20;
+                }
+
+            } else {
+                // show preview on right side
+                this.$right = null;
+                this.$left  = controlWidth + 20;
+            }
+
+            // calc preview max width
+
+
         }
     });
 });

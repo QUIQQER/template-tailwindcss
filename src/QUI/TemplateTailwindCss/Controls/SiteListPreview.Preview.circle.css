@@ -4,24 +4,14 @@
 .qui-control-siteListPreview-preview {
     position: absolute;
     background: #fff;
-    right: calc(100% + 2rem);
     border: 1px solid #ddd;
-    width: 550px;
+    width: 650px;
     top: 0;
     z-index: 1;
     cursor: initial;
-    transform: translateX(15px);
-    transition: 0.2s ease-out;
     opacity: 0;
     display: none;
 }
-
-/*.qui-control-siteListPreview-entry.active .qui-control-siteListPreview-preview,
-.qui-control-siteListPreview-entry:focus .qui-control-siteListPreview-preview,
-.qui-control-siteListPreview-preview.show {
-    transform: translateX(0);
-    opacity: 1;
-}*/
 
 .qui-control-siteListPreview-preview-image img {
     max-width: initial;
