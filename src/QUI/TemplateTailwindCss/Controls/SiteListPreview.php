@@ -61,6 +61,7 @@ class SiteListPreview extends QUI\Control
             'nodeName'              => 'section',
             'class'                 => 'qui-control-siteListPreview',
             'qui-class'             => 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
+            'previewWidth'          => 550,
             'limit'                 => 3,
             'order'                 => 'c_date DESC',
             'Site'                  => false,
@@ -114,6 +115,8 @@ class SiteListPreview extends QUI\Control
         if (!$this->getAttribute('site')) {
             return '';
         }
+
+        $this->setJavaScriptControlOption('previewwidth', $this->getAttribute('previewWidth'));
 
         $limit    = $this->getAttribute('limit');
         $Project  = $this->getProject();

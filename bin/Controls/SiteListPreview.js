@@ -15,9 +15,12 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         Extends: QUIControl,
         Type   : 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
 
-        Binds: [
+        Binds  : [
             'toggle'
         ],
+        options: {
+            previewwidth: 500
+        },
 
         initialize: function (options) {
             this.parent(options);
@@ -28,7 +31,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             this.$right      = null;
             this.$left       = null;
             this.$top        = 0;
-            this.$maxWidth   = null;
+            this.$width      = 0;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -42,37 +45,41 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         $onImport: function () {
             var self = this;
 
-            this.calcSizes();
-
             this.$Elm     = this.getElm();
             this.entries  = this.$Elm.getElements('.qui-control-siteListPreview-entry');
             this.previews = this.$Elm.getElements('.qui-control-siteListPreview-preview');
+            this.$width   = this.getAttribute('previewwidth').toInt();
 
-            if (this.entries && this.entries.length > 0) {
-                this.entries.addEvent('click', this.toggle);
+
+            if (!this.entries || this.entries.length < 1 ||
+                !this.previews || this.previews.length < 1) {
+                return;
             }
 
-            if (this.previews && this.previews.length > 0) {
-                this.previews.forEach(function (Preview) {
-                    Preview.setStyles({
-                        left : self.$left ? self.$left - 15 : self.left,
-                        right: self.$right ? self.$right - 15 : self.$right,
+            this.calcSizes();
+
+            this.entries.addEvent('click', this.toggle);
+
+            this.previews.forEach(function (Preview) {
+                Preview.setStyles({
+                    left : self.$left ? self.$left - 15 : self.left,
+                    right: self.$right ? self.$right - 15 : self.$right,
+                    width: self.$width
+                });
+
+                var Close = Preview.getElement('.qui-control-siteListPreview-preview-close');
+
+
+                if (Close) {
+                    Close.addEvent('click', function () {
+                        self.hide(Preview);
                     });
+                }
+            });
 
-                    var Close = Preview.getElement('.qui-control-siteListPreview-preview-close');
-
-
-                    if (Close) {
-                        Close.addEvent('click', function () {
-                            self.hide(Preview);
-                        });
-                    }
-                });
-
-                this.previews.addEvent('click', function (event) {
-                    event.stopPropagation();
-                });
-            }
+            this.previews.addEvent('click', function (event) {
+                event.stopPropagation();
+            });
         },
 
         /**
@@ -182,8 +189,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 display      : 'block',
                 pointerEvents: null,
                 left         : this.$left ? this.$left - 15 : this.left,
-                right        : this.$right ? this.$right - 15 : this.$right,
-                maxWidth     : this.$maxWidth ? this.$maxWidth - 20 : this.$maxWidth
+                right        : this.$right ? this.$right - 15 : this.$right
             });
 
             if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
@@ -211,20 +217,22 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         },
 
         calcSizes: function () {
+            // mobile
             if (QUI.getBodyScrollSize().x < 768) {
-                // mobile
                 return;
             }
-            var windowWidth  = QUI.getBodyScrollSize().x,
+
+            if (!this.previews || this.previews.length < 1) {
+                return;
+            }
+
+            var self         = this,
+                windowWidth  = QUI.getBodyScrollSize().x,
                 controlWidth = this.getElm().getSize().x,
                 controlPos   = this.getElm().getPosition().x, // left corner pos
-                Preview      = this.getElm().getElement('.qui-control-siteListPreview-preview'),
+                Preview      = this.previews[0],
                 previewWidth = 0,
                 previewPos   = 0;
-
-            if (!Preview) {
-                return;
-            }
 
 
             previewWidth = Preview.measure(function () {
@@ -243,8 +251,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 console.log(previewPos)
 
                 if (previewPos < 20) {
-                    console.log("huhu")
-                    this.$maxWidth = previewWidth - 20;
+
                 }
 
             } else {
@@ -253,9 +260,13 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 this.$left  = controlWidth + 20;
             }
 
-            // calc preview max width
-
-
+            this.previews.forEach(function (Preview) {
+                Preview.setStyles({
+                    pointerEvents: null,
+                    left         : self.$left ? self.$left - 15 : self.left,
+                    right        : self.$right ? self.$right - 15 : self.$right
+                });
+            });
         }
     });
 });
