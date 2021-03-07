@@ -19,19 +19,28 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             'toggle'
         ],
         options: {
-            previewwidth: 500
+            previewwidth: 550
         },
 
         initialize: function (options) {
             this.parent(options);
 
-            this.active      = 0;
-            this.isAnimating = false;
-            this.activeEntry = null;
-            this.$right      = null;
-            this.$left       = null;
-            this.$top        = 0;
-            this.$width      = 0;
+            this.active       = 0;
+            this.isAnimating  = false;
+            this.activeEntry  = null;
+            this.$right       = null;
+            this.$left        = null;
+            this.$top         = 0;
+            this.$width       = 0;
+            this.windowWidth  = 0;
+            this.controlWidth = 0;
+            this.controlPos   = 0; // left corner pos
+
+//            QUI.addEvent('resize', this.calcSizes);
+
+            QUI.addEvent('resize', function () {
+                this.calcSizes();
+            }.bind(this));
 
             this.addEvents({
                 onImport: this.$onImport
@@ -45,10 +54,13 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         $onImport: function () {
             var self = this;
 
-            this.$Elm     = this.getElm();
-            this.entries  = this.$Elm.getElements('.qui-control-siteListPreview-entry');
-            this.previews = this.$Elm.getElements('.qui-control-siteListPreview-preview');
-            this.$width   = this.getAttribute('previewwidth').toInt();
+            this.$Elm         = this.getElm();
+            this.entries      = this.$Elm.getElements('.qui-control-siteListPreview-entry');
+            this.previews     = this.$Elm.getElements('.qui-control-siteListPreview-preview');
+            this.$width       = this.getAttribute('previewwidth').toInt();
+            this.windowWidth  = QUI.getBodyScrollSize().x;
+            this.controlWidth = this.getElm().getSize().x;
+            this.controlPos   = this.getElm().getPosition().x;
 
 
             if (!this.entries || this.entries.length < 1 ||
@@ -61,14 +73,7 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
             this.entries.addEvent('click', this.toggle);
 
             this.previews.forEach(function (Preview) {
-                Preview.setStyles({
-                    left : self.$left ? self.$left - 15 : self.left,
-                    right: self.$right ? self.$right - 15 : self.$right,
-                    width: self.$width
-                });
-
                 var Close = Preview.getElement('.qui-control-siteListPreview-preview-close');
-
 
                 if (Close) {
                     Close.addEvent('click', function () {
@@ -98,8 +103,6 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 Target = Target.getParent('.qui-control-siteListPreview-entry')
             }
 
-            console.log(Target)
-            console.log(this.$Elm)
             var self            = this,
                 LastActiveEntry = this.$Elm.getElement('.qui-control-siteListPreview-entry.active'),
                 Preview         = Target.getElement('.qui-control-siteListPreview-preview');
@@ -171,6 +174,8 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                     duration: 250,
                     callback: function () {
                         Preview.setStyle('display', 'none');
+                        Preview.set('data-qui-open', 0);
+
                         resolve();
                     }
                 })
@@ -185,12 +190,8 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
          * @returns {Promise}
          */
         show: function (Preview, Entry) {
-            Preview.setStyles({
-                display      : 'block',
-                pointerEvents: null,
-                left         : this.$left ? this.$left - 15 : this.left,
-                right        : this.$right ? this.$right - 15 : this.$right
-            });
+            Preview.setStyle('display', 'block');
+            Preview.set('data-qui-open', 1);
 
             if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
                 Entry = Preview.getParent('.qui-control-siteListPreview-entry')
@@ -217,8 +218,10 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         },
 
         calcSizes: function () {
+            console.log(1)
             // mobile
             if (QUI.getBodyScrollSize().x < 768) {
+                this.calcSizesMobile();
                 return;
             }
 
@@ -226,45 +229,85 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
                 return;
             }
 
+            this.windowWidth  = QUI.getBodyScrollSize().x;
+            this.controlWidth = this.getElm().getSize().x;
+            this.controlPos   = this.getElm().getPosition().x; // left corner pos
+
             var self         = this,
-                windowWidth  = QUI.getBodyScrollSize().x,
-                controlWidth = this.getElm().getSize().x,
-                controlPos   = this.getElm().getPosition().x, // left corner pos
                 Preview      = this.previews[0],
-                previewWidth = 0,
-                previewPos   = 0;
+                previewWidth = this.getAttribute('previewwidth').toInt();
 
-
-            previewWidth = Preview.measure(function () {
-                return this.getSize().x;
-            });
-
-            previewPos = Preview.measure(function () {
+            var previewPos = Preview.measure(function () {
                 return this.getPosition().x;
             });
 
-            // show preview on left side
-            if (controlPos > windowWidth - controlPos + controlWidth) {
-                this.$right = controlWidth + 20;
+
+            // show preview on the left side
+            if (this.controlPos > this.windowWidth - this.controlPos + this.controlWidth) {
+                this.$right = this.controlWidth + 20;
                 this.$left  = null;
 
-                console.log(previewPos)
-
-                if (previewPos < 20) {
-
+                // preview is wider than available space
+                if (previewPos < 20 ||
+                    20 + previewWidth > this.controlPos) {
+                    this.$width = this.controlPos - 20 - 20;
+                } else {
+                    this.$width = previewWidth;
                 }
 
             } else {
-                // show preview on right side
+                // show preview on the right side
                 this.$right = null;
-                this.$left  = controlWidth + 20;
+                this.$left  = this.controlWidth + 20;
+
+//                previewPos = previewPos + controlWidth;
+
+//                console.warn("this.controlPos", this.controlPos)
+//                console.log("previewPos", previewPos)
+//                console.log("controlWidth", this.controlWidth)
+//                console.log("this.windowWidth", this.windowWidth)
+//                console.log("this.$width", this.$width)
+
+                // preview is wider than available space
+                /*if (previewPos + previewWidth > windowWidth - 20) {
+                    console.log(1)
+                    this.$width = windowWidth - previewPos - 20 - 20;
+                } else {
+                    console.log(2)
+                    this.$width = this.getAttribute('previewwidth').toInt();
+                }*/
             }
 
             this.previews.forEach(function (Preview) {
+                // preview is open now
+                if (Preview.get('data-qui-open') == 1) {
+                    Preview.setStyles({
+                        left : self.$left,
+                        right: self.$right,
+                        width: self.$width,
+                        position: null
+                    });
+
+                    return;
+                }
+
+                // preview ist closed
                 Preview.setStyles({
-                    pointerEvents: null,
-                    left         : self.$left ? self.$left - 15 : self.left,
-                    right        : self.$right ? self.$right - 15 : self.$right
+                    left : self.$left ? self.$left - 20 : self.left,
+                    right: self.$right ? self.$right - 20 : self.$right,
+                    width: self.$width,
+                    position: null
+                });
+            });
+        },
+
+        calcSizesMobile: function () {
+            this.previews.forEach(function (Preview) {
+                Preview.setStyles({
+                    left : 0,
+                    right: 0,
+                    width: '100%',
+                    position: 'relative'
                 });
             });
         }

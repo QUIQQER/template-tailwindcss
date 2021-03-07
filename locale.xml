@@ -302,21 +302,29 @@
             <de><![CDATA[Sortierung]]></de>
             <en><![CDATA[Sort]]></en>
         </locale>
-        <locale name="brick.SiteListPreview.setting.template">
-            <de><![CDATA[Vorlage (Template)]]></de>
-            <en><![CDATA[Template]]></en>
+        <locale name="brick.SiteListPreview.setting.listTemplate">
+            <de><![CDATA[Liste-Design]]></de>
+            <en><![CDATA[List template]]></en>
         </locale>
-        <locale name="brick.SiteListPreview.setting.template.default">
+        <locale name="brick.SiteListPreview.setting.listTemplate.default">
             <de><![CDATA[Standard]]></de>
             <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.previewTemplate">
+            <de><![CDATA[Vorschaubox-Design]]></de>
+            <en><![CDATA[Preview box template]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.previewTemplate.circle">
+            <de><![CDATA[Runde Bilder]]></de>
+            <en><![CDATA[Rounded images]]></en>
         </locale>
         <locale name="brick.SiteListPreview.setting.template.limit">
             <de><![CDATA[Limit]]></de>
             <en><![CDATA[Limit]]></en>
         </locale>
-        <locale name="brick.SiteListPreview.setting.moreLink">
-            <de><![CDATA[Link zu weiteren Seiten]]></de>
-            <en><![CDATA[Link to more pages]]></en>
+        <locale name="brick.SiteListPreview.setting.additionalText">
+            <de><![CDATA[Zusätzlicher Text nach der Liste]]></de>
+            <en><![CDATA[Additional text after the list]]></en>
         </locale>
 
         <!-- button -->

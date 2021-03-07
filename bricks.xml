@@ -218,7 +218,6 @@
                     </option>
                 </setting>
 
-
                 <setting name="listTemplate" type="select">
                     <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate"/>
                     <option value="default">
@@ -229,7 +228,7 @@
                 <setting name="previewTemplate" type="select">
                     <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate"/>
                     <option value="circle">
-                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate.default"/>
+                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate.circle"/>
                     </option>
                 </setting>
 
@@ -240,8 +239,8 @@
                     />
                 </setting>
 
-                <setting name="moreButton" type="text" class="project-site" data-external="1">
-                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.moreLink"/>
+                <setting name="additionalText" type="text" data-qui="controls/editors/Input">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.additionalText"/>
                 </setting>
 
             </settings>

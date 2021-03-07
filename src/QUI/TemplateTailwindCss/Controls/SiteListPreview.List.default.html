@@ -55,7 +55,12 @@
         ])}
 
     </article>
-
     {assign var=counter value=$counter+1}
     {/foreach}
+
+    {if $additionalText}
+    <hr class="my-4"/>
+    {$additionalText}
+    {/if}
+
 </section>

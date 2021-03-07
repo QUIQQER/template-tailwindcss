@@ -61,7 +61,7 @@ class SiteListPreview extends QUI\Control
             'nodeName'              => 'section',
             'class'                 => 'qui-control-siteListPreview',
             'qui-class'             => 'package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview',
-            'previewWidth'          => 550,
+            'previewWidth'          => 700,
             'limit'                 => 3,
             'order'                 => 'c_date DESC',
             'Site'                  => false,
@@ -76,6 +76,7 @@ class SiteListPreview extends QUI\Control
             'listTemplate'          => 'default',
             // preview layout / design
             'previewTemplate'       => 'default',
+            'additionalText'        => '',
 
             // overwrite
             // Custom list template (path to html file); overwrites "listTemplate"
@@ -148,13 +149,20 @@ class SiteListPreview extends QUI\Control
             return '';
         }
 
+        $additionalText = false;
+
+        if ($this->getAttribute('additionalText') && \strlen($this->getAttribute('additionalText')) > 0) {
+            $additionalText = $this->getAttribute('additionalText');
+        }
+
         $this->Engine->assign([
-            'this'     => $this,
-            'Site'     => $this->getSite(),
-            'Project'  => $this->getProject(),
-            'children' => $children,
-            'MetaList' => new QUI\Controls\Utils\MetaList(),
-            'Events'   => $this->Events
+            'this'           => $this,
+            'Site'           => $this->getSite(),
+            'Project'        => $this->getProject(),
+            'children'       => $children,
+            'MetaList'       => new QUI\Controls\Utils\MetaList(),
+            'Events'         => $this->Events,
+            'additionalText' => $additionalText
         ]);
 
         switch ($this->getAttribute('listTemplate')) {
