@@ -151,8 +151,6 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
          * @returns {Promise}
          */
         hide: function (Preview, Entry) {
-            Preview.setStyle('pointer-events', 'none');
-
             if (!Entry || !Entry.hasClass('qui-control-siteListPreview-entry')) {
                 Entry = Preview.getParent('.qui-control-siteListPreview-entry')
             }
@@ -218,7 +216,6 @@ define('package/quiqqer/template-tailwindcss/bin/Controls/SiteListPreview', [
         },
 
         calcSizes: function () {
-            console.log(1)
             // mobile
             if (QUI.getBodyScrollSize().x < 768) {
                 this.calcSizesMobile();
