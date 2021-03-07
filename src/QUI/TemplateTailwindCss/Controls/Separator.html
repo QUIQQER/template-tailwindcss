@@ -1,0 +1,16 @@
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+{if $icon &&
+($this->getAttribute('design') == 'iconLeft' || $this->getAttribute('design') == 'iconRight') || $this->getAttribute('design') == 'iconCenter'}
+<span class="fa {$this->getAttribute('icon')} quiqqer-control-separator-icon"></span>
+{/if}

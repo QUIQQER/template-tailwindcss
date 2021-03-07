@@ -1,0 +1,62 @@
+/***********/
+/* preview */
+/***********/
+.qui-control-siteListPreview-preview {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    top: 0;
+    z-index: 1;
+    cursor: initial;
+    opacity: 0;
+    display: none;
+}
+
+.qui-control-siteListPreview-preview-image img {
+    max-width: initial;
+    max-height: initial;
+    object-fit: cover;
+}
+
+header.qui-control-siteListPreview-preview-content-title {
+    margin-top: 0;
+}
+
+.qui-control-siteListPreview-preview-link {
+    float: right;
+}
+
+.qui-control-siteListPreview-preview-close {
+    width: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* dark */
+.qui-control-siteListPreview-preview {
+    background: #332d2d;
+    color: #fff;
+}
+
+.qui-control-siteListPreview-preview-content-short {
+    color: #d2cccc;
+}
+
+.qui-control-siteListPreview-preview-link {
+    color: #d2cccc;
+}
+
+.qui-control-siteListPreview-preview-link:hover {
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-control-siteListPreview-preview {
+        right: initial;
+        max-width: 100%;
+    }
+}

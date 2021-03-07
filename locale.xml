@@ -181,14 +181,14 @@
 
         <!-- HERO HEADER -->
         <locale name="brick.heroHeader.title">
-            <de><![CDATA[Hero Header]]></de>
-            <en><![CDATA[Hero Header]]></en>
+            <de><![CDATA[TailwindCSS: Hero Header]]></de>
+            <en><![CDATA[TailwindCSS: Hero Header]]></en>
         </locale>
 
         <!-- VERTICAL TAB SWITCHER -->
         <locale name="brick.verticalTabSwitcher.title">
-            <de><![CDATA[Vertical Tab Switcher]]></de>
-            <en><![CDATA[Vertical Tab Switcher]]></en>
+            <de><![CDATA[TailwindCSS: Vertical Tab Switcher]]></de>
+            <en><![CDATA[TailwindCSS: Vertical Tab Switcher]]></en>
         </locale>
         <locale name="brick.verticalTabSwitcher.description">
             <de><![CDATA[...]]></de>
@@ -239,9 +239,102 @@
             <en><![CDATA[Image]]></en>
         </locale>
 
-    </groups>
-    <groups name="quiqqer/template-tailwindcss" datatype="php">
+        <!-- Separator list -->
+        <locale name="brick.Separator.title">
+            <de><![CDATA[TailwindCSS: Trennelement]]></de>
+            <en><![CDATA[TailwindCSS: Separaotr element]]></en>
+        </locale>
+        <locale name="brick.Separator.description">
+            <de><![CDATA[Trennelement mit verschiedenen Designes. Eine ungeordnete Liste, die zu einer ungewöhnlichen Liste umgewandelt wird.]]></de>
+            <en><![CDATA[Separator element with different designs.An unordered list that is converted to an unusual list.]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design">
+            <de><![CDATA[Design]]></de>
+            <en><![CDATA[Design]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.simple">
+            <de><![CDATA[Einfach]]></de>
+            <en><![CDATA[Simple]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.lines">
+            <de><![CDATA[Linien]]></de>
+            <en><![CDATA[Lines]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.quote">
+            <de><![CDATA[Zitat]]></de>
+            <en><![CDATA[Quote]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.dark">
+            <de><![CDATA[Dunkel]]></de>
+            <en><![CDATA[Dark]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.iconLeft">
+            <de><![CDATA[Icon: auf der linken Seite]]></de>
+            <en><![CDATA[Icon: on the left]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.iconCenter">
+            <de><![CDATA[Icon: zentriert]]></de>
+            <en><![CDATA[Icon: center]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.iconRight">
+            <de><![CDATA[Icon: auf der rechten Seite]]></de>
+            <en><![CDATA[Icon: on the right]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.icon">
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
+        </locale>
 
+        <!-- Site list preview -->
+        <locale name="brick.SiteListPreview.title">
+            <de><![CDATA[TailwindCSS: Sidebar Seiten-Liste mit Vorschau]]></de>
+            <en><![CDATA[TailwindCSS: Sidebar site list with preview]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.description">
+            <de><![CDATA[Eine einfache Seiten-Liste. Ein Klick auf den Eintrag öffnet ein kleines Popup mit mehr Informationen.]]></de>
+            <en><![CDATA[A simple page list. Clicking on the entry opens a small popup with more information.]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.site">
+            <de><![CDATA[Seiten]]></de>
+            <en><![CDATA[Sites]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.order">
+            <de><![CDATA[Sortierung]]></de>
+            <en><![CDATA[Sort]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.listTemplate">
+            <de><![CDATA[Liste-Design]]></de>
+            <en><![CDATA[List template]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.listTemplate.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.previewTemplate">
+            <de><![CDATA[Vorschaubox-Design]]></de>
+            <en><![CDATA[Preview box template]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.previewTemplate.circle">
+            <de><![CDATA[Runde Bilder]]></de>
+            <en><![CDATA[Rounded images]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.template.limit">
+            <de><![CDATA[Limit]]></de>
+            <en><![CDATA[Limit]]></en>
+        </locale>
+        <locale name="brick.SiteListPreview.setting.additionalText">
+            <de><![CDATA[Zusätzlicher Text nach der Liste]]></de>
+            <en><![CDATA[Additional text after the list]]></en>
+        </locale>
+
+        <!-- button -->
+        <locale name="btn.learnMore">
+            <de><![CDATA[Mehr erfahren]]></de>
+            <en><![CDATA[Learn more]]></en>
+        </locale>
+    </groups>
+
+    <groups name="quiqqer/template-tailwindcss" datatype="php">
         <locale name="navbar.search.text">
             <de><![CDATA[Suchen]]></de>
             <en><![CDATA[Search]]></en>

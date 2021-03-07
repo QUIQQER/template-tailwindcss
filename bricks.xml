@@ -108,6 +108,143 @@
             </settings>
         </brick>
 
+        <!-- Separator element -->
+        <brick control="\QUI\TemplateTailwindCss\Controls\Separator">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.Separator.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.Separator.description"/>
+            </description>
+
+            <settings>
+                <setting name="design" type="select">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.design"/>
+
+                    <option value="simple" selected="selected">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.simple"/>
+                    </option>
+                    <option value="lines">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.lines"/>
+                    </option>
+                    <option value="quote">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.quote"/>
+                    </option>
+                    <option value="dark">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.dark"/>
+                    </option>
+                    <option value="iconLeft">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconLeft"/>
+                    </option>
+                    <option value="iconCenter">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconCenter"/>
+                    </option>
+                    <option value="iconRight">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.iconRight"/>
+                    </option>
+                </setting>
+
+                <setting type="text" name="icon" class="media-image" data-qui-options-selectable_types="icon" data-qui-options-cssclasses="1">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.icon"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- Site list preview -->
+        <brick control="\QUI\TemplateTailwindCss\Controls\SiteListPreview">
+            <title>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.SiteListPreview.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-tailwindcss"
+                        var="brick.SiteListPreview.description"/>
+            </description>
+
+            <settings>
+                <!-- select site -->
+                <setting name="site" data-qui="controls/projects/project/site/Select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.site"/>
+                </setting>
+
+                <!-- order -->
+                <setting name="order" type="select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.order"/>
+
+                    <!-- manual -->
+                    <option value="order_field">
+                        <locale group="quiqqer/bricks" var="brick.control.order.order_field"/>
+                    </option>
+                    <option value="name ASC">
+                        <locale group="quiqqer/quiqqer" var="name_asc"/>
+                    </option>
+                    <option value="name DESC">
+                        <locale group="quiqqer/quiqqer" var="name_desc"/>
+                    </option>
+                    <option value="title ASC">
+                        <locale group="quiqqer/quiqqer" var="title_asc"/>
+                    </option>
+                    <option value="title DESC">
+                        <locale group="quiqqer/quiqqer" var="title_desc"/>
+                    </option>
+                    <option value="c_date ASC">
+                        <locale group="quiqqer/quiqqer" var="c_date_asc"/>
+                    </option>
+                    <option value="c_date DESC" selected="selected">
+                        <locale group="quiqqer/quiqqer" var="c_date_desc"/>
+                    </option>
+                    <option value="e_date ASC">
+                        <locale group="quiqqer/quiqqer" var="e_date_asc"/>
+                    </option>
+                    <option value="e_date DESC">
+                        <locale group="quiqqer/quiqqer" var="e_date_desc"/>
+                    </option>
+                    <option value="release_from ASC">
+                        <locale group="quiqqer/quiqqer" var="release_from_asc"/>
+                    </option>
+                    <option value="release_from DESC">
+                        <locale group="quiqqer/quiqqer" var="release_from_desc"/>
+                    </option>
+                </setting>
+
+                <setting name="listTemplate" type="select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate"/>
+                    <option value="default">
+                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate.default"/>
+                    </option>
+                </setting>
+
+                <setting name="previewTemplate" type="select">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate"/>
+                    <option value="circle">
+                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate.circle"/>
+                    </option>
+                </setting>
+
+                <setting name="limit" type="number">
+                    <default>3</default>
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.SiteListPreview.setting.template.limit"
+                    />
+                </setting>
+
+                <setting name="additionalText" type="text" data-qui="controls/editors/Input">
+                    <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.additionalText"/>
+                </setting>
+
+            </settings>
+        </brick>
 
         <!-- defined areas in the template -->
         <templateAreas>

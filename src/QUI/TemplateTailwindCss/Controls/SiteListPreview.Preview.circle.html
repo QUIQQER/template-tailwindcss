@@ -1,0 +1,28 @@
+<div class="qui-control-siteListPreview-preview rounded-lg shadow-lg border overflow-hidden mb-4">
+    <div class="qui-control-siteListPreview-preview-container flex">
+        <span class="fa fa-close qui-control-siteListPreview-preview-close"></span>
+
+        <div class="qui-control-siteListPreview-preview-image">
+            {if $Child->getAttribute('image_site')}
+            {image src=$Child->getAttribute('image_site') width="128" type="resize" loading="lazy"
+            title="{$Child->getAttribute('title')}" class="rounded-full m-4 w-32 h-32"}
+            {/if}
+        </div>
+        <div class="qui-control-siteListPreview-preview-content p-4">
+            <header class="qui-control-siteListPreview-preview-content-title font-bold mt-4 mb-1 mt-0 text-xl">
+                {$Child->getAttribute('title')}
+            </header>
+
+            <p class="qui-control-siteListPreview-preview-content-short text-grey-darker text-sm">
+                {$Child->getAttribute('short')|nl2br}
+            </p>
+
+            <a href="{url site=$Child}"
+               title="{$Child->getAttribute('title')}"
+               class="qui-control-siteListPreview-preview-link font-bold text-sm hover:no-underline"
+            >
+                {locale group="quiqqer/template-tailwindcss" var="btn.learnMore"}
+            </a>
+        </div>
+    </div>
+</div>
