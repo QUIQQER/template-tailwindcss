@@ -74,7 +74,13 @@
 .quiqqer-control-separator__dark {
     background: #162734;
     color: #d9e5ef;
-    padding: 1rem;
+    padding: 2rem;
+}
+
+/* design: light */
+.quiqqer-control-separator__light {
+    background: #f5f5f5;
+    padding: 2rem;
 }
 
 /* design: icon */

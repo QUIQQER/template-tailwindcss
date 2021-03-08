@@ -75,6 +75,10 @@ class Separator extends QUI\Control
                 $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__simple rounded-lg shadow-lg';
                 break;
 
+            case 'border':
+                $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__border rounded-lg border p-8';
+                break;
+
             case 'lines':
                 $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__lines';
                 break;
@@ -85,6 +89,10 @@ class Separator extends QUI\Control
 
             case 'dark':
                 $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__dark rounded-lg shadow-lg';
+                break;
+
+            case 'light':
+                $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__light rounded-lg shadow-lg';
                 break;
 
             case 'iconLeft':
