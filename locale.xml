@@ -256,6 +256,10 @@
             <de><![CDATA[Einfach]]></de>
             <en><![CDATA[Simple]]></en>
         </locale>
+        <locale name="brick.Separator.setting.design.border">
+            <de><![CDATA[Mit Umrandung]]></de>
+            <en><![CDATA[With birder]]></en>
+        </locale>
         <locale name="brick.Separator.setting.design.lines">
             <de><![CDATA[Linien]]></de>
             <en><![CDATA[Lines]]></en>
@@ -267,6 +271,10 @@
         <locale name="brick.Separator.setting.design.dark">
             <de><![CDATA[Dunkel]]></de>
             <en><![CDATA[Dark]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.design.light">
+            <de><![CDATA[Hell]]></de>
+            <en><![CDATA[Light]]></en>
         </locale>
         <locale name="brick.Separator.setting.design.iconLeft">
             <de><![CDATA[Icon: auf der linken Seite]]></de>
