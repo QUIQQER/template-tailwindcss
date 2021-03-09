@@ -148,6 +148,10 @@
                         <locale group="quiqqer/template-tailwindcss"
                                 var="brick.Separator.setting.design.light"/>
                     </option>
+                    <option value="backgroundImage">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.design.backgroundImage"/>
+                    </option>
                     <option value="iconLeft">
                         <locale group="quiqqer/template-tailwindcss"
                                 var="brick.Separator.setting.design.iconLeft"/>
@@ -162,9 +166,55 @@
                     </option>
                 </setting>
 
-                <setting type="text" name="icon" class="media-image" data-qui-options-selectable_types="icon" data-qui-options-cssclasses="1">
+                <setting type="text" name="icon" class="media-image" data-qui-options-selectable_types="icon"
+                         data-qui-options-cssclasses="1">
                     <locale group="quiqqer/template-tailwindcss"
                             var="brick.Separator.setting.icon"/>
+                </setting>
+
+                <setting type="text" name="backgroundImage" class="media-image">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.backgroundImage"/>
+                </setting>
+
+                <setting type="color" name="overlayColor">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.overlayColor"/>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.overlayColor.desc"/>
+                    </description>
+                </setting>
+
+                <setting type="number" name="overlayOpacity" min="0" max="1">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.overlayOpacity"/>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.overlayOpacity.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="colorScheme" type="select">
+                    <locale group="quiqqer/template-tailwindcss"
+                            var="brick.Separator.setting.colorScheme"/>
+                    <description>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.colorScheme.desc"/>
+                    </description>
+
+                    <option value="none" selected="selected">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.colorScheme.none"/>
+                    </option>
+                    <option value="light">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.colorScheme.light"/>
+                    </option>
+                    <option value="dark">
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.Separator.setting.colorScheme.dark"/>
+                    </option>
                 </setting>
             </settings>
         </brick>
@@ -229,14 +279,16 @@
                 <setting name="listTemplate" type="select">
                     <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate"/>
                     <option value="default">
-                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.listTemplate.default"/>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.SiteListPreview.setting.listTemplate.default"/>
                     </option>
                 </setting>
 
                 <setting name="previewTemplate" type="select">
                     <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate"/>
                     <option value="circle">
-                        <locale group="quiqqer/template-tailwindcss" var="brick.SiteListPreview.setting.previewTemplate.circle"/>
+                        <locale group="quiqqer/template-tailwindcss"
+                                var="brick.SiteListPreview.setting.previewTemplate.circle"/>
                     </option>
                 </setting>
 
@@ -276,12 +328,12 @@
                     <title>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.headerSuffix.title"
-                                />
+                        />
                     </title>
                     <description>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.headerSuffix.description"
-                                />
+                        />
                     </description>
                 </area>
 
@@ -289,12 +341,12 @@
                     <title>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.footerPrefix.title"
-                                />
+                        />
                     </title>
                     <description>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.footerPrefix.description"
-                                />
+                        />
                     </description>
                 </area>
 
@@ -302,12 +354,12 @@
                     <title>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.footer.title"
-                                />
+                        />
                     </title>
                     <description>
                         <locale group="quiqqer/template-tailwindcss"
                                 var="area.footer.description"
-                                />
+                        />
                     </description>
                 </area>
             </areas>
@@ -320,24 +372,24 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.description"
-                                    />
+                            />
                         </description>
                     </area>
                     <area name="suffixContent" inheritance="1" priority="4">
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.description"
-                                    />
+                            />
                         </description>
                     </area>
                 </layout>
@@ -375,12 +427,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.noSidebar.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.noSidebar.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -388,12 +440,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -401,12 +453,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.description"
-                                    />
+                            />
                         </description>
                     </area>
                 </layout>
@@ -457,12 +509,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.leftSidebar.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.leftSidebar.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -470,12 +522,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -483,12 +535,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.description"
-                                    />
+                            />
                         </description>
                     </area>
                 </layout>
@@ -498,12 +550,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.rightSidebar.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.rightSidebar.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -511,12 +563,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.contentPrefix.description"
-                                    />
+                            />
                         </description>
                     </area>
 
@@ -524,12 +576,12 @@
                         <title>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.title"
-                                    />
+                            />
                         </title>
                         <description>
                             <locale group="quiqqer/template-tailwindcss"
                                     var="area.suffixContent.description"
-                                    />
+                            />
                         </description>
                     </area>
                 </layout>

@@ -1,16 +1,41 @@
-{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-<header class="control-header">
-    <h1>{$this->getAttribute('frontendTitle')}</h1>
-</header>
-{/if}
+{if $this->getAttribute('design') == 'backgroundImage'}
+<div class="{if $css}{$css}{else}quiqqer-control-separator{/if}"
+     style="{if $this->getAttribute('backgroundImage')}background-image: url({image src=$this->getAttribute('backgroundImage') width=1200 onlysrc=true});{/if}">
+    <div class="quiqqer-control-separator__background-overlay"
+    style="{if $overlayColor}background-color: {$overlayColor};{/if} {if $overlayOpacity}opacity: {$overlayOpacity};{/if} "></div>
+    <div class="quiqqer-control-separator__background-content {if $colorScheme}quiqqer-control-separator__background-content__{$colorScheme}{/if}">
+        {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+        <header class="control-header">
+            <h1>{$this->getAttribute('frontendTitle')}</h1>
+        </header>
+        {/if}
 
-{if $this->getAttribute('content') != ""}
-<div class="control-content">
-    {$this->getAttribute('content')}
+        {if $this->getAttribute('content') != ""}
+        <div class="control-content">
+            {$this->getAttribute('content')}
+        </div>
+        {/if}
+    </div>
 </div>
-{/if}
 
-{if $icon &&
-($this->getAttribute('design') == 'iconLeft' || $this->getAttribute('design') == 'iconRight') || $this->getAttribute('design') == 'iconCenter'}
-<span class="fa {$this->getAttribute('icon')} quiqqer-control-separator-icon"></span>
+{else}
+
+<div class="{if $css}{$css}{else}quiqqer-control-separator{/if}">
+    {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+    <header class="control-header">
+        <h1>{$this->getAttribute('frontendTitle')}</h1>
+    </header>
+    {/if}
+
+    {if $this->getAttribute('content') != ""}
+    <div class="control-content">
+        {$this->getAttribute('content')}
+    </div>
+    {/if}
+
+    {if $icon &&
+    ($this->getAttribute('design') == 'iconLeft' || $this->getAttribute('design') == 'iconRight') || $this->getAttribute('design') == 'iconCenter'}
+    <span class="fa {$this->getAttribute('icon')} quiqqer-control-separator-icon"></span>
+    {/if}
+</div>
 {/if}
