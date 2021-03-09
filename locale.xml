@@ -276,6 +276,10 @@
             <de><![CDATA[Hell]]></de>
             <en><![CDATA[Light]]></en>
         </locale>
+        <locale name="brick.Separator.setting.design.backgroundImage">
+            <de><![CDATA[Mit Hintergrundbild]]></de>
+            <en><![CDATA[With background image]]></en>
+        </locale>
         <locale name="brick.Separator.setting.design.iconLeft">
             <de><![CDATA[Icon: auf der linken Seite]]></de>
             <en><![CDATA[Icon: on the left]]></en>
@@ -288,9 +292,45 @@
             <de><![CDATA[Icon: auf der rechten Seite]]></de>
             <en><![CDATA[Icon: on the right]]></en>
         </locale>
-        <locale name="brick.Separator.setting.icon">
-            <de><![CDATA[Icon]]></de>
-            <en><![CDATA[Icon]]></en>
+        <locale name="brick.Separator.setting.backgroundImage">
+            <de><![CDATA[Hintergrund-Bild]]></de>
+            <en><![CDATA[Background image]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.overlayColor">
+            <de><![CDATA[Overlay-Farbe]]></de>
+            <en><![CDATA[Overlay color]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.overlayColor.desc">
+            <de><![CDATA[Nur für Design "Mit Hintergrundbild"]]></de>
+            <en><![CDATA[Only for design "With background image"]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.overlayOpacity">
+            <de><![CDATA[Overlay-Transparenz]]></de>
+            <en><![CDATA[Overlay opacity]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.overlayOpacity.desc">
+            <de><![CDATA[Nur für Design "Mit Hintergrundbild"]]></de>
+            <en><![CDATA[Only for design "With background image"]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.colorScheme">
+            <de><![CDATA[Text-Color Scheme]]></de>
+            <en><![CDATA[Text color scheme]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.colorScheme.desc">
+            <de><![CDATA[Nur für Design "Mit Hintergrundbild"]]></de>
+            <en><![CDATA[Only for design "With background image"]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.colorScheme.none">
+            <de><![CDATA[Kein]]></de>
+            <en><![CDATA[None]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.colorScheme.light">
+            <de><![CDATA[Hell]]></de>
+            <en><![CDATA[Light]]></en>
+        </locale>
+        <locale name="brick.Separator.setting.colorScheme.dark">
+            <de><![CDATA[Dunkel]]></de>
+            <en><![CDATA[Dark]]></en>
         </locale>
 
         <!-- Site list preview -->

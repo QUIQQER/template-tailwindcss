@@ -24,9 +24,13 @@ class Separator extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'class'  => 'quiqqer-control-separator',
-            'design' => 'simple',
-            'icon'   => 'fa-star-o'
+            'class'           => 'quiqqer-control-separator-container',
+            'design'          => 'simple',
+            'icon'            => 'fa-star-o',
+            'backgroundImage' => null,
+            'overlayColor'    => '#222',
+            'overlayOpacity'  => 0.5,
+            'colorScheme'     => false
         ]);
 
         parent::__construct($attributes);
@@ -45,7 +49,8 @@ class Separator extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $this->setAttribute('class', $this->getDesignCSSClasses());
+//        $this->setAttribute('class', $this->getDesignCSSClasses());
+        $css = $this->getDesignCSSClasses();
 
         $icon = $this->getAttribute('icon');
 
@@ -54,9 +59,30 @@ class Separator extends QUI\Control
             $icon = null;
         }
 
+        $overlayColor   = null;
+        $overlayOpacity = null;
+        $colorScheme    = false;
+
+        if ($this->getAttribute('overlayColor')) {
+            $overlayColor = $this->getAttribute('overlayColor');
+        }
+
+        if ($this->getAttribute('overlayOpacity') && $this->getAttribute('overlayOpacity') >= 0 && $this->getAttribute('overlayOpacity') <= 1) {
+            $overlayOpacity = $this->getAttribute('overlayOpacity');
+        }
+
+        if ($this->getAttribute('colorScheme')) {
+            $colorScheme = $this->getAttribute('colorScheme');
+        }
+
+
         $Engine->assign([
-            'this' => $this,
-            'icon' => $icon
+            'this'           => $this,
+            'css'            => $css,
+            'icon'           => $icon,
+            'overlayColor'   => $overlayColor,
+            'overlayOpacity' => $overlayOpacity,
+            'colorScheme' => $colorScheme
         ]);
 
         return $Engine->fetch(dirname(__FILE__).'/Separator.html');
@@ -93,6 +119,10 @@ class Separator extends QUI\Control
 
             case 'light':
                 $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__light rounded-lg shadow-lg';
+                break;
+
+            case 'backgroundImage':
+                $cssClasses = 'quiqqer-control-separator quiqqer-control-separator__background rounded-lg';
                 break;
 
             case 'iconLeft':
